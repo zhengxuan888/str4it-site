@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Policy — Strait Pristine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --cream: #FAFAF7; --warm-white: #F5F0EB; --text: #1A1A1A; --text-light: #6B6560;
+            --bronze: #8B7355; --forest: #2D4A3E; --beige: #E8DDD3; --gold: #C4A265;
+            --border: #E0D8CF;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+        }
+        body { font-family: var(--font-body); color: var(--text); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+        a:hover { opacity: 0.7; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+        @media (max-width: 768px) { .container { padding: 0 20px; } }
+
+        .announcement { background: var(--forest); color: #fff; text-align: center; padding: 10px 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
+        .header { position: sticky; top: 0; z-index: 1000; background: var(--cream); border-bottom: 1px solid var(--border); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; max-width: 1400px; margin: 0 auto; }
+        .logo { font-family: var(--font-display); font-size: 28px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; }
+        .logo span { color: var(--bronze); }
+        .nav { display: flex; gap: 40px; }
+        .nav a { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
+        .nav-icons { display: flex; gap: 20px; }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; }
+        @media (max-width: 768px) { .header-inner { padding: 16px 20px; } .nav { display: none; } .hamburger { display: block; } .logo { font-size: 22px; } }
+
+        .page-hero { background: var(--warm-white); padding: 80px 0; text-align: center; }
+        .page-hero h1 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 56px); font-weight: 300; margin-bottom: 12px; }
+        .page-hero p { color: var(--text-light); font-size: 15px; }
+
+        .policy-content { padding: 80px 0 100px; max-width: 820px; margin: 0 auto; }
+        .policy-content h2 { font-family: var(--font-display); font-size: 28px; font-weight: 400; margin-bottom: 18px; margin-top: 45px; }
+        .policy-content h2:first-child { margin-top: 0; }
+        .policy-content h3 { font-family: var(--font-display); font-size: 20px; font-weight: 400; margin-top: 28px; margin-bottom: 12px; }
+        .policy-content p { font-size: 15px; line-height: 1.8; color: var(--text-light); margin-bottom: 16px; }
+        .policy-content ul { margin: 16px 0; padding-left: 24px; }
+        .policy-content li { font-size: 15px; line-height: 1.8; color: var(--text-light); margin-bottom: 8px; }
+        .policy-content strong { color: var(--text); }
+        .policy-content .highlight { background: var(--warm-white); padding: 20px 24px; border-left: 3px solid var(--bronze); margin: 24px 0; }
+        .policy-content .highlight p { margin-bottom: 0; }
+
+        .footer { background: var(--text); color: rgba(255,255,255,0.7); padding: 80px 0 40px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+        .footer-brand .logo { color: #fff; margin-bottom: 20px; display: block; }
+        .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 300px; }
+        .footer-col h4 { color: #fff; font-family: var(--font-display); font-size: 18px; font-weight: 400; margin-bottom: 20px; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { font-size: 13px; }
+        .footer-col a:hover { color: var(--gold); opacity: 1; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .footer-bottom p { font-size: 12px; }
+        .footer-payments { display: flex; gap: 12px; }
+        .footer-payments span { padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; font-size: 11px; }
+        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+    
+        .cart-icon-wrapper { position: relative; display: inline-flex; }
+        .cart-badge { position: absolute; top: -8px; right: -10px; background: var(--forest); color: #fff; font-size: 10px; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    </style>
+</head>
+<body>
+    <div class="announcement">Complimentary shipping on orders over SGD 200 — Shop Now</div>
+    <header class="header">
+        <div class="header-inner">
+            <button class="hamburger">&#9776;</button>
+            <a href="index.html" class="logo">Strait <span>Pristine</span></a>
+            <nav class="nav">
+                <a href="collection.html">Shop</a>
+                <a href="collection.html">New Arrivals</a>
+                <a href="collection.html">Sale</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html">Cart</a>
+            </nav>
+            <div class="nav-icons">
+                <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></a>
+                <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+                <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h1>Refund Policy</h1>
+        <p>Our commitment to your satisfaction</p>
+    </section>
+
+    <div class="container">
+        <div class="policy-content">
+            <p><strong>Last updated:</strong> January 2025</p>
+
+            <p>Thank you for shopping with Strait Pristine. We are committed to providing you with the highest quality products and customer service. If you are not entirely satisfied with your purchase, we're here to help.</p>
+
+            <h2>Refund Eligibility</h2>
+            <p>To be eligible for a refund, the following conditions must be met:</p>
+            <ul>
+                <li>The request must be made within <strong>30 days</strong> of the date you received your item</li>
+                <li>The item must be unused, in the same condition that you received it, with all original tags attached</li>
+                <li>The item must be returned in its original packaging</li>
+                <li>You must provide a receipt or proof of purchase (order confirmation email)</li>
+            </ul>
+
+            <h2>Non-Refundable Items</h2>
+            <p>The following items cannot be refunded:</p>
+            <ul>
+                <li><strong>Sale items</strong> — Items purchased at a discounted price are final sale</li>
+                <li><strong>Gift cards</strong> — Non-refundable and non-exchangeable</li>
+                <li><strong>Made-to-order / custom items</strong> — Items specifically made or customised for you</li>
+                <li><strong>Intimate apparel</strong> — Undergarments, swimwear, and hosiery for hygiene reasons</li>
+                <li><strong>Beauty & fragrance products</strong> — Once opened, for health and safety reasons</li>
+                <li><strong>Items damaged through customer misuse</strong> — Damage caused by improper care, alterations, or accidents</li>
+            </ul>
+
+            <h2>Refund Process</h2>
+            <div class="highlight">
+                <p><strong>Step 1:</strong> Contact us at <strong>service@str4it.com</strong> with your order number and reason for return.</p>
+            </div>
+            <p><strong>Step 2:</strong> Our customer service team will review your request and provide a Return Merchandise Authorization (RMA) number within 1–2 business days.</p>
+            <p><strong>Step 3:</strong> Pack your item securely in its original packaging, include the RMA number, and ship to the address provided. We recommend using a trackable shipping service or purchasing shipping insurance.</p>
+            <p><strong>Step 4:</strong> Once we receive and inspect your returned item (within 5–7 business days), we will notify you of the approval or rejection of your refund.</p>
+            <p><strong>Step 5:</strong> If approved, your refund will be processed and a credit will automatically be applied to your original method of payment within 5–10 business days.</p>
+
+            <h2>Refund Methods</h2>
+            <p>Refunds are processed to the original payment method used at the time of purchase:</p>
+            <ul>
+                <li><strong>PayPal:</strong> Refunds are processed within 5–10 business days and will appear in your PayPal account</li>
+                <li><strong>Credit/Debit Cards:</strong> Refunds are processed within 5–10 business days, though it may take an additional billing cycle for your bank to post the credit</li>
+                <li><strong>Bank Transfer:</strong> Refunds are processed within 7–14 business days</li>
+            </ul>
+
+            <h2>Partial Refunds</h2>
+            <p>In certain situations, only partial refunds may be granted:</p>
+            <ul>
+                <li>Any item not in its original condition, is damaged, or missing parts for reasons not due to our error</li>
+                <li>Any item that is returned more than 30 days after delivery</li>
+            </ul>
+
+            <h2>Late or Missing Refunds</h2>
+            <p>If you haven't received a refund yet, please:</p>
+            <ul>
+                <li>Check your bank account again</li>
+                <li>Contact your credit card company — it may take some time before your refund is officially posted</li>
+                <li>Contact your bank — there is often some processing time before a refund is posted</li>
+                <li>If you've done all of this and still have not received your refund, please contact us at <strong>service@str4it.com</strong></li>
+            </ul>
+
+            <h2>Defective or Incorrect Items</h2>
+            <p>If you receive a defective, damaged, or incorrect item, please contact us immediately at <strong>service@str4it.com</strong> within 48 hours of delivery. We will arrange for a replacement to be sent to you or provide a full refund including all shipping costs. Please include photos of the defect or incorrect item to help us resolve the issue as quickly as possible.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have any questions about our Refund Policy, please contact us:</p>
+            <ul>
+                <li>By email: <strong>service@str4it.com</strong></li>
+                <li>By phone: <strong>+65 8555 3654</strong></li>
+                <li>By mail: STRAIT PRISTINE RESOURCES PTE. LTD., 8 Eu Tong Sen Street, #15-91 The Central, Singapore 059818</li>
+            </ul>
+        </div>
+    </div>
+
+        <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo">Strait <span>Pristine</span></span>
+                    <p>Contemporary fashion and lifestyle brand inspired by the Silk Road and the rich cultural heritage of Southeast Asia. Based in Singapore since 2022.</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/straitpristine" target="_blank" title="Instagram">@</a>
+                        <a href="https://facebook.com/straitpristine" target="_blank" title="Facebook">f</a>
+                        <a href="https://pinterest.com/straitpristine" target="_blank" title="Pinterest">P</a>
+                        <a href="https://tiktok.com/@straitpristine" target="_blank" title="TikTok">T</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="collection.html">New Arrivals</a></li>
+                        <li><a href="collection.html">Dresses</a></li>
+                        <li><a href="collection.html">Kaftans</a></li>
+                        <li><a href="collection.html">Bags & Accessories</a></li>
+                        <li><a href="collection.html">Home & Living</a></li>
+                        <li><a href="collection.html">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="shipping.html">Shipping & Returns</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="refund-policy.html">Refund Policy</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>STRAIT PRISTINE RESOURCES PTE. LTD.</li>
+                        <li>8 Eu Tong Sen Street</li>
+                        <li>#15-91 The Central</li>
+                        <li>Singapore 059818</li>
+                        <li style="margin-top:10px"><a href="mailto:service@str4it.com">service@str4it.com</a></li>
+                        <li><a href="tel:+6585553654">+65 8555 3654</a></li>
+                        <li style="margin-top:8px;font-size:12px;color:rgba(255,255,255,0.5)">Mon–Fri: 9:00–18:00 SGT</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 STRAIT PRISTINE RESOURCES PTE. LTD. (UEN: 202212345A) All rights reserved.</p>
+                <div class="footer-payments"><span class="pp">PayPal</span><span>Visa</span><span>Mastercard</span><span>Amex</span><span>Apple Pay</span></div>
+            </div>
+        </div>
+    </footer>
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

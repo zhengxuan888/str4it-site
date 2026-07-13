@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — Strait Pristine</title>
+    <meta name="description" content="Frequently asked questions about ordering, shipping, returns, sizing, and payment at Strait Pristine.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --cream: #FAFAF7; --warm-white: #F5F0EB; --text: #1A1A1A; --text-light: #6B6560;
+            --bronze: #8B7355; --forest: #2D4A3E; --beige: #E8DDD3; --gold: #C4A265;
+            --border: #E0D8CF;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+        }
+        body { font-family: var(--font-body); color: var(--text); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s; } a:hover { opacity: 0.7; }
+        img { max-width: 100%; display: block; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+        @media (max-width: 768px) { .container { padding: 0 20px; } }
+
+        .announcement { background: var(--forest); color: #fff; text-align: center; padding: 10px 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
+        .header { position: sticky; top: 0; z-index: 1000; background: var(--cream); border-bottom: 1px solid var(--border); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; max-width: 1400px; margin: 0 auto; }
+        .logo { font-family: var(--font-display); font-size: 28px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; }
+        .logo span { color: var(--bronze); }
+        .nav { display: flex; gap: 40px; align-items: center; }
+        .nav a { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; position: relative; }
+        .nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--bronze); transition: width 0.3s; }
+        .nav a:hover { opacity: 1; } .nav a:hover::after { width: 100%; }
+        .nav-icons { display: flex; gap: 20px; align-items: center; }
+        .cart-icon-wrapper { position: relative; display: inline-flex; }
+        .cart-badge { position: absolute; top: -8px; right: -10px; background: var(--forest); color: #fff; font-size: 10px; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+        .hamburger span { width: 24px; height: 1.5px; background: var(--text); }
+        @media (max-width: 768px) { .header-inner { padding: 16px 20px; } .nav { display: none; } .hamburger { display: flex; } .logo { font-size: 22px; } }
+
+        .page-hero { background: var(--warm-white); padding: 80px 0; text-align: center; }
+        .page-hero h1 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 56px); font-weight: 300; margin-bottom: 12px; }
+        .page-hero p { color: var(--text-light); font-size: 15px; max-width: 500px; margin: 0 auto; }
+
+        .faq-section { padding: 80px 0 100px; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-category { margin-bottom: 50px; }
+        .faq-category h2 { font-family: var(--font-display); font-size: 28px; font-weight: 400; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-question { width: 100%; text-align: left; padding: 20px 0; background: none; border: none; font-family: var(--font-body); font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+        .faq-question:hover { color: var(--bronze); }
+        .faq-question .icon { flex-shrink: 0; width: 20px; height: 20px; transition: transform 0.3s; }
+        .faq-item.active .faq-question .icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+        .faq-item.active .faq-answer { max-height: 300px; }
+        .faq-answer p { padding: 0 0 20px; font-size: 14px; line-height: 1.8; color: var(--text-light); }
+
+        .faq-contact { text-align: center; margin-top: 60px; padding: 40px; background: var(--warm-white); }
+        .faq-contact h3 { font-family: var(--font-display); font-size: 24px; font-weight: 400; margin-bottom: 12px; }
+        .faq-contact p { font-size: 14px; color: var(--text-light); margin-bottom: 20px; }
+        .faq-contact a { display: inline-block; padding: 12px 32px; background: var(--text); color: #fff; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+
+        .footer { background: var(--text); color: rgba(255,255,255,0.7); padding: 80px 0 40px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 60px; margin-bottom: 60px; }
+        .footer-brand .logo { color: #fff; margin-bottom: 20px; display: block; }
+        .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 300px; }
+        .footer-col h4 { color: #fff; font-family: var(--font-display); font-size: 18px; font-weight: 400; margin-bottom: 20px; }
+        .footer-col ul { list-style: none; } .footer-col li { margin-bottom: 10px; }
+        .footer-col a { font-size: 13px; } .footer-col a:hover { color: var(--gold); opacity: 1; }
+        .footer-social { display: flex; gap: 16px; margin-top: 20px; }
+        .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .footer-bottom p { font-size: 12px; }
+        .footer-payments { display: flex; gap: 10px; }
+        .footer-payments span { padding: 5px 12px; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; font-size: 11px; font-weight: 500; }
+        .footer-payments .pp { color: #FFC439; }
+        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+        .mobile-menu { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 2000; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a { font-family: var(--font-display); font-size: 28px; }
+        .mobile-menu-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="announcement">Complimentary shipping on orders over SGD 200 — Shop Now</div>
+    <header class="header">
+        <div class="header-inner">
+            <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.add('active')"><span></span><span></span><span></span></button>
+            <a href="index.html" class="logo">Strait <span>Pristine</span></a>
+            <nav class="nav">
+                <a href="collection.html">Shop</a>
+                <a href="collection.html">New Arrivals</a>
+                <a href="collection.html">Sale</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html">Cart</a>
+            </nav>
+            <div class="nav-icons">
+                <a href="#" title="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></a>
+                <a href="#" title="Account"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+                <a href="cart.html" title="Cart" class="cart-icon-wrapper"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="cart-badge" style="display:none;">0</span></a>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-menu">
+        <button class="mobile-menu-close" onclick="this.parentElement.classList.remove('active')">&times;</button>
+        <a href="collection.html">Shop</a>
+        <a href="collection.html">New Arrivals</a>
+        <a href="collection.html">Sale</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">Cart</a>
+    </div>
+
+    <section class="page-hero">
+        <h1>Frequently Asked Questions</h1>
+        <p>Find answers to common questions about ordering, shipping, returns, and more.</p>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-container">
+                <!-- Orders -->
+                <div class="faq-category">
+                    <h2>Orders & Payment</h2>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            <span>What payment methods do you accept?</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We accept PayPal, Visa, Mastercard, American Express, and Apple Pay. All transactions are processed securely through encrypted payment gateways. Your payment information is never stored on our servers.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            <span>Can I modify or cancel my order after placing it?</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Orders can be modified or cancelled within 2 hours of placement by emailing service@str4it.com with your order number. After this window, orders enter our fulfilment process and can no longer be modified. You may return items within 30 days of delivery for a full refund.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            <span>How do I track my order?</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Once your order ships, you'll receive a confirmation email with a tracking number. You can use this to track your parcel on the courier's website. Orders typically ship within 1-2 business days of placement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipping -->
+                <div class="faq-category">
+                    <h2>Shipping & Delivery</h2>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            <span>How much is shipping?</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Standard shipping is complimentary on orders over SGD 150. For orders under SGD 150, standard shipping is SGD 15 within Singapore and SGD 25 for international destinations. Express shipping (2-3 business days) is available for SGD 28.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            <span>How long does delivery take?</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Within Singapore: Standard delivery takes 2-4 business days, express delivery takes 1-2 business days. International orders: Standard delivery takes 5-10 business days depending on destination. We ship to over 15 countries including Australia, UK, US, Japan, and across Southeast Asia.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            <span>Do you ship internationally?</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We ship to over 15 countries worldwide. International customers are responsible for any customs duties or import taxes imposed by their country. These fees are not included in our shipping charges. Please check your local customs regulations before ordering.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Returns -->
+                <div class="faq-category">
+                    <h2>Returns & Exchanges</h2>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            <span>What is your return policy?</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer a 30-day return policy for all unworn, unwashed items in their original condition with tags attached. Sale items are eligible for exchange or store credit only. To initiate a return, email service@str4it.com with your order number. Refunds are processed within 5-7 business days of receiving the returned item.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            <span>Can I exchange an item for a different size?</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. We offer free size exchanges within Singapore. Simply email us at service@str4it.com within 30 days of delivery, and we'll arrange a courier pickup and send out the new size. International customers can return items for store credit and place a new order.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            <span>How do I know which size to order?</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Each product page includes detailed size measurements and fit notes. We recommend measuring yourself and comparing with our size chart. Our garments generally fit true to size. If you're between sizes, we recommend sizing up for a relaxed fit or sizing down for a more tailored look. Contact us if you need assistance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products -->
+                <div class="faq-category">
+                    <h2>Products & Care</h2>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            <span>Are your products ethically made?</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes. We work exclusively with family-run ateliers and artisan workshops across Southeast Asia. All our partners pay fair wages and provide safe working conditions. We conduct regular site visits and maintain long-term relationships with each production partner. Read more on our About page.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            <span>How should I care for my silk garments?</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We recommend dry cleaning for all silk garments to preserve the fabric's lustre and hand-feel. If hand-washing, use cold water with a mild silk detergent, do not wring or twist, and lay flat to dry away from direct sunlight. Store on padded hangers. Iron on the lowest heat setting with a pressing cloth.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            <span>Do you offer gift wrapping?</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! Every Strait Pristine order comes beautifully packaged in our signature recyclable packaging. For a special touch, add our complimentary gift wrapping service at checkout — your order will be wrapped in hand-made batik paper with a personalised message card.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-contact">
+                    <h3>Still Have Questions?</h3>
+                    <p>Our customer service team is available Monday to Friday, 9:00 AM – 6:00 PM SGT.<br>We typically respond within 1-2 business days.</p>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo">Strait <span>Pristine</span></span>
+                    <p>Contemporary fashion and lifestyle brand inspired by the Silk Road and the rich cultural heritage of Southeast Asia. Based in Singapore since 2022.</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/straitpristine" target="_blank" title="Instagram">@</a>
+                        <a href="https://facebook.com/straitpristine" target="_blank" title="Facebook">f</a>
+                        <a href="https://pinterest.com/straitpristine" target="_blank" title="Pinterest">P</a>
+                        <a href="https://tiktok.com/@straitpristine" target="_blank" title="TikTok">T</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="collection.html">New Arrivals</a></li>
+                        <li><a href="collection.html">Dresses</a></li>
+                        <li><a href="collection.html">Kaftans</a></li>
+                        <li><a href="collection.html">Bags & Accessories</a></li>
+                        <li><a href="collection.html">Home & Living</a></li>
+                        <li><a href="collection.html">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="shipping.html">Shipping & Returns</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="refund-policy.html">Refund Policy</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>STRAIT PRISTINE RESOURCES PTE. LTD.</li>
+                        <li>8 Eu Tong Sen Street</li>
+                        <li>#15-91 The Central</li>
+                        <li>Singapore 059818</li>
+                        <li style="margin-top:10px"><a href="mailto:service@str4it.com">service@str4it.com</a></li>
+                        <li><a href="tel:+6585553654">+65 8555 3654</a></li>
+                        <li style="margin-top:8px;font-size:12px;color:rgba(255,255,255,0.5)">Mon–Fri: 9:00–18:00 SGT</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 STRAIT PRISTINE RESOURCES PTE. LTD. (UEN: 202212345A) All rights reserved.</p>
+                <div class="footer-payments"><span class="pp">PayPal</span><span>Visa</span><span>Mastercard</span><span>Amex</span><span>Apple Pay</span></div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
