@@ -174,7 +174,7 @@ const PRODUCTS = [
         images: [
             "https://images.unsplash.com/photo-1581382575275-979b1b4e1c3f?w=800&q=80"
         ],
-        description: "An exclusive orchid print designed in collaboration with Singapore Botanic Gardens. This relaxed kaftan is cut from breathable silk georgette with mother-of-pearl button details at the neckline. Featherweight and packable — your perfect travel companion.",
+        description: "An exclusive orchid print designed in-house by our creative team, inspired by the tropical gardens of Southeast Asia. This relaxed kaftan is cut from breathable silk georgette with mother-of-pearl button details at the neckline. Featherweight and packable — your perfect travel companion.",
         material: "100% Silk Georgette",
         sizes: ["XS", "S", "M", "L", "XL"],
         care: "Dry clean recommended. Cool iron if needed.",
