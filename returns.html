@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQ | Strait Pristine</title>
+<title>Returns & Refund Policy | Strait Pristine</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -106,116 +106,53 @@ function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle
 .page-hero{padding:80px 40px;text-align:center;background:var(--color-bg-warm)}
 .page-hero h1{font-family:var(--font-serif);font-size:clamp(32px,4vw,56px);font-weight:300;letter-spacing:3px;margin-bottom:16px}
 .page-content{max-width:800px;margin:0 auto;padding:60px 40px}
-.faq-category{margin-bottom:40px}
-.faq-category h2{font-family:var(--font-serif);font-size:24px;font-weight:400;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--color-border);letter-spacing:1px}
-.faq-item{border-bottom:1px solid var(--color-border);padding:0}
-.faq-question{padding:18px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:15px;font-weight:400;transition:color .3s}
-.faq-question:hover{color:var(--color-accent)}
-.faq-question .icon{font-size:18px;transition:transform .3s;flex-shrink:0;margin-left:16px}
-.faq-item.open .faq-question .icon{transform:rotate(45deg)}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
-.faq-item.open .faq-answer{max-height:500px;padding:0 0 18px}
-.faq-answer p{font-size:14px;color:var(--color-text-light);line-height:1.8}
-.faq-answer a{text-decoration:underline}
-@media(max-width:768px){.page-hero{padding:50px 20px}.page-content{padding:40px 20px}}
+.page-content h2{font-family:var(--font-serif);font-size:24px;font-weight:400;margin:40px 0 16px;letter-spacing:1px}
+.page-content h2:first-of-type{margin-top:0}
+.page-content p{font-size:15px;color:var(--color-text-light);line-height:1.9;margin-bottom:16px}
+.page-content ul{padding-left:20px;margin:12px 0}
+.page-content ul li{font-size:14px;color:var(--color-text-light);line-height:2;list-style:disc}
+.highlight-box{background:var(--color-bg-warm);padding:24px;margin:30px 0;border-left:3px solid var(--color-accent)}
+.highlight-box p{margin:0;color:var(--color-text)}
 </style>
 
-<div class="page-hero"><h1>Frequently Asked Questions</h1></div>
+<div class="page-hero"><h1>Returns & Refund Policy</h1></div>
 
 <div class="page-content">
-  <div class="faq-category">
-    <h2>Orders & Payment</h2>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">How do I place an order?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Browse our collections, select your desired items, choose your size, and click "Add to Bag". When you're ready, click the bag icon to review your items and proceed to checkout. We accept PayPal, Visa, Mastercard, and American Express.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">Can I change or cancel my order after placing it?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>We process orders quickly. If you need to make changes, please contact us at <a href="mailto:service@str4it.com">service@str4it.com</a> within 2 hours of placing your order. After this window, we may not be able to modify your order as it may already be in the shipping process.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">What payment methods do you accept?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>We accept PayPal, Visa, Mastercard, and American Express. All transactions are processed securely through PayPal's encrypted payment system.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">Do you offer gift wrapping?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Yes! Every order comes with our signature packaging. If you'd like special gift wrapping, please mention it in your order notes at checkout.</p></div>
-    </div>
+  <div class="highlight-box">
+    <p><strong>14-Day Return Policy:</strong> You may return any unworn, unwashed item with original tags attached within 14 days of delivery for a full refund.</p>
   </div>
 
-  <div class="faq-category">
-    <h2>Shipping & Delivery</h2>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">How long does shipping take?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Within Singapore: 2-4 business days (standard) or 1-2 business days (express). International Asia: 5-10 business days. Worldwide: 7-15 business days. Please see our <a href="shipping.html">Shipping Policy</a> for full details.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">Is free shipping available?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Yes! Free standard shipping on orders over S$200 within Singapore, and over S$400 for international orders.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">How can I track my order?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Once your order ships, you'll receive a tracking number via email. You can use this to track your package on the carrier's website.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">Do you ship internationally?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Yes, we ship worldwide. Please note that international orders may be subject to customs duties and taxes, which are the responsibility of the recipient.</p></div>
-    </div>
-  </div>
+  <h2>How to Return</h2>
+  <ul>
+    <li>Email us at <strong>service@str4it.com</strong> with your order number and the items you wish to return.</li>
+    <li>We will provide you with a Return Authorization and shipping instructions within 24-48 hours.</li>
+    <li>Items must be returned in their original condition — unworn, unwashed, with all tags attached.</li>
+    <li>Original packaging should be included where possible.</li>
+    <li>Return shipping costs are the responsibility of the customer unless the item is defective or incorrect.</li>
+  </ul>
 
-  <div class="faq-category">
-    <h2>Returns & Exchanges</h2>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">What is your return policy?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>We accept returns within 14 days of delivery. Items must be unworn, unwashed, with all original tags attached. Please see our <a href="returns.html">Returns & Refund Policy</a> for full details.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">How do I initiate a return?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Email us at <a href="mailto:service@str4it.com">service@str4it.com</a> with your order number and the items you'd like to return. We'll send you return instructions within 24-48 hours.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">Do you offer exchanges?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>We don't offer direct exchanges. Please return the original item and place a new order for your desired size or color.</p></div>
-    </div>
-  </div>
+  <h2>Refund Processing</h2>
+  <p>Once we receive and inspect your return, we will process your refund within 5-7 business days. The refund will be issued to your original payment method.</p>
+  <p>Please note that it may take additional time for your bank or payment provider to reflect the refund in your account.</p>
 
-  <div class="faq-category">
-    <h2>Products & Sizing</h2>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">How do your sizes run?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Our sizes generally run true to standard sizing. Kaftans and sarongs are free-size/one-size. For specific measurements, please refer to the size guide on each product page or contact our customer service team.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">Are your products hand-made?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Yes! All our products feature hand-printed patterns using traditional artisanal techniques. This means each piece may have slight variations that make it unique — this is part of the beauty of handcrafted goods.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">How should I care for my Strait Pristine items?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Silk items: Dry clean only. Cotton items: Machine wash cold on gentle cycle. Do not bleach. Iron on low heat. Store in a cool, dry place. Specific care instructions are included with each purchase.</p></div>
-    </div>
-  </div>
+  <h2>Non-Returnable Items</h2>
+  <ul>
+    <li>Sale items marked as "Final Sale"</li>
+    <li>Items that have been worn, washed, or altered</li>
+    <li>Items without original tags attached</li>
+    <li>Items returned after the 14-day return window</li>
+  </ul>
 
-  <div class="faq-category">
-    <h2>Account & Newsletter</h2>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">Do I need to create an account to order?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>No, you can checkout as a guest. However, creating an account allows you to track orders, save your preferences, and enjoy a faster checkout process.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">How do I unsubscribe from your newsletter?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>You can unsubscribe at any time by clicking the "unsubscribe" link at the bottom of any of our emails, or by contacting us directly.</p></div>
-    </div>
-  </div>
+  <h2>Exchanges</h2>
+  <p>We do not offer direct exchanges. If you need a different size or color, please return the original item and place a new order. Our customer service team is happy to assist with sizing questions before you order.</p>
 
-  <div style="text-align:center;margin-top:50px;padding:40px;background:var(--color-bg-warm);border-radius:4px">
-    <p style="font-family:var(--font-serif);font-size:20px;margin-bottom:8px">Still have questions?</p>
-    <p style="font-size:14px;color:var(--color-text-light);margin-bottom:16px">Our team is happy to help. Contact us at <a href="mailto:service@str4it.com" style="text-decoration:underline">service@str4it.com</a></p>
-  </div>
+  <h2>Damaged or Defective Items</h2>
+  <p>If you receive a damaged or defective item, please contact us at <strong>service@str4it.com</strong> within 48 hours of delivery with photos of the damage. We will arrange a replacement or full refund including return shipping at no cost to you.</p>
+
+  <h2>Contact Us</h2>
+  <p>For any return-related questions, please reach out to our customer service team:</p>
+  <p>Email: <strong>service@str4it.com</strong><br>Phone: <strong>+65 8555 3654</strong><br>Hours: Mon-Fri, 9:00 AM - 6:00 PM (SGT)</p>
 </div>
-
-<script>
-function toggleFaq(el){el.parentElement.classList.toggle('open')}
-</script>
 
 <footer class="footer">
   <div class="container">

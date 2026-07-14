@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQ | Strait Pristine</title>
+<title>Size Guide | Strait Pristine</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -106,116 +106,66 @@ function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle
 .page-hero{padding:80px 40px;text-align:center;background:var(--color-bg-warm)}
 .page-hero h1{font-family:var(--font-serif);font-size:clamp(32px,4vw,56px);font-weight:300;letter-spacing:3px;margin-bottom:16px}
 .page-content{max-width:800px;margin:0 auto;padding:60px 40px}
-.faq-category{margin-bottom:40px}
-.faq-category h2{font-family:var(--font-serif);font-size:24px;font-weight:400;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--color-border);letter-spacing:1px}
-.faq-item{border-bottom:1px solid var(--color-border);padding:0}
-.faq-question{padding:18px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:15px;font-weight:400;transition:color .3s}
-.faq-question:hover{color:var(--color-accent)}
-.faq-question .icon{font-size:18px;transition:transform .3s;flex-shrink:0;margin-left:16px}
-.faq-item.open .faq-question .icon{transform:rotate(45deg)}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
-.faq-item.open .faq-answer{max-height:500px;padding:0 0 18px}
-.faq-answer p{font-size:14px;color:var(--color-text-light);line-height:1.8}
-.faq-answer a{text-decoration:underline}
-@media(max-width:768px){.page-hero{padding:50px 20px}.page-content{padding:40px 20px}}
+.page-content h2{font-family:var(--font-serif);font-size:24px;font-weight:400;margin:40px 0 16px;letter-spacing:1px}
+.page-content h2:first-of-type{margin-top:0}
+.page-content p{font-size:14px;color:var(--color-text-light);line-height:1.8;margin-bottom:16px}
+.page-content table{width:100%;border-collapse:collapse;margin:20px 0 30px}
+.page-content th,.page-content td{padding:12px 16px;border:1px solid var(--color-border);text-align:center;font-size:13px}
+.page-content th{background:var(--color-bg-warm);font-weight:500;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.how-to-measure{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin:30px 0}
+.measure-item h4{font-family:var(--font-serif);font-size:18px;margin-bottom:8px}
+.measure-item p{font-size:13px;color:var(--color-text-light);line-height:1.8}
+@media(max-width:768px){.page-hero{padding:50px 20px}.page-content{padding:40px 20px}.how-to-measure{grid-template-columns:1fr}}
 </style>
 
-<div class="page-hero"><h1>Frequently Asked Questions</h1></div>
+<div class="page-hero"><h1>Size Guide</h1></div>
 
 <div class="page-content">
-  <div class="faq-category">
-    <h2>Orders & Payment</h2>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">How do I place an order?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Browse our collections, select your desired items, choose your size, and click "Add to Bag". When you're ready, click the bag icon to review your items and proceed to checkout. We accept PayPal, Visa, Mastercard, and American Express.</p></div>
+  <h2>Women's Clothing</h2>
+  <table>
+    <tr><th>Size</th><th>XS</th><th>S</th><th>M</th><th>L</th><th>XL</th></tr>
+    <tr><td>Bust (cm)</td><td>80-84</td><td>84-88</td><td>88-92</td><td>92-96</td><td>96-100</td></tr>
+    <tr><td>Waist (cm)</td><td>62-66</td><td>66-70</td><td>70-74</td><td>74-78</td><td>78-82</td></tr>
+    <tr><td>Hips (cm)</td><td>86-90</td><td>90-94</td><td>94-98</td><td>98-102</td><td>102-106</td></tr>
+  </table>
+
+  <h2>How to Measure</h2>
+  <div class="how-to-measure">
+    <div class="measure-item">
+      <h4>Bust</h4>
+      <p>Measure around the fullest part of your bust, keeping the tape measure level across your back.</p>
     </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">Can I change or cancel my order after placing it?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>We process orders quickly. If you need to make changes, please contact us at <a href="mailto:service@str4it.com">service@str4it.com</a> within 2 hours of placing your order. After this window, we may not be able to modify your order as it may already be in the shipping process.</p></div>
+    <div class="measure-item">
+      <h4>Waist</h4>
+      <p>Measure around your natural waistline, which is the narrowest part of your torso.</p>
     </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">What payment methods do you accept?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>We accept PayPal, Visa, Mastercard, and American Express. All transactions are processed securely through PayPal's encrypted payment system.</p></div>
+    <div class="measure-item">
+      <h4>Hips</h4>
+      <p>Measure around the fullest part of your hips, keeping the tape measure level.</p>
     </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">Do you offer gift wrapping?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Yes! Every order comes with our signature packaging. If you'd like special gift wrapping, please mention it in your order notes at checkout.</p></div>
+    <div class="measure-item">
+      <h4>Length</h4>
+      <p>Dress lengths are measured from the highest point of the shoulder to the hem.</p>
     </div>
   </div>
 
-  <div class="faq-category">
-    <h2>Shipping & Delivery</h2>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">How long does shipping take?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Within Singapore: 2-4 business days (standard) or 1-2 business days (express). International Asia: 5-10 business days. Worldwide: 7-15 business days. Please see our <a href="shipping.html">Shipping Policy</a> for full details.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">Is free shipping available?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Yes! Free standard shipping on orders over S$200 within Singapore, and over S$400 for international orders.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">How can I track my order?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Once your order ships, you'll receive a tracking number via email. You can use this to track your package on the carrier's website.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">Do you ship internationally?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Yes, we ship worldwide. Please note that international orders may be subject to customs duties and taxes, which are the responsibility of the recipient.</p></div>
-    </div>
-  </div>
+  <h2>Kids' Clothing</h2>
+  <table>
+    <tr><th>Size</th><th>2-3Y</th><th>3-4Y</th><th>5-6Y</th><th>7-8Y</th><th>9-10Y</th></tr>
+    <tr><td>Height (cm)</td><td>92-98</td><td>98-104</td><td>104-116</td><td>116-128</td><td>128-140</td></tr>
+    <tr><td>Chest (cm)</td><td>52-54</td><td>54-56</td><td>56-60</td><td>60-64</td><td>64-68</td></tr>
+  </table>
 
-  <div class="faq-category">
-    <h2>Returns & Exchanges</h2>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">What is your return policy?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>We accept returns within 14 days of delivery. Items must be unworn, unwashed, with all original tags attached. Please see our <a href="returns.html">Returns & Refund Policy</a> for full details.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">How do I initiate a return?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Email us at <a href="mailto:service@str4it.com">service@str4it.com</a> with your order number and the items you'd like to return. We'll send you return instructions within 24-48 hours.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">Do you offer exchanges?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>We don't offer direct exchanges. Please return the original item and place a new order for your desired size or color.</p></div>
-    </div>
-  </div>
+  <h2>Home Cushions</h2>
+  <table>
+    <tr><th>Size</th><th>Dimensions</th><th>Best For</th></tr>
+    <tr><td>30x40 cm</td><td>12" x 16"</td><td>Accent chairs, reading nooks</td></tr>
+    <tr><td>45x45 cm</td><td>18" x 18"</td><td>Sofas, bed headboards</td></tr>
+    <tr><td>50x50 cm</td><td>20" x 20"</td><td>Statement floor cushions</td></tr>
+  </table>
 
-  <div class="faq-category">
-    <h2>Products & Sizing</h2>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">How do your sizes run?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Our sizes generally run true to standard sizing. Kaftans and sarongs are free-size/one-size. For specific measurements, please refer to the size guide on each product page or contact our customer service team.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">Are your products hand-made?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Yes! All our products feature hand-printed patterns using traditional artisanal techniques. This means each piece may have slight variations that make it unique — this is part of the beauty of handcrafted goods.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">How should I care for my Strait Pristine items?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>Silk items: Dry clean only. Cotton items: Machine wash cold on gentle cycle. Do not bleach. Iron on low heat. Store in a cool, dry place. Specific care instructions are included with each purchase.</p></div>
-    </div>
-  </div>
-
-  <div class="faq-category">
-    <h2>Account & Newsletter</h2>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">Do I need to create an account to order?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>No, you can checkout as a guest. However, creating an account allows you to track orders, save your preferences, and enjoy a faster checkout process.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">How do I unsubscribe from your newsletter?<span class="icon">+</span></div>
-      <div class="faq-answer"><p>You can unsubscribe at any time by clicking the "unsubscribe" link at the bottom of any of our emails, or by contacting us directly.</p></div>
-    </div>
-  </div>
-
-  <div style="text-align:center;margin-top:50px;padding:40px;background:var(--color-bg-warm);border-radius:4px">
-    <p style="font-family:var(--font-serif);font-size:20px;margin-bottom:8px">Still have questions?</p>
-    <p style="font-size:14px;color:var(--color-text-light);margin-bottom:16px">Our team is happy to help. Contact us at <a href="mailto:service@str4it.com" style="text-decoration:underline">service@str4it.com</a></p>
-  </div>
+  <p style="margin-top:30px">Need help with sizing? Contact our team at <a href="mailto:service@str4it.com" style="text-decoration:underline">service@str4it.com</a> — we're happy to help you find your perfect fit.</p>
 </div>
-
-<script>
-function toggleFaq(el){el.parentElement.classList.toggle('open')}
-</script>
 
 <footer class="footer">
   <div class="container">

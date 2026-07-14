@@ -1,461 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us — Strait Pristine</title>
-    <meta name="description" content="Learn about Strait Pristine — our story, team, sustainability practices, and commitment to ethical fashion from Singapore.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --cream: #FAFAF7; --warm-white: #F5F0EB; --text: #1A1A1A; --text-light: #6B6560;
-            --bronze: #8B7355; --forest: #2D4A3E; --beige: #E8DDD3; --gold: #C4A265;
-            --border: #E0D8CF;
-            --font-display: 'Cormorant Garamond', Georgia, serif;
-            --font-body: 'DM Sans', -apple-system, sans-serif;
-        }
-        body { font-family: var(--font-body); color: var(--text); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
-        a:hover { opacity: 0.7; }
-        img { max-width: 100%; display: block; }
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
-        @media (max-width: 768px) { .container { padding: 0 20px; } }
-
-        .announcement { background: var(--forest); color: #fff; text-align: center; padding: 10px 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
-        .header { position: sticky; top: 0; z-index: 1000; background: var(--cream); border-bottom: 1px solid var(--border); }
-        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; max-width: 1400px; margin: 0 auto; }
-        .logo { font-family: var(--font-display); font-size: 28px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; }
-        .logo span { color: var(--bronze); }
-        .nav { display: flex; gap: 40px; align-items: center; }
-        .nav a { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; position: relative; }
-        .nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--bronze); transition: width 0.3s; }
-        .nav a:hover { opacity: 1; }
-        .nav a:hover::after { width: 100%; }
-        .nav-icons { display: flex; gap: 20px; align-items: center; }
-        .cart-icon-wrapper { position: relative; display: inline-flex; }
-        .cart-badge { position: absolute; top: -8px; right: -10px; background: var(--forest); color: #fff; font-size: 10px; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
-        .hamburger span { width: 24px; height: 1.5px; background: var(--text); }
-        @media (max-width: 768px) { .header-inner { padding: 16px 20px; } .nav { display: none; } .hamburger { display: flex; } .logo { font-size: 22px; } }
-
-        /* Page Hero */
-        .page-hero { position: relative; height: 50vh; min-height: 400px; overflow: hidden; }
-        .page-hero img { width: 100%; height: 100%; object-fit: cover; }
-        .page-hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center; }
-        .page-hero-content { text-align: center; color: #fff; }
-        .page-hero-content h1 { font-family: var(--font-display); font-size: clamp(40px, 6vw, 68px); font-weight: 300; margin-bottom: 12px; }
-        .page-hero-content p { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.8; }
-
-        /* Story Section */
-        .story-section { padding: 100px 0; }
-        .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .story-grid.reverse { direction: rtl; }
-        .story-grid.reverse > * { direction: ltr; }
-        .story-image { aspect-ratio: 4/5; overflow: hidden; }
-        .story-image img { width: 100%; height: 100%; object-fit: cover; }
-        .story-text .label { font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--bronze); margin-bottom: 16px; }
-        .story-text h2 { font-family: var(--font-display); font-size: clamp(30px, 3.5vw, 44px); font-weight: 300; margin-bottom: 24px; line-height: 1.2; }
-        .story-text p { font-size: 15px; line-height: 1.9; color: var(--text-light); margin-bottom: 16px; }
-        @media (max-width: 768px) { .story-grid, .story-grid.reverse { grid-template-columns: 1fr; gap: 40px; direction: ltr; } }
-
-        /* Timeline */
-        .timeline-section { padding: 100px 0; background: var(--warm-white); }
-        .timeline-section .section-header { text-align: center; margin-bottom: 60px; }
-        .timeline-section .label { font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--bronze); margin-bottom: 12px; }
-        .timeline-section h2 { font-family: var(--font-display); font-size: clamp(30px, 4vw, 48px); font-weight: 300; }
-        .timeline { max-width: 800px; margin: 0 auto; position: relative; }
-        .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--border); }
-        .timeline-item { display: flex; align-items: flex-start; margin-bottom: 50px; position: relative; }
-        .timeline-item:nth-child(odd) { flex-direction: row-reverse; text-align: right; }
-        .timeline-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--forest); border: 3px solid var(--cream); position: absolute; left: 50%; transform: translateX(-50%); z-index: 1; }
-        .timeline-content { width: 45%; padding: 0 30px; }
-        .timeline-year { font-family: var(--font-display); font-size: 28px; font-weight: 400; color: var(--bronze); margin-bottom: 8px; }
-        .timeline-content h3 { font-family: var(--font-display); font-size: 20px; font-weight: 400; margin-bottom: 8px; }
-        .timeline-content p { font-size: 14px; color: var(--text-light); line-height: 1.7; }
-        @media (max-width: 768px) {
-            .timeline::before { left: 20px; }
-            .timeline-item, .timeline-item:nth-child(odd) { flex-direction: row; text-align: left; padding-left: 50px; }
-            .timeline-dot { left: 20px; }
-            .timeline-content { width: 100%; padding: 0; }
-        }
-
-        /* Team */
-        .team-section { padding: 100px 0; }
-        .team-section .section-header { text-align: center; margin-bottom: 60px; }
-        .team-section .label { font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--bronze); margin-bottom: 12px; }
-        .team-section h2 { font-family: var(--font-display); font-size: clamp(30px, 4vw, 48px); font-weight: 300; }
-        .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
-        .team-card { text-align: center; }
-        .team-photo { aspect-ratio: 3/4; overflow: hidden; margin-bottom: 16px; background: #eee; }
-        .team-photo img { width: 100%; height: 100%; object-fit: cover; }
-        .team-card h3 { font-family: var(--font-display); font-size: 20px; font-weight: 400; margin-bottom: 4px; }
-        .team-card .role { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--bronze); font-weight: 500; }
-        @media (max-width: 1024px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 480px) { .team-grid { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; } }
-
-        /* Sustainability */
-        .sustainability-section { background: var(--forest); padding: 100px 0; color: #fff; }
-        .sustainability-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .sustainability-text .label { font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-        .sustainability-text h2 { font-family: var(--font-display); font-size: clamp(30px, 4vw, 44px); font-weight: 300; margin-bottom: 24px; }
-        .sustainability-text p { font-size: 15px; line-height: 1.9; color: rgba(255,255,255,0.8); margin-bottom: 16px; }
-        .sustainability-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
-        .stat { text-align: center; }
-        .stat .number { font-family: var(--font-display); font-size: 42px; font-weight: 300; color: var(--gold); }
-        .stat .desc { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-top: 4px; }
-        .sustainability-image { aspect-ratio: 4/5; overflow: hidden; }
-        .sustainability-image img { width: 100%; height: 100%; object-fit: cover; }
-        @media (max-width: 768px) { .sustainability-inner { grid-template-columns: 1fr; gap: 40px; } }
-
-        /* Values */
-        .values-section { background: var(--warm-white); padding: 100px 0; }
-        .values-header { text-align: center; margin-bottom: 60px; }
-        .values-header .label { font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--bronze); margin-bottom: 12px; }
-        .values-header h2 { font-family: var(--font-display); font-size: clamp(30px, 4vw, 48px); font-weight: 300; }
-        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; }
-        .value-card { text-align: center; padding: 40px 30px; }
-        .value-icon { font-size: 40px; margin-bottom: 20px; }
-        .value-card h3 { font-family: var(--font-display); font-size: 22px; font-weight: 400; margin-bottom: 14px; }
-        .value-card p { font-size: 14px; line-height: 1.8; color: var(--text-light); }
-        @media (max-width: 768px) { .values-grid { grid-template-columns: 1fr; gap: 30px; } }
-
-        /* Founder */
-        .founder-section { padding: 100px 0; }
-        .founder-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
-        .founder-image { aspect-ratio: 1; overflow: hidden; }
-        .founder-image img { width: 100%; height: 100%; object-fit: cover; }
-        .founder-text .label { font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--bronze); margin-bottom: 16px; }
-        .founder-text h2 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 40px); font-weight: 300; margin-bottom: 24px; }
-        .founder-text p { font-size: 15px; line-height: 1.9; color: var(--text-light); margin-bottom: 16px; }
-        .founder-text .signature { font-family: var(--font-display); font-size: 24px; font-style: italic; color: var(--bronze); margin-top: 24px; }
-        @media (max-width: 768px) { .founder-grid { grid-template-columns: 1fr; gap: 40px; } }
-
-        /* Footer */
-        .footer { background: var(--text); color: rgba(255,255,255,0.7); padding: 80px 0 40px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 60px; margin-bottom: 60px; }
-        .footer-brand .logo { color: #fff; margin-bottom: 20px; display: block; }
-        .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 300px; }
-        .footer-col h4 { color: #fff; font-family: var(--font-display); font-size: 18px; font-weight: 400; margin-bottom: 20px; }
-        .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: 10px; }
-        .footer-col a { font-size: 13px; }
-        .footer-col a:hover { color: var(--gold); opacity: 1; }
-        .footer-social { display: flex; gap: 16px; margin-top: 20px; }
-        .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        .footer-bottom p { font-size: 12px; }
-        .footer-payments { display: flex; gap: 10px; }
-        .footer-payments span { padding: 5px 12px; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; font-size: 11px; font-weight: 500; }
-        .footer-payments .pp { color: #FFC439; }
-        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
-        .mobile-menu { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 2000; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
-        .mobile-menu.active { display: flex; }
-        .mobile-menu a { font-family: var(--font-display); font-size: 28px; }
-        .mobile-menu-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Strait Pristine</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--color-bg:#ffffff;--color-text:#1a1a1a;--color-text-light:#666;--color-accent:#8b6914;--color-sale:#c41230;--color-border:#e5e5e5;--color-bg-warm:#f8f5f0;--font-serif:'Cormorant Garamond',Georgia,serif;--font-sans:'Jost','Helvetica Neue',Arial,sans-serif;--max-width:1440px}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-sans);color:var(--color-text);background:var(--color-bg);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}button{cursor:pointer;border:none;background:none;font-family:inherit}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 2rem}
+.announcement-bar{background:var(--color-text);color:#fff;text-align:center;padding:10px 20px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase}
+.announcement-bar a{color:#fff;text-decoration:underline}
+.header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--color-border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;max-width:var(--max-width);margin:0 auto}
+.logo{font-family:var(--font-serif);font-size:28px;font-weight:400;letter-spacing:3px;text-transform:uppercase}
+.logo span{font-weight:600}
+.nav-main{display:flex;gap:32px;align-items:center}
+.nav-main a{font-size:13px;letter-spacing:1.2px;text-transform:uppercase;position:relative;padding:4px 0;transition:color .3s}
+.nav-main a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--color-text);transition:width .3s}
+.nav-main a:hover::after{width:100%}
+.nav-main a.sale-link{color:var(--color-sale);font-weight:500}
+.nav-icons{display:flex;gap:20px;align-items:center}
+.nav-icons button{font-size:18px;position:relative}
+.cart-count{position:absolute;top:-8px;right:-10px;background:var(--color-text);color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.footer{background:var(--color-text);color:#fff;padding:80px 0 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:60px}
+.footer-brand{font-family:var(--font-serif);font-size:22px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px}
+.footer-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:20px}
+.footer-social{display:flex;gap:16px}
+.footer-social a{width:36px;height:36px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:rgba(255,255,255,.7);transition:all .3s}
+.footer-social a:hover{background:#fff;color:var(--color-text);border-color:#fff}
+.footer-col h4{font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;font-weight:500}
+.footer-col ul li{margin-bottom:12px}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,.6);transition:color .3s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.5)}
+.footer-payments{display:flex;gap:12px}
+.footer-payments span{font-size:11px;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.2);padding:4px 8px;border-radius:3px}
+.mobile-menu-btn{display:none;font-size:24px}
+.mobile-nav{position:fixed;top:0;left:-100%;width:80%;max-width:360px;height:100%;background:#fff;z-index:10001;transition:left .4s;padding:30px;overflow-y:auto}
+.mobile-nav.open{left:0}
+.mobile-nav-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:10000;opacity:0;visibility:hidden;transition:all .3s}
+.mobile-nav-overlay.open{opacity:1;visibility:visible}
+.mobile-nav-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
+.mobile-nav-close{font-size:28px;cursor:pointer}
+.mobile-nav ul li{padding:14px 0;border-bottom:1px solid var(--color-border)}
+.mobile-nav ul li a{font-size:14px;letter-spacing:1px;text-transform:uppercase}
+.mobile-nav ul li a.sale-link{color:var(--color-sale)}
+@media(max-width:1024px){.nav-main{display:none}.mobile-menu-btn{display:block}.footer-grid{grid-template-columns:1fr 1fr;gap:30px}}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}.header-inner{padding:14px 20px}}
+</style>
 </head>
 <body>
-    <div class="announcement">Complimentary shipping on orders over SGD 200 — Shop Now</div>
-    <header class="header">
-        <div class="header-inner">
-            <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.add('active')"><span></span><span></span><span></span></button>
-            <a href="index.html" class="logo">Strait <span>Pristine</span></a>
-            <nav class="nav">
-                <a href="collection.html">Shop</a>
-                <a href="collection.html">New Arrivals</a>
-                <a href="collection.html">Sale</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="cart.html">Cart</a>
-            </nav>
-            <div class="nav-icons">
-                <a href="#" title="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></a>
-                <a href="#" title="Account"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
-                <a href="cart.html" title="Cart" class="cart-icon-wrapper"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="cart-badge" style="display:none;">0</span></a>
-            </div>
-        </div>
-    </header>
-    <div class="mobile-menu">
-        <button class="mobile-menu-close" onclick="this.parentElement.classList.remove('active')">&times;</button>
-        <a href="collection.html">Shop</a>
-        <a href="collection.html">New Arrivals</a>
-        <a href="collection.html">Sale</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="cart.html">Cart</a>
+
+<div class="announcement-bar">Summer Sale — Up to 50% off selected styles | <a href="collections.html?c=sale2">Shop now</a></div>
+
+<header class="header">
+  <div class="header-inner">
+    <button class="mobile-menu-btn" onclick="toggleMobileNav()">☰</button>
+    <a href="index.html" class="logo">STRAIT <span>PRISTINE</span></a>
+    <nav class="nav-main">
+      <a href="collections.html?c=dresses">Dresses</a>
+      <a href="collections.html?c=kaftans">Kaftans</a>
+      <a href="collections.html?c=kurtas">Kurtas</a>
+      <a href="collections.html?c=beachwear">Beachwear</a>
+      <a href="collections.html?c=bags">Bags</a>
+      <a href="collections.html?c=home">Home</a>
+      <a href="collections.html?c=new">New</a>
+      <a href="collections.html?c=sale2" class="sale-link">Sale</a>
+    </nav>
+    <div class="nav-icons">
+      <button onclick="location.href='collections.html'">⌕</button>
+      <button onclick="location.href='index.html'">♡ <span class="cart-count">0</span></button>
     </div>
+  </div>
+</header>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80" alt="Our Story">
-        <div class="page-hero-overlay">
-            <div class="page-hero-content">
-                <h1>Our Story</h1>
-                <p>Where tradition meets contemporary elegance</p>
-            </div>
-        </div>
-    </section>
+<div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="toggleMobileNav()"></div>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header"><span class="logo" style="font-size:20px">STRAIT PRISTINE</span><span class="mobile-nav-close" onclick="toggleMobileNav()">✕</span></div>
+  <ul>
+    <li><a href="collections.html?c=dresses" onclick="toggleMobileNav()">Dresses</a></li>
+    <li><a href="collections.html?c=kaftans" onclick="toggleMobileNav()">Kaftans</a></li>
+    <li><a href="collections.html?c=kurtas" onclick="toggleMobileNav()">Kurtas</a></li>
+    <li><a href="collections.html?c=beachwear" onclick="toggleMobileNav()">Beachwear</a></li>
+    <li><a href="collections.html?c=bags" onclick="toggleMobileNav()">Bags</a></li>
+    <li><a href="collections.html?c=home" onclick="toggleMobileNav()">Home</a></li>
+    <li><a href="collections.html?c=kids" onclick="toggleMobileNav()">Kids</a></li>
+    <li><a href="collections.html?c=new" onclick="toggleMobileNav()">New Arrivals</a></li>
+    <li><a href="collections.html?c=sale2" onclick="toggleMobileNav()" class="sale-link">Summer Sale</a></li>
+    <li><a href="about.html" onclick="toggleMobileNav()">About Us</a></li>
+    <li><a href="contact.html" onclick="toggleMobileNav()">Contact</a></li>
+  </ul>
+</div>
 
-    <!-- Origin Story -->
-    <section class="story-section">
-        <div class="container">
-            <div class="story-grid">
-                <div class="story-image">
-                    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80" alt="Singapore heritage">
-                </div>
-                <div class="story-text">
-                    <p class="label">Our Origins</p>
-                    <h2>Born at the Crossroads of Civilisations</h2>
-                    <p>Strait Pristine was founded in 2022 in Singapore — a city that has stood for centuries at the meeting point of the world's great trading routes. The Straits of Malacca, through which goods, ideas, and artistry have flowed for millennia, is the wellspring of our creative vision.</p>
-                    <p>Our founder drew inspiration from the Peranakan heritage of the region — a culture born from the marriage of Chinese and Malay traditions — and from the broader legacy of the maritime Silk Road.</p>
-                    <p>Every piece we create carries within it this spirit of cultural exchange: the boldness of tropical colour, the refinement of Eastern craft, and the timeless appeal of considered design.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<script>
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');document.getElementById('mobileNavOverlay').classList.toggle('open')}
+</script>
 
-    <!-- Timeline -->
-    <section class="timeline-section">
-        <div class="container">
-            <div class="section-header">
-                <p class="label">Our Journey</p>
-                <h2>Key Milestones</h2>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <p class="timeline-year">2022</p>
-                        <h3>The Beginning</h3>
-                        <p>Founded in Singapore by Amara Chen. Launched our debut collection of 12 silk kaftans, selling out within 3 weeks through word-of-mouth alone.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <p class="timeline-year">2023</p>
-                        <h3>Expanding Horizons</h3>
-                        <p>Opened our first retail space at The Central, Chinatown. Launched home & living and bags collections. Featured in Luxe Asia's "Brands to Watch".</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <p class="timeline-year">2024</p>
-                        <h3>Going Global</h3>
-                        <p>Launched international shipping to 15 countries. Partnered with artisans in Java, Bali, and Pekalongan. Reached 10,000 happy customers worldwide.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <p class="timeline-year">2025</p>
-                        <h3>Sustainable Future</h3>
-                        <p>Achieved 100% sustainable packaging. Launched our Transparency Report. Introduced made-to-order programme to reduce waste. Growing our team to serve you better.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<style>
+.page-hero{padding:80px 40px;text-align:center;background:var(--color-bg-warm)}
+.page-hero h1{font-family:var(--font-serif);font-size:clamp(32px,4vw,56px);font-weight:300;letter-spacing:3px;margin-bottom:16px}
+.page-hero p{font-size:15px;color:var(--color-text-light);max-width:600px;margin:0 auto;line-height:1.8}
+.page-content{max-width:800px;margin:0 auto;padding:60px 40px}
+.page-content h2{font-family:var(--font-serif);font-size:28px;font-weight:400;margin-bottom:20px;letter-spacing:1px}
+.page-content h3{font-family:var(--font-serif);font-size:22px;font-weight:400;margin:30px 0 12px}
+.page-content p{font-size:15px;color:var(--color-text-light);line-height:1.9;margin-bottom:20px}
+.about-image{width:100%;aspect-ratio:16/9;background:#f5f5f5;overflow:hidden;margin:40px 0;border-radius:4px}
+.about-image img{width:100%;height:100%;object-fit:cover}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin:50px 0}
+.value-item{text-align:center}
+.value-item h4{font-family:var(--font-serif);font-size:20px;margin-bottom:12px}
+.value-item p{font-size:13px;color:var(--color-text-light);line-height:1.8}
+@media(max-width:768px){.page-hero{padding:50px 20px}.page-content{padding:40px 20px}.values-grid{grid-template-columns:1fr}}
+</style>
 
-    <!-- Values -->
-    <section class="values-section">
-        <div class="container">
-            <div class="values-header">
-                <p class="label">Our Philosophy</p>
-                <h2>What We Believe In</h2>
-            </div>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">✦</div>
-                    <h3>Artisan Craftsmanship</h3>
-                    <p>Each piece is meticulously created by skilled artisans using techniques passed down through generations. From hand-block printing to intricate embroidery, we honour the craft behind every creation.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">◈</div>
-                    <h3>Cultural Bridge</h3>
-                    <p>We believe in fashion that connects cultures rather than divides them. Our designs celebrate the rich artistic traditions of the Silk Road while remaining contemporary and globally relevant.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">❋</div>
-                    <h3>Conscious Luxury</h3>
-                    <p>We are committed to responsible sourcing and sustainable practices. Our natural fabrics, eco-conscious packaging, and ethical partnerships ensure beauty and responsibility go hand in hand.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="page-hero">
+  <h1>Our Story</h1>
+  <p>From the crossroads of East and West, Strait Pristine brings you a world of color, craftsmanship, and contemporary elegance.</p>
+</div>
 
-    <!-- Team -->
-    <section class="team-section">
-        <div class="container">
-            <div class="section-header">
-                <p class="label">The People Behind SP</p>
-                <h2>Meet Our Team</h2>
-            </div>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-photo">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=80" alt="Amara Chen">
-                    </div>
-                    <h3>Amara Chen</h3>
-                    <p class="role">Founder & Creative Director</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80" alt="Daniel Wong">
-                    </div>
-                    <h3>Daniel Wong</h3>
-                    <p class="role">Head of Operations</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80" alt="Priya Nair">
-                    </div>
-                    <h3>Priya Nair</h3>
-                    <p class="role">Design Lead</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&q=80" alt="Marcus Lim">
-                    </div>
-                    <h3>Marcus Lim</h3>
-                    <p class="role">Customer Experience</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="page-content">
+  <div class="about-image">
+    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&q=80" alt="Strait Pristine Atelier">
+  </div>
 
-    <!-- Sustainability -->
-    <section class="sustainability-section">
-        <div class="container">
-            <div class="sustainability-inner">
-                <div class="sustainability-text">
-                    <p class="label">Our Commitment</p>
-                    <h2>Sustainability & Ethics</h2>
-                    <p>At Strait Pristine, sustainability isn't a marketing initiative — it's the foundation of how we do business. We believe that luxury fashion and environmental responsibility are not mutually exclusive.</p>
-                    <p>We work exclusively with family-run ateliers across Southeast Asia, ensuring fair wages, safe working conditions, and the preservation of traditional craft techniques. Every artisan in our supply chain is paid above market rate.</p>
-                    <p>Our packaging is 100% recyclable and plastic-free. We use GOTS-certified organic cotton, OEKO-TEX certified silks, and vegetable-tanned leathers. In 2024, we introduced a made-to-order programme to further reduce waste.</p>
-                    <div class="sustainability-stats">
-                        <div class="stat">
-                            <p class="number">100%</p>
-                            <p class="desc">Eco Packaging</p>
-                        </div>
-                        <div class="stat">
-                            <p class="number">12</p>
-                            <p class="desc">Artisan Partners</p>
-                        </div>
-                        <div class="stat">
-                            <p class="number">100%</p>
-                            <p class="desc">Fair Wages</p>
-                        </div>
-                        <div class="stat">
-                            <p class="number">5</p>
-                            <p class="desc">Countries Sourced</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="sustainability-image">
-                    <img src="https://images.unsplash.com/photo-1617551307578-7f5160d6615e?w=800&q=80" alt="Sustainability">
-                </div>
-            </div>
-        </div>
-    </section>
+  <h2>Where Tradition Meets Tomorrow</h2>
+  <p>Strait Pristine was born from a deep love of artisanal craftsmanship and the belief that beautiful, hand-printed textiles should be part of everyday life. Based in Singapore, at the crossroads of Asia's rich textile traditions, we bring together the finest printing techniques from India, Indonesia, and Japan to create pieces that are both timeless and modern.</p>
+  <p>Our founder, inspired by the vibrant markets of Rajasthan, the batik workshops of Java, and the refined aesthetics of Japanese textiles, envisioned a brand that would celebrate the artistry of hand-printing while embracing contemporary design sensibility.</p>
 
-    <!-- Craftsmanship -->
-    <section class="story-section">
-        <div class="container">
-            <div class="story-grid reverse">
-                <div class="story-image">
-                    <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=800&q=80" alt="Craftsmanship">
-                </div>
-                <div class="story-text">
-                    <p class="label">Our Craft</p>
-                    <h2>From Fibre to Fashion</h2>
-                    <p>The journey of a Strait Pristine piece begins with the careful selection of the finest natural materials — pure silks sourced from heritage mills, organic cottons from sustainable farms, and luxuriously soft linens.</p>
-                    <p>Our print designs are developed in-house, drawing from the botanical richness of Southeast Asian gardens, the geometric patterns of Islamic art, and the flowing motifs of traditional batik.</p>
-                    <p>Working with family-run ateliers across the region, we ensure that every stitch, every seam, and every finish meets our exacting standards of quality.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="about-image">
+    <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=1200&q=80" alt="Artisan Craftsmanship">
+  </div>
 
-    <!-- Founder -->
-    <section class="founder-section" style="background: var(--warm-white);">
-        <div class="container">
-            <div class="founder-grid">
-                <div class="founder-image">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80" alt="Founder">
-                </div>
-                <div class="founder-text">
-                    <p class="label">The Founder</p>
-                    <h2>A Vision Rooted in Heritage</h2>
-                    <p>Growing up between the bustling markets of Singapore and the ancient textile centres of Southeast Asia, our founder developed an early appreciation for the power of fabric to tell stories and connect people across cultures.</p>
-                    <p>After years in international fashion and luxury goods, the desire to create something authentically rooted in the region's heritage — yet modern and globally appealing — led to the founding of Strait Pristine in 2022.</p>
-                    <p>"I wanted to create a brand that celebrates the beauty of cultural exchange — the kind of beauty that has always existed at the crossroads of the world's great trading routes."</p>
-                    <p class="signature">— Amara Chen, Founder & Creative Director</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <h2>Our Craft</h2>
+  <p>Every Strait Pristine piece begins with a hand-drawn design, translated into carved blocks or screens by master artisans. Using traditional techniques passed down through generations — from hand block printing to screen printing — each pattern is applied with care and precision.</p>
+  <p>We work exclusively with natural fibers: premium silk, breathable cotton, and luxurious silk-cotton blends. Our dyes are carefully selected for their vibrancy and longevity, ensuring that each piece maintains its beauty wash after wash.</p>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <span class="logo">Strait <span>Pristine</span></span>
-                    <p>Contemporary fashion and lifestyle brand inspired by the Silk Road and the rich cultural heritage of Southeast Asia. Based in Singapore since 2022.</p>
-                    <div class="footer-social">
-                        <a href="https://instagram.com/straitpristine" target="_blank" title="Instagram">@</a>
-                        <a href="https://facebook.com/straitpristine" target="_blank" title="Facebook">f</a>
-                        <a href="https://pinterest.com/straitpristine" target="_blank" title="Pinterest">P</a>
-                        <a href="https://tiktok.com/@straitpristine" target="_blank" title="TikTok">T</a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Shop</h4>
-                    <ul>
-                        <li><a href="collection.html">New Arrivals</a></li>
-                        <li><a href="collection.html">Dresses</a></li>
-                        <li><a href="collection.html">Kaftans</a></li>
-                        <li><a href="collection.html">Bags & Accessories</a></li>
-                        <li><a href="collection.html">Home & Living</a></li>
-                        <li><a href="collection.html">Sale</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Information</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="shipping.html">Shipping & Returns</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="refund-policy.html">Refund Policy</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li>STRAIT PRISTINE RESOURCES PTE. LTD.</li>
-                        <li>8 Eu Tong Sen Street</li>
-                        <li>#15-91 The Central</li>
-                        <li>Singapore 059818</li>
-                        <li style="margin-top:10px"><a href="mailto:service@str4it.com">service@str4it.com</a></li>
-                        <li><a href="tel:+6585553654">+65 8555 3654</a></li>
-                        <li style="margin-top:8px;font-size:12px;color:rgba(255,255,255,0.5)">Mon–Fri: 9:00–18:00 SGT</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 STRAIT PRISTINE RESOURCES PTE. LTD. (UEN: 202212345A) All rights reserved.</p>
-                <div class="footer-payments"><span class="pp">PayPal</span><span>Visa</span><span>Mastercard</span><span>Amex</span><span>Apple Pay</span></div>
-            </div>
-        </div>
-    </footer>
+  <div class="values-grid">
+    <div class="value-item">
+      <h4>Artisanal</h4>
+      <p>Every piece is handcrafted using traditional printing techniques passed down through generations of master artisans.</p>
+    </div>
+    <div class="value-item">
+      <h4>Sustainable</h4>
+      <p>We use natural fibers and eco-conscious processes, minimizing waste while maximizing beauty and quality.</p>
+    </div>
+    <div class="value-item">
+      <h4>Timeless</h4>
+      <p>Our designs transcend trends, creating pieces that become treasured wardrobe staples for years to come.</p>
+    </div>
+  </div>
+
+  <h2>Our Collections</h2>
+  <p>From our iconic Nizam print — inspired by the geometric patterns of Mughal architecture — to the romantic florals of our Ginza Bouquet collection, each line tells a story of cultural convergence and artistic excellence.</p>
+  <p>Our fashion collections span dresses, kaftans, kurtas, and beachwear, while our home collection brings the same artistry to cushions, tableware, porcelain, and decorative accessories.</p>
+
+  <h2>Singapore, Our Home</h2>
+  <p>Headquartered at 8 Eu Tong Sen Street in the heart of Singapore, Strait Pristine is proud to be part of this vibrant city's rich textile heritage. Singapore's position as a cultural crossroads — where Chinese, Malay, Indian, and Western traditions meet — perfectly mirrors our design philosophy of bringing diverse artisanal traditions together in harmony.</p>
+  <p>We invite you to explore our world of color and craftsmanship, and to discover the pieces that will bring joy to your wardrobe and home.</p>
+  <p style="margin-top:40px;font-style:italic;font-family:var(--font-serif);font-size:18px;color:var(--color-text)">— The Strait Pristine Team</p>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand">STRAIT PRISTINE</div><p class="footer-desc">Luxury printed fashion and home accessories, handcrafted with artisanal techniques. Based in Singapore, inspired by the world.</p><div class="footer-social"><a href="#">IG</a><a href="#">FB</a><a href="#">PI</a><a href="#">TK</a></div></div>
+      <div class="footer-col"><h4>Shop</h4><ul><li><a href="collections.html?c=dresses">Dresses</a></li><li><a href="collections.html?c=kaftans">Kaftans</a></li><li><a href="collections.html?c=kurtas">Kurtas</a></li><li><a href="collections.html?c=beachwear">Beachwear</a></li><li><a href="collections.html?c=bags">Bags</a></li><li><a href="collections.html?c=home">Home</a></li><li><a href="collections.html?c=kids">Kids</a></li></ul></div>
+      <div class="footer-col"><h4>Collections</h4><ul><li><a href="collections.html?c=new">New Arrivals</a></li><li><a href="collections.html?c=nizam">Nizam Collection</a></li><li><a href="collections.html?c=icons">Icons Collection</a></li><li><a href="collections.html?c=sale2">Summer Sale</a></li></ul></div>
+      <div class="footer-col"><h4>Help</h4><ul><li><a href="contact.html">Contact Us</a></li><li><a href="shipping.html">Shipping Policy</a></li><li><a href="returns.html">Returns & Refunds</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="returns.html">Refund Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 STRAIT PRISTINE RESOURCES PTE. LTD. All rights reserved. | 8 EU TONG SEN STREET #15-91 THE CENTRAL SINGAPORE (059818)</p><div class="footer-payments"><span>PayPal</span><span>Visa</span><span>Mastercard</span><span>AMEX</span></div></div>
+  </div>
+</footer>
 </body>
 </html>

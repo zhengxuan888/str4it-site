@@ -1,276 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service — Strait Pristine</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --cream: #FAFAF7; --warm-white: #F5F0EB; --text: #1A1A1A; --text-light: #6B6560;
-            --bronze: #8B7355; --forest: #2D4A3E; --border: #E0D8CF; --gold: #C4A265;
-            --font-display: 'Cormorant Garamond', Georgia, serif;
-            --font-body: 'DM Sans', -apple-system, sans-serif;
-        }
-        body { font-family: var(--font-body); color: var(--text); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
-        a:hover { opacity: 0.7; }
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
-        @media (max-width: 768px) { .container { padding: 0 20px; } }
-
-        .announcement { background: var(--forest); color: #fff; text-align: center; padding: 10px 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
-        .header { position: sticky; top: 0; z-index: 1000; background: var(--cream); border-bottom: 1px solid var(--border); }
-        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; max-width: 1400px; margin: 0 auto; }
-        .logo { font-family: var(--font-display); font-size: 28px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; }
-        .logo span { color: var(--bronze); }
-        .nav { display: flex; gap: 40px; }
-        .nav a { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
-        .nav-icons { display: flex; gap: 20px; }
-        .hamburger { display: none; background: none; border: none; cursor: pointer; }
-        @media (max-width: 768px) { .header-inner { padding: 16px 20px; } .nav { display: none; } .hamburger { display: block; } .logo { font-size: 22px; } }
-
-        .page-hero { background: var(--warm-white); padding: 80px 0; text-align: center; }
-        .page-hero h1 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 56px); font-weight: 300; margin-bottom: 12px; }
-        .page-hero p { color: var(--text-light); font-size: 15px; }
-
-        .policy-content { padding: 80px 0 100px; max-width: 820px; margin: 0 auto; }
-        .policy-content h2 { font-family: var(--font-display); font-size: 26px; font-weight: 400; margin-bottom: 16px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); }
-        .policy-content h2:first-of-type { margin-top: 0; border-top: none; padding-top: 0; }
-        .policy-content h3 { font-family: var(--font-display); font-size: 20px; font-weight: 400; margin-top: 24px; margin-bottom: 12px; }
-        .policy-content p { font-size: 14px; line-height: 1.85; color: var(--text-light); margin-bottom: 14px; }
-        .policy-content ul { margin: 12px 0 16px; padding-left: 24px; }
-        .policy-content li { font-size: 14px; line-height: 1.85; color: var(--text-light); margin-bottom: 6px; }
-        .policy-content strong { color: var(--text); }
-
-        .footer { background: var(--text); color: rgba(255,255,255,0.7); padding: 80px 0 40px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
-        .footer-brand .logo { color: #fff; margin-bottom: 20px; display: block; }
-        .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 300px; }
-        .footer-col h4 { color: #fff; font-family: var(--font-display); font-size: 18px; font-weight: 400; margin-bottom: 20px; }
-        .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: 10px; }
-        .footer-col a { font-size: 13px; }
-        .footer-col a:hover { color: var(--gold); opacity: 1; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        .footer-bottom p { font-size: 12px; }
-        .footer-payments { display: flex; gap: 12px; }
-        .footer-payments span { padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; font-size: 11px; }
-        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
-    
-        .cart-icon-wrapper { position: relative; display: inline-flex; }
-        .cart-badge { position: absolute; top: -8px; right: -10px; background: var(--forest); color: #fff; font-size: 10px; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service | Strait Pristine</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--color-bg:#ffffff;--color-text:#1a1a1a;--color-text-light:#666;--color-accent:#8b6914;--color-sale:#c41230;--color-border:#e5e5e5;--color-bg-warm:#f8f5f0;--font-serif:'Cormorant Garamond',Georgia,serif;--font-sans:'Jost','Helvetica Neue',Arial,sans-serif;--max-width:1440px}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-sans);color:var(--color-text);background:var(--color-bg);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}button{cursor:pointer;border:none;background:none;font-family:inherit}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 2rem}
+.announcement-bar{background:var(--color-text);color:#fff;text-align:center;padding:10px 20px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase}
+.announcement-bar a{color:#fff;text-decoration:underline}
+.header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--color-border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;max-width:var(--max-width);margin:0 auto}
+.logo{font-family:var(--font-serif);font-size:28px;font-weight:400;letter-spacing:3px;text-transform:uppercase}
+.logo span{font-weight:600}
+.nav-main{display:flex;gap:32px;align-items:center}
+.nav-main a{font-size:13px;letter-spacing:1.2px;text-transform:uppercase;position:relative;padding:4px 0;transition:color .3s}
+.nav-main a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--color-text);transition:width .3s}
+.nav-main a:hover::after{width:100%}
+.nav-main a.sale-link{color:var(--color-sale);font-weight:500}
+.nav-icons{display:flex;gap:20px;align-items:center}
+.nav-icons button{font-size:18px;position:relative}
+.cart-count{position:absolute;top:-8px;right:-10px;background:var(--color-text);color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.footer{background:var(--color-text);color:#fff;padding:80px 0 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:60px}
+.footer-brand{font-family:var(--font-serif);font-size:22px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px}
+.footer-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:20px}
+.footer-social{display:flex;gap:16px}
+.footer-social a{width:36px;height:36px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:rgba(255,255,255,.7);transition:all .3s}
+.footer-social a:hover{background:#fff;color:var(--color-text);border-color:#fff}
+.footer-col h4{font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;font-weight:500}
+.footer-col ul li{margin-bottom:12px}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,.6);transition:color .3s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.5)}
+.footer-payments{display:flex;gap:12px}
+.footer-payments span{font-size:11px;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.2);padding:4px 8px;border-radius:3px}
+.mobile-menu-btn{display:none;font-size:24px}
+.mobile-nav{position:fixed;top:0;left:-100%;width:80%;max-width:360px;height:100%;background:#fff;z-index:10001;transition:left .4s;padding:30px;overflow-y:auto}
+.mobile-nav.open{left:0}
+.mobile-nav-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:10000;opacity:0;visibility:hidden;transition:all .3s}
+.mobile-nav-overlay.open{opacity:1;visibility:visible}
+.mobile-nav-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
+.mobile-nav-close{font-size:28px;cursor:pointer}
+.mobile-nav ul li{padding:14px 0;border-bottom:1px solid var(--color-border)}
+.mobile-nav ul li a{font-size:14px;letter-spacing:1px;text-transform:uppercase}
+.mobile-nav ul li a.sale-link{color:var(--color-sale)}
+@media(max-width:1024px){.nav-main{display:none}.mobile-menu-btn{display:block}.footer-grid{grid-template-columns:1fr 1fr;gap:30px}}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}.header-inner{padding:14px 20px}}
+</style>
 </head>
 <body>
-    <div class="announcement">Complimentary shipping on orders over SGD 200 — Shop Now</div>
-    <header class="header">
-        <div class="header-inner">
-            <button class="hamburger">&#9776;</button>
-            <a href="index.html" class="logo">Strait <span>Pristine</span></a>
-            <nav class="nav">
-                <a href="collection.html">Shop</a>
-                <a href="collection.html">New Arrivals</a>
-                <a href="collection.html">Sale</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="cart.html">Cart</a>
-            </nav>
-            <div class="nav-icons">
-                <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></a>
-                <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
-                <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></a>
-            </div>
-        </div>
-    </header>
 
-    <section class="page-hero">
-        <h1>Terms of Service</h1>
-        <p>Please read these terms carefully before using our website</p>
-    </section>
+<div class="announcement-bar">Summer Sale — Up to 50% off selected styles | <a href="collections.html?c=sale2">Shop now</a></div>
 
-    <div class="container">
-        <div class="policy-content">
-            <p><strong>Last updated:</strong> 15 January 2025</p>
-            <p>Welcome to str4it.com. These Terms of Service ("Terms") govern your use of the website operated by STRAIT PRISTINE RESOURCES PTE. LTD. ("Company", "we", "us", "our"), a company incorporated under the laws of the Republic of Singapore with registered address at 8 Eu Tong Sen Street, #15-91 The Central, Singapore 059818.</p>
-            <p>By accessing or using our website, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use the Site.</p>
-
-            <h2>1. General Conditions</h2>
-            <p>You must be at least 16 years of age to use this Site. By using the Site, you represent and warrant that you have the legal capacity to enter into binding agreements and that you will comply with these Terms and all applicable local, national, and international laws and regulations.</p>
-            <p>We reserve the right to refuse service to anyone for any reason at any time. We may terminate or suspend your access to the Site without prior notice if we believe you have violated these Terms.</p>
-
-            <h2>2. Account Registration</h2>
-            <p>You may create an account on our Site to facilitate purchases and access additional features. When creating an account, you agree to:</p>
-            <ul>
-                <li>Provide accurate, current, and complete information</li>
-                <li>Maintain and promptly update your account information</li>
-                <li>Maintain the security and confidentiality of your password</li>
-                <li>Accept responsibility for all activities that occur under your account</li>
-                <li>Notify us immediately of any unauthorised use of your account</li>
-            </ul>
-            <p>We reserve the right to suspend or terminate accounts that contain false or misleading information, or that are used in violation of these Terms.</p>
-
-            <h2>3. Products and Orders</h2>
-            <h3>3.1 Product Information</h3>
-            <p>We make every effort to display our products accurately, including colours, descriptions, and pricing. However, we do not warrant that product descriptions, colours, or other content on the Site are accurate, complete, reliable, current, or error-free. We reserve the right to correct any errors and to update information at any time without prior notice.</p>
-
-            <h3>3.2 Pricing</h3>
-            <p>All prices are displayed in Singapore Dollars (SGD) and include applicable Goods and Services Tax (GST) unless otherwise stated. We reserve the right to change prices at any time without prior notice. In the event of a pricing error, we reserve the right to cancel orders placed at the incorrect price.</p>
-
-            <h3>3.3 Order Acceptance</h3>
-            <p>Your receipt of an order confirmation does not constitute our acceptance of your order. We reserve the right to accept or decline any order for any reason, including but not limited to:</p>
-            <ul>
-                <li>Product unavailability or errors in product information</li>
-                <li>Suspected fraud or unauthorised transactions</li>
-                <li>Errors in pricing or product descriptions</li>
-                <li>Issues with payment authorisation</li>
-            </ul>
-
-            <h3>3.4 Order Cancellation</h3>
-            <p>You may request cancellation of an order within 24 hours of placement by contacting us at service@str4it.com. Orders that have already been dispatched cannot be cancelled and will be subject to our return policy.</p>
-
-            <h2>4. Payment</h2>
-            <p>We accept the following payment methods:</p>
-            <ul>
-                <li>PayPal</li>
-                <li>Major credit and debit cards (Visa, Mastercard, American Express)</li>
-                <li>Other payment methods as may be added from time to time</li>
-            </ul>
-            <p>All payment information is processed securely through our third-party payment providers. We do not store complete credit card numbers or CVV codes on our servers. By providing payment information, you represent and warrant that you are authorised to use the designated payment method.</p>
-
-            <h2>5. Shipping and Delivery</h2>
-            <p>Shipping and delivery information is outlined in our Shipping Policy page. Delivery times are estimates and not guaranteed. We are not liable for delays caused by customs, weather, or other circumstances beyond our reasonable control. Risk of loss and title for items pass to you upon delivery to the shipping carrier.</p>
-
-            <h2>6. Returns and Refunds</h2>
-            <p>Our returns and refund policies are detailed in our Refund Policy and Shipping & Returns pages. By making a purchase, you acknowledge and accept these policies. We reserve the right to refuse returns if the conditions of our policies are not met.</p>
-
-            <h2>7. Intellectual Property</h2>
-            <p>All content on this Site — including but not limited to text, graphics, logos, images, product designs, photographs, video, software, and the overall look and feel of the Site — is the property of STRAIT PRISTINE RESOURCES PTE. LTD. or its licensors and is protected by Singapore and international copyright, trademark, and other intellectual property laws.</p>
-            <p>The STRAIT PRISTINE name, logo, and all related names, logos, product and service names, designs, and slogans are registered trademarks of the Company. You may not use these marks without our prior written consent.</p>
-            <p>You may not reproduce, distribute, modify, create derivative works of, publicly display, or exploit any content from this Site for any purpose without our express written permission.</p>
-
-            <h2>8. User-Generated Content</h2>
-            <p>If you submit content to the Site (such as reviews, comments, or photographs), you grant us a non-exclusive, royalty-free, perpetual, irrevocable, and sublicensable licence to use, reproduce, modify, adapt, publish, and display such content worldwide in any media. You represent and warrant that:</p>
-            <ul>
-                <li>You own or control all rights to the content you submit</li>
-                <li>The content is accurate and not misleading</li>
-                <li>The content does not violate any laws or third-party rights</li>
-                <li>The content does not contain defamatory, obscene, or unlawful material</li>
-            </ul>
-
-            <h2>9. Prohibited Uses</h2>
-            <p>You are prohibited from using the Site:</p>
-            <ul>
-                <li>For any unlawful purpose or in violation of any applicable laws</li>
-                <li>To transmit any malware, viruses, or harmful code</li>
-                <li>To attempt to gain unauthorised access to our systems or other users' data</li>
-                <li>To interfere with or disrupt the Site's operation</li>
-                <li>To scrape, data mine, or extract content from the Site using automated means</li>
-                <li>To impersonate any person or entity, or misrepresent your affiliation</li>
-                <li>To upload or transmit unsolicited advertising or spam</li>
-                <li>To engage in any activity that violates the rights of others</li>
-            </ul>
-
-            <h2>10. Disclaimer of Warranties</h2>
-            <p>The Site and all products and services provided through the Site are offered on an "as is" and "as available" basis. We make no warranties, express or implied, regarding:</p>
-            <ul>
-                <li>The availability, reliability, or accuracy of the Site</li>
-                <li>The quality or fitness for a particular purpose of any products</li>
-                <li>The compatibility of the Site with your devices</li>
-                <li>The absence of viruses or other harmful components</li>
-            </ul>
-            <p>To the fullest extent permitted by applicable law, we disclaim all warranties, express or implied, including implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
-
-            <h2>11. Limitation of Liability</h2>
-            <p>To the maximum extent permitted by applicable law, STRAIT PRISTINE RESOURCES PTE. LTD. and its directors, officers, employees, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or goodwill, arising out of your use of or inability to use the Site or products.</p>
-            <p>In no event shall our total aggregate liability exceed the amount paid by you to us in the twelve (12) months preceding the event giving rise to the claim.</p>
-
-            <h2>12. Indemnification</h2>
-            <p>You agree to indemnify, defend, and hold harmless STRAIT PRISTINE RESOURCES PTE. LTD. and its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, costs, and expenses (including reasonable legal fees) arising out of your use of the Site, your violation of these Terms, or your violation of any third-party rights.</p>
-
-            <h2>13. Governing Law and Dispute Resolution</h2>
-            <p>These Terms shall be governed by and construed in accordance with the laws of the Republic of Singapore, without regard to its conflict of laws principles. Any dispute arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of Singapore.</p>
-            <p>Before initiating any legal proceedings, you agree to first attempt to resolve the dispute informally by contacting us at service@str4it.com.</p>
-
-            <h2>14. Modifications</h2>
-            <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting on the Site. Your continued use of the Site after changes constitutes acceptance of the modified Terms. Material changes will be notified via the Site or email. It is your responsibility to review these Terms periodically.</p>
-
-            <h2>15. Severability</h2>
-            <p>If any provision of these Terms is found to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect. The invalid provision shall be modified to the minimum extent necessary to make it valid and enforceable while preserving the original intent.</p>
-
-            <h2>16. Entire Agreement</h2>
-            <p>These Terms, together with our Privacy Policy, Refund Policy, and Shipping Policy, constitute the entire agreement between you and STRAIT PRISTINE RESOURCES PTE. LTD. regarding your use of the Site. No other agreements, representations, or warranties, whether oral or written, shall exist between the parties.</p>
-
-            <h2>17. Contact Information</h2>
-            <p>For any questions about these Terms, please contact us:</p>
-            <ul>
-                <li><strong>Company:</strong> STRAIT PRISTINE RESOURCES PTE. LTD.</li>
-                <li><strong>Address:</strong> 8 Eu Tong Sen Street, #15-91 The Central, Singapore 059818</li>
-                <li><strong>Email:</strong> service@str4it.com</li>
-                <li><strong>Phone:</strong> +65 8555 3654</li>
-            </ul>
-        </div>
+<header class="header">
+  <div class="header-inner">
+    <button class="mobile-menu-btn" onclick="toggleMobileNav()">☰</button>
+    <a href="index.html" class="logo">STRAIT <span>PRISTINE</span></a>
+    <nav class="nav-main">
+      <a href="collections.html?c=dresses">Dresses</a>
+      <a href="collections.html?c=kaftans">Kaftans</a>
+      <a href="collections.html?c=kurtas">Kurtas</a>
+      <a href="collections.html?c=beachwear">Beachwear</a>
+      <a href="collections.html?c=bags">Bags</a>
+      <a href="collections.html?c=home">Home</a>
+      <a href="collections.html?c=new">New</a>
+      <a href="collections.html?c=sale2" class="sale-link">Sale</a>
+    </nav>
+    <div class="nav-icons">
+      <button onclick="location.href='collections.html'">⌕</button>
+      <button onclick="location.href='index.html'">♡ <span class="cart-count">0</span></button>
     </div>
+  </div>
+</header>
 
-        <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <span class="logo">Strait <span>Pristine</span></span>
-                    <p>Contemporary fashion and lifestyle brand inspired by the Silk Road and the rich cultural heritage of Southeast Asia. Based in Singapore since 2022.</p>
-                    <div class="footer-social">
-                        <a href="https://instagram.com/straitpristine" target="_blank" title="Instagram">@</a>
-                        <a href="https://facebook.com/straitpristine" target="_blank" title="Facebook">f</a>
-                        <a href="https://pinterest.com/straitpristine" target="_blank" title="Pinterest">P</a>
-                        <a href="https://tiktok.com/@straitpristine" target="_blank" title="TikTok">T</a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Shop</h4>
-                    <ul>
-                        <li><a href="collection.html">New Arrivals</a></li>
-                        <li><a href="collection.html">Dresses</a></li>
-                        <li><a href="collection.html">Kaftans</a></li>
-                        <li><a href="collection.html">Bags & Accessories</a></li>
-                        <li><a href="collection.html">Home & Living</a></li>
-                        <li><a href="collection.html">Sale</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Information</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="shipping.html">Shipping & Returns</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="refund-policy.html">Refund Policy</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li>STRAIT PRISTINE RESOURCES PTE. LTD.</li>
-                        <li>8 Eu Tong Sen Street</li>
-                        <li>#15-91 The Central</li>
-                        <li>Singapore 059818</li>
-                        <li style="margin-top:10px"><a href="mailto:service@str4it.com">service@str4it.com</a></li>
-                        <li><a href="tel:+6585553654">+65 8555 3654</a></li>
-                        <li style="margin-top:8px;font-size:12px;color:rgba(255,255,255,0.5)">Mon–Fri: 9:00–18:00 SGT</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 STRAIT PRISTINE RESOURCES PTE. LTD. (UEN: 202212345A) All rights reserved.</p>
-                <div class="footer-payments"><span class="pp">PayPal</span><span>Visa</span><span>Mastercard</span><span>Amex</span><span>Apple Pay</span></div>
-            </div>
-        </div>
-    </footer>
-    <script src="products.js"></script>
-    <script src="cart.js"></script>
+<div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="toggleMobileNav()"></div>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header"><span class="logo" style="font-size:20px">STRAIT PRISTINE</span><span class="mobile-nav-close" onclick="toggleMobileNav()">✕</span></div>
+  <ul>
+    <li><a href="collections.html?c=dresses" onclick="toggleMobileNav()">Dresses</a></li>
+    <li><a href="collections.html?c=kaftans" onclick="toggleMobileNav()">Kaftans</a></li>
+    <li><a href="collections.html?c=kurtas" onclick="toggleMobileNav()">Kurtas</a></li>
+    <li><a href="collections.html?c=beachwear" onclick="toggleMobileNav()">Beachwear</a></li>
+    <li><a href="collections.html?c=bags" onclick="toggleMobileNav()">Bags</a></li>
+    <li><a href="collections.html?c=home" onclick="toggleMobileNav()">Home</a></li>
+    <li><a href="collections.html?c=kids" onclick="toggleMobileNav()">Kids</a></li>
+    <li><a href="collections.html?c=new" onclick="toggleMobileNav()">New Arrivals</a></li>
+    <li><a href="collections.html?c=sale2" onclick="toggleMobileNav()" class="sale-link">Summer Sale</a></li>
+    <li><a href="about.html" onclick="toggleMobileNav()">About Us</a></li>
+    <li><a href="contact.html" onclick="toggleMobileNav()">Contact</a></li>
+  </ul>
+</div>
+
+<script>
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');document.getElementById('mobileNavOverlay').classList.toggle('open')}
+</script>
+
+<style>
+.page-hero{padding:80px 40px;text-align:center;background:var(--color-bg-warm)}
+.page-hero h1{font-family:var(--font-serif);font-size:clamp(32px,4vw,56px);font-weight:300;letter-spacing:3px;margin-bottom:16px}
+.page-hero p{font-size:13px;color:var(--color-text-light)}
+.page-content{max-width:800px;margin:0 auto;padding:60px 40px}
+.page-content h2{font-family:var(--font-serif);font-size:22px;font-weight:400;margin:36px 0 14px;letter-spacing:1px}
+.page-content h2:first-of-type{margin-top:0}
+.page-content p,.page-content li{font-size:14px;color:var(--color-text-light);line-height:1.9;margin-bottom:12px}
+.page-content ul{padding-left:20px;margin:12px 0 20px}
+.page-content ul li{list-style:disc}
+</style>
+
+<div class="page-hero"><h1>Terms of Service</h1><p>Last updated: January 2025</p></div>
+
+<div class="page-content">
+  <p>Welcome to str4it.com. These Terms of Service govern your use of our website and purchase of products. By accessing or using our website, you agree to be bound by these terms.</p>
+
+  <h2>About Us</h2>
+  <p>STRAIT PRISTINE RESOURCES PTE. LTD. is a company registered in Singapore (UEN to be provided). Our registered address is 8 Eu Tong Sen Street #15-91, The Central Singapore (059818).</p>
+
+  <h2>Products & Pricing</h2>
+  <ul>
+    <li>All prices are displayed in Singapore Dollars (SGD) and include applicable GST unless stated otherwise.</li>
+    <li>We reserve the right to modify prices at any time without prior notice. Orders are confirmed at the price at the time of purchase.</li>
+    <li>Product images are for illustration purposes. Actual colors may vary slightly due to screen settings and the handcrafted nature of our products.</li>
+    <li>We make every effort to display products accurately. Hand-printed items may have slight variations that are part of their artisanal character.</li>
+  </ul>
+
+  <h2>Orders & Payment</h2>
+  <ul>
+    <li>All orders are subject to product availability and payment authorization.</li>
+    <li>We accept payments via PayPal, Visa, Mastercard, and American Express.</li>
+    <li>We reserve the right to cancel any order if we suspect fraudulent activity.</li>
+    <li>Order confirmation will be sent to your email address upon successful payment.</li>
+  </ul>
+
+  <h2>Shipping & Delivery</h2>
+  <p>Please refer to our <a href="shipping.html" style="text-decoration:underline">Shipping Policy</a> for detailed information about delivery times, costs, and international shipping.</p>
+
+  <h2>Returns & Refunds</h2>
+  <p>Please refer to our <a href="returns.html" style="text-decoration:underline">Returns & Refund Policy</a> for detailed information about our return process and eligibility.</p>
+
+  <h2>Intellectual Property</h2>
+  <p>All content on this website — including text, images, graphics, logos, product designs, and print patterns — is the property of STRAIT PRISTINE RESOURCES PTE. LTD. and is protected by copyright and intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.</p>
+
+  <h2>User Accounts</h2>
+  <ul>
+    <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
+    <li>You agree to provide accurate and complete information when creating an account.</li>
+    <li>We reserve the right to suspend or terminate accounts that violate these terms.</li>
+  </ul>
+
+  <h2>Limitation of Liability</h2>
+  <p>To the maximum extent permitted by law, STRAIT PRISTINE RESOURCES PTE. LTD. shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our website or products.</p>
+
+  <h2>Governing Law</h2>
+  <p>These Terms of Service are governed by the laws of the Republic of Singapore. Any disputes shall be subject to the exclusive jurisdiction of the courts of Singapore.</p>
+
+  <h2>Changes to Terms</h2>
+  <p>We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting. Your continued use of the website constitutes acceptance of the modified terms.</p>
+
+  <h2>Contact</h2>
+  <p>For questions about these terms:<br>
+  Email: <strong>service@str4it.com</strong><br>
+  Phone: <strong>+65 8555 3654</strong></p>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand">STRAIT PRISTINE</div><p class="footer-desc">Luxury printed fashion and home accessories, handcrafted with artisanal techniques. Based in Singapore, inspired by the world.</p><div class="footer-social"><a href="#">IG</a><a href="#">FB</a><a href="#">PI</a><a href="#">TK</a></div></div>
+      <div class="footer-col"><h4>Shop</h4><ul><li><a href="collections.html?c=dresses">Dresses</a></li><li><a href="collections.html?c=kaftans">Kaftans</a></li><li><a href="collections.html?c=kurtas">Kurtas</a></li><li><a href="collections.html?c=beachwear">Beachwear</a></li><li><a href="collections.html?c=bags">Bags</a></li><li><a href="collections.html?c=home">Home</a></li><li><a href="collections.html?c=kids">Kids</a></li></ul></div>
+      <div class="footer-col"><h4>Collections</h4><ul><li><a href="collections.html?c=new">New Arrivals</a></li><li><a href="collections.html?c=nizam">Nizam Collection</a></li><li><a href="collections.html?c=icons">Icons Collection</a></li><li><a href="collections.html?c=sale2">Summer Sale</a></li></ul></div>
+      <div class="footer-col"><h4>Help</h4><ul><li><a href="contact.html">Contact Us</a></li><li><a href="shipping.html">Shipping Policy</a></li><li><a href="returns.html">Returns & Refunds</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="returns.html">Refund Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 STRAIT PRISTINE RESOURCES PTE. LTD. All rights reserved. | 8 EU TONG SEN STREET #15-91 THE CENTRAL SINGAPORE (059818)</p><div class="footer-payments"><span>PayPal</span><span>Visa</span><span>Mastercard</span><span>AMEX</span></div></div>
+  </div>
+</footer>
 </body>
 </html>

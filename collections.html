@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collections | Strait Pristine</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="products.js"></script>
+<script src="cart.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--color-bg:#ffffff;--color-text:#1a1a1a;--color-text-light:#666;--color-accent:#8b6914;--color-sale:#c41230;--color-border:#e5e5e5;--color-bg-warm:#f8f5f0;--color-bg-cream:#faf8f5;--font-serif:'Cormorant Garamond',Georgia,serif;--font-sans:'Jost','Helvetica Neue',Arial,sans-serif;--max-width:1440px;--padding:2rem}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-sans);color:var(--color-text);background:var(--color-bg);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}button{cursor:pointer;border:none;background:none;font-family:inherit}ul{list-style:none}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 var(--padding)}
+
+.announcement-bar{background:var(--color-text);color:#fff;text-align:center;padding:10px 20px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;font-weight:400}
+.announcement-bar a{color:#fff;text-decoration:underline}
+.header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--color-border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;max-width:var(--max-width);margin:0 auto}
+.logo{font-family:var(--font-serif);font-size:28px;font-weight:400;letter-spacing:3px;text-transform:uppercase}
+.logo span{font-weight:600}
+.nav-main{display:flex;gap:32px;align-items:center}
+.nav-main a{font-size:13px;letter-spacing:1.2px;text-transform:uppercase;font-weight:400;position:relative;padding:4px 0;transition:color .3s}
+.nav-main a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--color-text);transition:width .3s}
+.nav-main a:hover::after{width:100%}
+.nav-main a.sale-link{color:var(--color-sale);font-weight:500}
+.nav-icons{display:flex;gap:20px;align-items:center}
+.nav-icons button{font-size:18px;position:relative;color:var(--color-text)}
+.cart-count{position:absolute;top:-8px;right:-10px;background:var(--color-text);color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.mobile-menu-btn{display:none;font-size:24px}
+
+/* Collection Hero */
+.collection-hero{padding:60px 40px;text-align:center;background:var(--color-bg-cream)}
+.collection-hero h1{font-family:var(--font-serif);font-size:clamp(32px,4vw,56px);font-weight:300;letter-spacing:3px;margin-bottom:12px}
+.collection-hero p{font-size:14px;color:var(--color-text-light);max-width:600px;margin:0 auto}
+
+/* Collection Tabs */
+.collection-tabs{display:flex;justify-content:center;gap:8px;padding:24px 20px;flex-wrap:wrap;border-bottom:1px solid var(--color-border);background:#fff;position:sticky;top:65px;z-index:100}
+.collection-tabs a{padding:8px 20px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--color-border);transition:all .3s;white-space:nowrap}
+.collection-tabs a:hover,.collection-tabs a.active{background:var(--color-text);color:#fff;border-color:var(--color-text)}
+.collection-tabs a.sale-tab{border-color:var(--color-sale);color:var(--color-sale)}
+.collection-tabs a.sale-tab:hover,.collection-tabs a.sale-tab.active{background:var(--color-sale);color:#fff;border-color:var(--color-sale)}
+
+/* Filter Bar */
+.filter-bar{display:flex;justify-content:space-between;align-items:center;padding:16px 40px;border-bottom:1px solid var(--color-border)}
+.filter-bar .count{font-size:13px;color:var(--color-text-light)}
+.filter-bar select{padding:8px 16px;border:1px solid var(--color-border);font-size:13px;font-family:var(--font-sans);background:#fff;cursor:pointer}
+
+/* Product Grid */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;padding:40px}
+.product-card{position:relative;overflow:hidden;cursor:pointer;transition:transform .3s}
+.product-card:hover{transform:translateY(-4px)}
+.product-card-image{position:relative;overflow:hidden;aspect-ratio:3/4;background:#f5f5f5}
+.product-card-image img{width:100%;height:100%;object-fit:cover;transition:opacity .5s}
+.product-card-image img:nth-child(2){position:absolute;top:0;left:0;opacity:0}
+.product-card:hover .product-card-image img:nth-child(1){opacity:0}
+.product-card:hover .product-card-image img:nth-child(2){opacity:1}
+.product-badge{position:absolute;top:12px;left:12px;background:var(--color-sale);color:#fff;padding:4px 12px;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:500}
+.product-badge.must-have{background:var(--color-accent)}
+.product-badge.new-arrival{background:var(--color-text)}
+.product-badge.sold-out{background:#999}
+.product-card-info{padding:16px 4px}
+.product-card-name{font-size:13px;font-weight:400;letter-spacing:.5px;margin-bottom:8px;line-height:1.5}
+.product-card-price{font-size:14px;font-weight:500;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.product-card-price .original{text-decoration:line-through;color:#999;font-weight:300}
+.product-card-price .discount{color:var(--color-sale);font-size:12px}
+.product-card-price .current{color:var(--color-sale)}
+
+/* Cart Drawer */
+.cart-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:9999;opacity:0;visibility:hidden;transition:all .3s}
+.cart-overlay.open{opacity:1;visibility:visible}
+.cart-drawer{position:fixed;top:0;right:-480px;width:460px;max-width:100%;height:100%;background:#fff;z-index:10000;transition:right .4s;display:flex;flex-direction:column}
+.cart-drawer.open{right:0}
+.cart-drawer-header{padding:24px 30px;border-bottom:1px solid var(--color-border);display:flex;justify-content:space-between;align-items:center}
+.cart-drawer-header h3{font-family:var(--font-serif);font-size:22px;font-weight:400;letter-spacing:2px}
+.cart-drawer-close{font-size:24px;cursor:pointer}
+.cart-drawer-body{flex:1;overflow-y:auto;padding:20px 30px}
+.cart-item{display:grid;grid-template-columns:80px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--color-border)}
+.cart-item img{width:80px;height:100px;object-fit:cover}
+.cart-item-info h4{font-size:13px;font-weight:400;margin-bottom:6px;line-height:1.4}
+.cart-item-info .ci-size{font-size:12px;color:var(--color-text-light);margin-bottom:8px}
+.cart-item-info .ci-price{font-size:14px;font-weight:500}
+.cart-item-qty{display:flex;align-items:center;gap:8px;margin-top:8px}
+.cart-item-qty button{width:28px;height:28px;border:1px solid var(--color-border);display:flex;align-items:center;justify-content:center;font-size:14px}
+.cart-item-qty span{font-size:13px;min-width:20px;text-align:center}
+.cart-item-remove{font-size:11px;color:var(--color-text-light);text-decoration:underline;margin-top:8px;cursor:pointer}
+.cart-drawer-footer{padding:24px 30px;border-top:1px solid var(--color-border)}
+.cart-subtotal{display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px}
+.cart-savings{display:flex;justify-content:space-between;margin-bottom:16px;font-size:13px;color:var(--color-sale)}
+.cart-checkout-btn{width:100%;padding:16px;background:var(--color-text);color:#fff;font-size:13px;letter-spacing:2px;text-transform:uppercase;border:none;margin-bottom:10px;transition:opacity .3s}
+.cart-checkout-btn:hover{opacity:.85}
+.cart-continue{display:block;text-align:center;font-size:12px;color:var(--color-text-light);text-decoration:underline;cursor:pointer}
+.cart-empty{text-align:center;padding:60px 20px}
+.cart-empty p{font-size:14px;color:var(--color-text-light);margin-bottom:20px}
+
+/* Footer */
+.footer{background:var(--color-text);color:#fff;padding:80px 0 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:60px}
+.footer-brand{font-family:var(--font-serif);font-size:22px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px}
+.footer-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:20px}
+.footer-social{display:flex;gap:16px}
+.footer-social a{width:36px;height:36px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:rgba(255,255,255,.7);transition:all .3s}
+.footer-social a:hover{background:#fff;color:var(--color-text);border-color:#fff}
+.footer-col h4{font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;font-weight:500}
+.footer-col ul li{margin-bottom:12px}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,.6);transition:color .3s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.5)}
+.footer-payments{display:flex;gap:12px}
+.footer-payments span{font-size:11px;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.2);padding:4px 8px;border-radius:3px}
+
+.mobile-nav{position:fixed;top:0;left:-100%;width:80%;max-width:360px;height:100%;background:#fff;z-index:10001;transition:left .4s;padding:30px;overflow-y:auto}
+.mobile-nav.open{left:0}
+.mobile-nav-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:10000;opacity:0;visibility:hidden;transition:all .3s}
+.mobile-nav-overlay.open{opacity:1;visibility:visible}
+.mobile-nav-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
+.mobile-nav-close{font-size:28px;cursor:pointer}
+.mobile-nav ul li{padding:14px 0;border-bottom:1px solid var(--color-border)}
+.mobile-nav ul li a{font-size:14px;letter-spacing:1px;text-transform:uppercase}
+.mobile-nav ul li a.sale-link{color:var(--color-sale)}
+
+@media(max-width:1024px){.nav-main{display:none}.mobile-menu-btn{display:block}.footer-grid{grid-template-columns:1fr 1fr;gap:30px}}
+@media(max-width:768px){.product-grid{grid-template-columns:repeat(2,1fr);gap:12px;padding:20px 12px}.collection-hero{padding:40px 20px}.collection-tabs{gap:4px;padding:16px 12px;top:58px}.filter-bar{padding:12px 16px;flex-direction:column;gap:8px}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}.header-inner{padding:14px 20px}.collection-tabs a{padding:6px 14px;font-size:11px}}
+@media(max-width:480px){.product-grid{grid-template-columns:repeat(2,1fr);gap:8px;padding:12px 8px}.product-card-info{padding:10px 2px}.product-card-name{font-size:11px}.product-card-price{font-size:12px}}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<div class="announcement-bar">Summer Sale — Up to 50% off selected styles | <a href="collections.html?c=sale2">Shop now</a></div>
+
+<header class="header">
+  <div class="header-inner">
+    <button class="mobile-menu-btn" onclick="toggleMobileNav()">☰</button>
+    <a href="index.html" class="logo">STRAIT <span>PRISTINE</span></a>
+    <nav class="nav-main">
+      <a href="collections.html?c=dresses">Dresses</a>
+      <a href="collections.html?c=kaftans">Kaftans</a>
+      <a href="collections.html?c=kurtas">Kurtas</a>
+      <a href="collections.html?c=beachwear">Beachwear</a>
+      <a href="collections.html?c=bags">Bags</a>
+      <a href="collections.html?c=home">Home</a>
+      <a href="collections.html?c=new">New</a>
+      <a href="collections.html?c=sale2" class="sale-link">Sale</a>
+    </nav>
+    <div class="nav-icons">
+      <button onclick="toggleSearch()">⌕</button>
+      <button onclick="openCart()">♡ <span class="cart-count" id="cartCount">0</span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="toggleMobileNav()"></div>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header"><span class="logo" style="font-size:20px">STRAIT PRISTINE</span><span class="mobile-nav-close" onclick="toggleMobileNav()">✕</span></div>
+  <ul>
+    <li><a href="collections.html?c=dresses" onclick="toggleMobileNav()">Dresses</a></li>
+    <li><a href="collections.html?c=kaftans" onclick="toggleMobileNav()">Kaftans</a></li>
+    <li><a href="collections.html?c=kurtas" onclick="toggleMobileNav()">Kurtas</a></li>
+    <li><a href="collections.html?c=beachwear" onclick="toggleMobileNav()">Beachwear</a></li>
+    <li><a href="collections.html?c=bags" onclick="toggleMobileNav()">Bags</a></li>
+    <li><a href="collections.html?c=home" onclick="toggleMobileNav()">Home</a></li>
+    <li><a href="collections.html?c=kids" onclick="toggleMobileNav()">Kids</a></li>
+    <li><a href="collections.html?c=new" onclick="toggleMobileNav()">New Arrivals</a></li>
+    <li><a href="collections.html?c=sale2" onclick="toggleMobileNav()" class="sale-link">Summer Sale</a></li>
+    <li><a href="about.html" onclick="toggleMobileNav()">About Us</a></li>
+    <li><a href="contact.html" onclick="toggleMobileNav()">Contact</a></li>
+  </ul>
+</div>
+
+<div class="collection-hero">
+  <h1 id="collectionTitle">All Products</h1>
+  <p id="collectionDesc">Discover our complete collection of luxury printed fashion and home accessories.</p>
+</div>
+
+<div class="collection-tabs" id="collectionTabs">
+  <a href="collections.html?c=all">All</a>
+  <a href="collections.html?c=dresses">Dresses</a>
+  <a href="collections.html?c=kaftans">Kaftans</a>
+  <a href="collections.html?c=kurtas">Kurtas</a>
+  <a href="collections.html?c=beachwear">Beachwear</a>
+  <a href="collections.html?c=bags">Bags</a>
+  <a href="collections.html?c=home">Home</a>
+  <a href="collections.html?c=kids">Kids</a>
+  <a href="collections.html?c=accessories">Accessories</a>
+  <a href="collections.html?c=new">New</a>
+  <a href="collections.html?c=sale2" class="sale-tab">Sale</a>
+</div>
+
+<div class="filter-bar">
+  <span class="count" id="productCount"></span>
+  <select id="sortSelect" onchange="sortProducts()">
+    <option value="default">Sort by: Featured</option>
+    <option value="price-asc">Price: Low to High</option>
+    <option value="price-desc">Price: High to Low</option>
+    <option value="name-asc">Name: A to Z</option>
+    <option value="name-desc">Name: Z to A</option>
+  </select>
+</div>
+
+<div class="product-grid" id="productGrid"></div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand">STRAIT PRISTINE</div><p class="footer-desc">Luxury printed fashion and home accessories, handcrafted with artisanal techniques. Based in Singapore.</p><div class="footer-social"><a href="#">IG</a><a href="#">FB</a><a href="#">PI</a><a href="#">TK</a></div></div>
+      <div class="footer-col"><h4>Shop</h4><ul><li><a href="collections.html?c=dresses">Dresses</a></li><li><a href="collections.html?c=kaftans">Kaftans</a></li><li><a href="collections.html?c=kurtas">Kurtas</a></li><li><a href="collections.html?c=beachwear">Beachwear</a></li><li><a href="collections.html?c=bags">Bags</a></li><li><a href="collections.html?c=home">Home</a></li><li><a href="collections.html?c=kids">Kids</a></li></ul></div>
+      <div class="footer-col"><h4>Collections</h4><ul><li><a href="collections.html?c=new">New Arrivals</a></li><li><a href="collections.html?c=nizam">Nizam Collection</a></li><li><a href="collections.html?c=icons">Icons Collection</a></li><li><a href="collections.html?c=sale2">Summer Sale</a></li></ul></div>
+      <div class="footer-col"><h4>Help</h4><ul><li><a href="contact.html">Contact Us</a></li><li><a href="shipping.html">Shipping Policy</a></li><li><a href="returns.html">Returns & Refunds</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="returns.html">Refund Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 STRAIT PRISTINE RESOURCES PTE. LTD. All rights reserved.</p><div class="footer-payments"><span>PayPal</span><span>Visa</span><span>Mastercard</span><span>AMEX</span></div></div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header"><h3>Shopping Bag</h3><span class="cart-drawer-close" onclick="closeCart()">✕</span></div>
+  <div class="cart-drawer-body" id="cartBody"></div>
+  <div class="cart-drawer-footer" id="cartFooter"></div>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+let currentCategory = params.get('c') || 'all';
+let currentSearch = params.get('q') || '';
+let currentProducts = [];
+
+const collectionTitles = {
+  all: 'All Products', dresses: 'Dresses', kaftans: 'Kaftans', kurtas: 'Kurtas',
+  beachwear: 'Beachwear', bags: 'Bags', home: 'Home', kids: 'Kids',
+  accessories: 'Accessories', sale2: 'Summer Sale', nizam: 'Nizam Collection',
+  icons: 'Icons Collection', new: 'New Arrivals'
+};
+const collectionDescs = {
+  all: 'Discover our complete collection of luxury printed fashion and home accessories.',
+  dresses: 'From flowing maxis to chic midis — each piece is hand-printed with artisanal patterns.',
+  kaftans: 'Our iconic kaftans — the epitome of effortless luxury and artisanal craftsmanship.',
+  kurtas: 'Versatile kurta silhouettes in our signature prints. Perfect for layering or wearing alone.',
+  beachwear: 'From beach to bar — sarongs, cover-ups, and kaftons for sun-soaked days.',
+  bags: 'Handcrafted bags in our signature prints. From totes to weekenders.',
+  home: 'Transform your space with hand-printed cushions, porcelain, and artisanal tableware.',
+  kids: 'Little ones deserve luxury too. Our kids collection in beloved prints.',
+  accessories: 'Silk scarves, hair accessories, and finishing touches.',
+  sale2: 'Up to 70% off selected styles. Limited quantities available.',
+  nizam: 'Our most iconic print, reimagined across fashion and home.',
+  icons: 'The patterns that defined us — cushions, trays, and porcelain.',
+  new: 'Fresh arrivals for the season. Be the first to discover new prints.'
+};
+
+function init() {
+  // Set title
+  document.getElementById('collectionTitle').textContent = collectionTitles[currentCategory] || 'All Products';
+  document.getElementById('collectionDesc').textContent = currentSearch
+    ? `Search results for "${currentSearch}"`
+    : (collectionDescs[currentCategory] || collectionDescs.all);
+  document.title = (collectionTitles[currentCategory] || 'All') + ' | Strait Pristine';
+
+  // Highlight active tab
+  document.querySelectorAll('.collection-tabs a').forEach(a => {
+    const href = a.getAttribute('href');
+    if (href === `collections.html?c=${currentCategory}`) a.classList.add('active');
+  });
+
+  // Get products
+  if (currentSearch) {
+    currentProducts = searchProducts(currentSearch);
+  } else if (currentCategory === 'sale2') {
+    currentProducts = getSaleProducts();
+  } else if (currentCategory === 'new') {
+    currentProducts = getNewProducts();
+  } else {
+    currentProducts = getProductsByCategory(currentCategory);
+  }
+
+  renderProducts();
+}
+
+function renderProducts() {
+  document.getElementById('productCount').textContent = `${currentProducts.length} products`;
+  document.getElementById('productGrid').innerHTML = currentProducts.map(p => renderCard(p)).join('');
+}
+
+function renderCard(p) {
+  const badge = p.tag === 'sale' ? `<span class="product-badge">${p.discount}% off</span>`
+    : p.tag === 'new' ? '<span class="product-badge new-arrival">New</span>'
+    : p.tag === 'must-have' ? '<span class="product-badge must-have">Must Have</span>'
+    : p.tag === 'sold-out' ? '<span class="product-badge sold-out">Sold out</span>' : '';
+  const priceHTML = p.salePrice
+    ? `<span class="current">S$${p.salePrice.toFixed(2)}</span> <span class="original">S$${p.price.toFixed(2)}</span> <span class="discount">-${p.discount}%</span>`
+    : `S$${p.price.toFixed(2)}`;
+  return `<div class="product-card" onclick="location.href='product.html?id=${p.id}'">
+    <div class="product-card-image">${badge}
+      <img src="${p.images[0]}" alt="${p.name}" loading="lazy">
+      ${p.images[1] ? `<img src="${p.images[1]}" alt="${p.name}" loading="lazy">` : ''}
+    </div>
+    <div class="product-card-info">
+      <div class="product-card-name">${p.name}</div>
+      <div class="product-card-price">${priceHTML}</div>
+    </div>
+  </div>`;
+}
+
+function sortProducts() {
+  const val = document.getElementById('sortSelect').value;
+  switch(val) {
+    case 'price-asc': currentProducts.sort((a,b) => (a.salePrice||a.price) - (b.salePrice||b.price)); break;
+    case 'price-desc': currentProducts.sort((a,b) => (b.salePrice||b.price) - (a.salePrice||a.price)); break;
+    case 'name-asc': currentProducts.sort((a,b) => a.name.localeCompare(b.name)); break;
+    case 'name-desc': currentProducts.sort((a,b) => b.name.localeCompare(a.name)); break;
+  }
+  renderProducts();
+}
+
+// Cart
+function openCart(){document.getElementById('cartOverlay').classList.add('open');document.getElementById('cartDrawer').classList.add('open');renderCart()}
+function closeCart(){document.getElementById('cartOverlay').classList.remove('open');document.getElementById('cartDrawer').classList.remove('open')}
+function renderCart(){
+  const body=document.getElementById('cartBody'),footer=document.getElementById('cartFooter');
+  if(cart.items.length===0){body.innerHTML='<div class="cart-empty"><p>Your bag is empty</p><a href="collections.html?c=dresses" class="split-btn" style="display:inline-block;border:1px solid #1a1a1a;padding:14px 40px;font-size:12px;letter-spacing:2px;text-transform:uppercase">Continue shopping</a></div>';footer.innerHTML='';return}
+  body.innerHTML=cart.items.map(i=>`<div class="cart-item"><img src="${i.image}" alt="${i.name}"><div class="cart-item-info"><h4>${i.name}</h4><div class="ci-size">Size: ${i.size}</div><div class="ci-price">S$${(i.price*i.qty).toFixed(2)}</div><div class="cart-item-qty"><button onclick="cart.updateQty('${i.key}',${i.qty-1});renderCart()">−</button><span>${i.qty}</span><button onclick="cart.updateQty('${i.key}',${i.qty+1});renderCart()">+</button></div><span class="cart-item-remove" onclick="cart.removeItem('${i.key}');renderCart()">Remove</span></div></div>`).join('');
+  const sub=cart.getSubtotal(),sav=cart.getSavings();
+  footer.innerHTML=`<div class="cart-subtotal"><span>Subtotal</span><span>S$${sub.toFixed(2)}</span></div>${sav>0?`<div class="cart-savings"><span>You save</span><span>S$${sav.toFixed(2)}</span></div>`:''}<div class="cart-subtotal" style="font-weight:500;border-top:1px solid var(--color-border);padding-top:12px;margin-top:4px"><span>Total</span><span>S$${sub.toFixed(2)}</span></div><button class="cart-checkout-btn" onclick="openCheckout()">Checkout</button><span class="cart-continue" onclick="closeCart()">Continue shopping</span>`;
+}
+cart.onChange(()=>{document.getElementById('cartCount').textContent=cart.getTotalItems();renderCart()});
+
+function openCheckout(){
+  closeCart();
+  const m=document.createElement('div');m.id='checkoutModal';m.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:20000;display:flex;align-items:center;justify-content:center';
+  const t=cart.getSubtotal();
+  m.innerHTML=`<div style="background:#fff;border-radius:8px;width:480px;max-width:90%;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.3)"><div style="padding:24px 30px;border-bottom:1px solid #e5e5e5;display:flex;justify-content:space-between;align-items:center"><h3 style="font-family:var(--font-serif);font-size:22px;font-weight:400">Checkout</h3><span onclick="document.getElementById('checkoutModal').remove()" style="font-size:24px;cursor:pointer">✕</span></div><div style="padding:30px;text-align:center"><div style="margin-bottom:24px"><div style="font-size:14px;color:#666;margin-bottom:8px">Order Total</div><div style="font-size:32px;font-weight:500">S$${t.toFixed(2)}</div></div><div style="background:#f8f5f0;padding:16px;border-radius:6px;margin-bottom:24px"><div style="font-size:12px;color:#666;margin-bottom:4px">Merchant</div><div style="font-size:14px;font-weight:500;letter-spacing:1px">STRAIT PRISTINE RESOURCES PTE. LTD.</div></div><button onclick="processPayPal()" style="width:100%;padding:16px;background:#0070ba;color:#fff;border:none;border-radius:6px;font-size:15px;font-weight:500;cursor:pointer;margin-bottom:12px">Pay with PayPal</button><button onclick="processPayPal()" style="width:100%;padding:16px;background:#ffc439;color:#111;border:none;border-radius:6px;font-size:15px;font-weight:500;cursor:pointer;margin-bottom:16px">Pay with Debit or Credit Card</button><div style="font-size:11px;color:#999">Secured by PayPal. Your payment information is encrypted.</div></div></div>`;
+  document.body.appendChild(m);
+}
+function processPayPal(){
+  const m=document.getElementById('checkoutModal'),b=m.querySelector('button');
+  b.innerHTML='<span style="display:inline-block;width:20px;height:20px;border:2px solid #fff;border-top-color:transparent;border-radius:50%;animation:spin .8s linear infinite"></span> Processing...';b.disabled=true;
+  setTimeout(()=>{m.innerHTML=`<div style="background:#fff;border-radius:8px;width:480px;max-width:90%;padding:60px 40px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)"><div style="width:60px;height:60px;border-radius:50%;background:#22a85a;margin:0 auto 24px;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff">✓</div><h3 style="font-family:var(--font-serif);font-size:28px;margin-bottom:12px">Thank You!</h3><p style="font-size:14px;color:#666;margin-bottom:8px">Your order has been placed successfully.</p><p style="font-size:13px;color:#999;margin-bottom:32px">Merchant: STRAIT PRISTINE RESOURCES PTE. LTD.</p><button onclick="document.getElementById('checkoutModal').remove();cart.clear()" style="padding:14px 40px;background:#1a1a1a;color:#fff;border:none;font-size:13px;letter-spacing:2px;text-transform:uppercase;cursor:pointer">Continue Shopping</button></div>`},2500);
+}
+function toggleSearch(){const q=prompt('Search Strait Pristine:');if(q)location.href='collections.html?q='+encodeURIComponent(q)}
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');document.getElementById('mobileNavOverlay').classList.toggle('open')}
+init();
+</script>
+</body>
+</html>

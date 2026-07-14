@@ -1,628 +1,675 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strait Pristine — Contemporary Fashion & Lifestyle</title>
-    <meta name="description" content="Strait Pristine — Luxury fashion, kaftans, handbags and home décor inspired by the Silk Road and Southeast Asian heritage. Free shipping over SGD 200.">
-    <meta name="keywords" content="Strait Pristine, Singapore fashion, kaftans, dresses, handbags, home décor, Silk Road, Southeast Asian fashion">
-    <meta property="og:title" content="Strait Pristine — Contemporary Fashion & Lifestyle">
-    <meta property="og:description" content="Luxury fashion inspired by the Silk Road and Southeast Asian heritage.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.str4it.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --cream: #FAFAF7;
-            --warm-white: #F5F0EB;
-            --text: #1A1A1A;
-            --text-light: #6B6560;
-            --bronze: #8B7355;
-            --bronze-light: #A89279;
-            --forest: #2D4A3E;
-            --beige: #E8DDD3;
-            --gold: #C4A265;
-            --border: #E0D8CF;
-            --sale: #9B2335;
-            --font-display: 'Cormorant Garamond', Georgia, serif;
-            --font-body: 'DM Sans', -apple-system, sans-serif;
-        }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font-body); color: var(--text); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
-        a:hover { opacity: 0.7; }
-        img { max-width: 100%; display: block; }
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
-        @media (max-width: 768px) { .container { padding: 0 20px; } }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strait Pristine | Luxury Fashion & Home</title>
+<meta name="description" content="Strait Pristine - Luxury printed fashion, kaftans, beachwear, bags and home accessories. Handcrafted with artisanal techniques from Singapore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="products.js"></script>
+<script src="cart.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--color-bg:#ffffff;--color-text:#1a1a1a;--color-text-light:#666;
+--color-accent:#8b6914;--color-sale:#c41230;--color-border:#e5e5e5;
+--color-bg-warm:#f8f5f0;--color-bg-cream:#faf8f5;
+--font-serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+--font-sans:'Jost','Helvetica Neue',Arial,sans-serif;
+--max-width:1440px;--padding:2rem;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-sans);color:var(--color-text);background:var(--color-bg);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+ul{list-style:none}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 var(--padding)}
 
-        /* Announcement Bar */
-        .announcement { background: var(--forest); color: #fff; text-align: center; padding: 10px 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
+/* ===== ANNOUNCEMENT BAR ===== */
+.announcement-bar{background:var(--color-text);color:#fff;text-align:center;padding:10px 20px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;font-weight:400}
+.announcement-bar a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.announcement-bar .close-ann{position:absolute;right:20px;top:50%;transform:translateY(-50%);color:#fff;font-size:18px;cursor:pointer}
 
-        /* Header */
-        .header { position: sticky; top: 0; z-index: 1000; background: var(--cream); border-bottom: 1px solid var(--border); }
-        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; max-width: 1400px; margin: 0 auto; }
-        .logo { font-family: var(--font-display); font-size: 28px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; }
-        .logo span { color: var(--bronze); }
-        .nav { display: flex; gap: 40px; align-items: center; }
-        .nav a { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; position: relative; }
-        .nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--bronze); transition: width 0.3s; }
-        .nav a:hover { opacity: 1; }
-        .nav a:hover::after { width: 100%; }
-        .nav-icons { display: flex; gap: 20px; align-items: center; }
-        .nav-icons a { font-size: 13px; letter-spacing: 1px; }
-        .cart-icon-wrapper { position: relative; display: inline-flex; }
-        .cart-badge { position: absolute; top: -8px; right: -10px; background: var(--forest); color: #fff; font-size: 10px; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
-        .hamburger span { width: 24px; height: 1.5px; background: var(--text); transition: 0.3s; }
-        @media (max-width: 768px) {
-            .header-inner { padding: 16px 20px; }
-            .nav { display: none; }
-            .hamburger { display: flex; }
-            .logo { font-size: 22px; }
-        }
+/* ===== HEADER / NAV ===== */
+.header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--color-border);transition:box-shadow .3s}
+.header.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;max-width:var(--max-width);margin:0 auto}
+.logo{font-family:var(--font-serif);font-size:28px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:var(--color-text)}
+.logo span{font-weight:600}
+.nav-main{display:flex;gap:32px;align-items:center}
+.nav-main a{font-size:13px;letter-spacing:1.2px;text-transform:uppercase;font-weight:400;position:relative;padding:4px 0;transition:color .3s}
+.nav-main a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--color-text);transition:width .3s}
+.nav-main a:hover::after{width:100%}
+.nav-main a.sale-link{color:var(--color-sale);font-weight:500}
+.nav-icons{display:flex;gap:20px;align-items:center}
+.nav-icons button{font-size:18px;position:relative;color:var(--color-text);transition:opacity .3s}
+.nav-icons button:hover{opacity:.6}
+.cart-count{position:absolute;top:-8px;right:-10px;background:var(--color-text);color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:500}
+.mobile-menu-btn{display:none;font-size:24px;color:var(--color-text)}
 
-        /* Hero */
-        .hero { position: relative; height: 85vh; min-height: 600px; overflow: hidden; }
-        .hero-image { width: 100%; height: 100%; object-fit: cover; }
-        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 50%, transparent 100%); }
-        .hero-content { position: absolute; bottom: 12%; left: 8%; color: #fff; max-width: 550px; }
-        .hero-subtitle { font-family: var(--font-body); font-size: 12px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; opacity: 0.9; }
-        .hero-title { font-family: var(--font-display); font-size: clamp(42px, 6vw, 72px); font-weight: 300; line-height: 1.1; margin-bottom: 24px; }
-        .hero-btn { display: inline-block; padding: 16px 48px; border: 1px solid #fff; color: #fff; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; transition: all 0.4s; }
-        .hero-btn:hover { background: #fff; color: var(--text); opacity: 1; }
+/* ===== HERO SLIDER ===== */
+.hero-slider{position:relative;overflow:hidden;height:85vh;min-height:500px}
+.hero-slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity 1s ease}
+.hero-slide.active{opacity:1}
+.hero-slide img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:40px}
+.hero-slide:nth-child(1) .hero-overlay{background:rgba(0,0,0,.25)}
+.hero-slide:nth-child(2) .hero-overlay{background:rgba(0,0,0,.2)}
+.hero-title{font-family:var(--font-serif);font-size:clamp(32px,5vw,64px);font-weight:300;letter-spacing:4px;margin-bottom:16px;text-transform:uppercase}
+.hero-subtitle{font-size:15px;letter-spacing:2px;margin-bottom:32px;font-weight:300;text-transform:uppercase}
+.hero-btn{display:inline-block;border:1px solid #fff;padding:14px 40px;font-size:12px;letter-spacing:2px;text-transform:uppercase;transition:all .3s;color:#fff}
+.hero-btn:hover{background:#fff;color:var(--color-text)}
+.slider-dots{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;gap:12px;z-index:10}
+.slider-dots button{width:10px;height:10px;border-radius:50%;border:1px solid #fff;background:transparent;transition:background .3s;cursor:pointer}
+.slider-dots button.active{background:#fff}
 
-        /* Trust Badges */
-        .trust-badges { background: #fff; border-bottom: 1px solid var(--border); padding: 28px 0; }
-        .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
-        .trust-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-        .trust-item svg { width: 28px; height: 28px; stroke: var(--forest); fill: none; stroke-width: 1.5; }
-        .trust-item strong { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
-        .trust-item span { font-size: 11px; color: var(--text-light); }
-        @media (max-width: 640px) { .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+/* ===== SECTIONS ===== */
+.section{padding:80px 0}
+.section-title{font-family:var(--font-serif);font-size:clamp(24px,3vw,42px);font-weight:400;text-align:center;margin-bottom:50px;letter-spacing:2px}
+.section-header{text-align:center;margin-bottom:50px}
+.section-header h2{font-family:var(--font-serif);font-size:clamp(24px,3vw,42px);font-weight:400;letter-spacing:2px;margin-bottom:12px}
+.section-header p{font-size:14px;color:var(--color-text-light);max-width:600px;margin:0 auto;line-height:1.8}
 
-        /* Categories */
-        .categories { padding: 100px 0; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-subtitle { font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--bronze); margin-bottom: 12px; }
-        .section-title { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 300; }
-        .category-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
-        .category-card { position: relative; aspect-ratio: 3/4; overflow: hidden; cursor: pointer; }
-        .category-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-        .category-card:hover img { transform: scale(1.08); }
-        .category-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%); display: flex; align-items: flex-end; padding: 24px; }
-        .category-card-title { color: #fff; font-family: var(--font-display); font-size: 22px; font-weight: 400; letter-spacing: 1px; }
-        @media (max-width: 1024px) { .category-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (max-width: 640px) { .category-grid { grid-template-columns: repeat(2, 1fr); } }
+/* ===== PRODUCT GRID ===== */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;padding:0 var(--padding)}
+.product-card{position:relative;overflow:hidden;cursor:pointer;transition:transform .3s}
+.product-card:hover{transform:translateY(-4px)}
+.product-card-image{position:relative;overflow:hidden;aspect-ratio:3/4;background:#f5f5f5}
+.product-card-image img{width:100%;height:100%;object-fit:cover;transition:opacity .5s}
+.product-card-image img:nth-child(2){position:absolute;top:0;left:0;opacity:0}
+.product-card:hover .product-card-image img:nth-child(1){opacity:0}
+.product-card:hover .product-card-image img:nth-child(2){opacity:1}
+.product-badge{position:absolute;top:12px;left:12px;background:var(--color-sale);color:#fff;padding:4px 12px;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:500}
+.product-badge.must-have{background:var(--color-accent)}
+.product-badge.new-arrival{background:var(--color-text)}
+.product-badge.sold-out{background:#999}
+.product-card-info{padding:16px 4px}
+.product-card-name{font-size:13px;font-weight:400;letter-spacing:.5px;margin-bottom:8px;line-height:1.5}
+.product-card-price{font-size:14px;font-weight:500;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.product-card-price .original{text-decoration:line-through;color:#999;font-weight:300}
+.product-card-price .discount{color:var(--color-sale);font-size:12px}
+.product-card-price .current{color:var(--color-sale)}
 
-        /* Products */
-        .products { padding: 80px 0 100px; background: var(--warm-white); }
-        .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
-        .product-card { cursor: pointer; }
-        .product-image { position: relative; aspect-ratio: 3/4; overflow: hidden; margin-bottom: 16px; background: #eee; }
-        .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
-        .product-card:hover .product-image img { transform: scale(1.05); }
-        .product-badge { position: absolute; top: 12px; left: 12px; padding: 4px 12px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; }
-        .badge-sale { background: var(--sale); color: #fff; }
-        .badge-new { background: var(--forest); color: #fff; }
-        .product-name { font-family: var(--font-display); font-size: 18px; font-weight: 400; margin-bottom: 6px; }
-        .product-price { font-size: 14px; color: var(--text-light); }
-        .product-price .original { text-decoration: line-through; margin-right: 8px; color: #aaa; }
-        .product-price .sale-price { color: var(--sale); font-weight: 600; }
-        .product-card .quick-add { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(26,26,26,0.9); color: #fff; text-align: center; padding: 10px; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; transform: translateY(100%); transition: transform 0.3s ease; cursor: pointer; border: none; width: 100%; font-family: var(--font-body); z-index: 2; }
-        .product-card .product-image:hover .quick-add { transform: translateY(0); }
-        @media (max-width: 1024px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (max-width: 640px) { .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+/* ===== VIDEO SECTION ===== */
+.video-section{position:relative;height:70vh;min-height:400px;overflow:hidden}
+.video-section img{width:100%;height:100%;object-fit:cover}
+.video-overlay{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,.3);color:#fff;text-align:center}
+.video-overlay h2{font-family:var(--font-serif);font-size:clamp(28px,4vw,52px);font-weight:300;letter-spacing:3px;margin-bottom:24px}
+.play-btn{width:70px;height:70px;border:2px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:24px;transition:all .3s}
+.play-btn:hover{background:rgba(255,255,255,.2)}
+.play-btn svg{width:24px;height:24px;fill:#fff;margin-left:4px}
 
-        /* Brand Story */
-        .brand-story { padding: 120px 0; }
-        .brand-story-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .brand-story-image { aspect-ratio: 4/5; overflow: hidden; }
-        .brand-story-image img { width: 100%; height: 100%; object-fit: cover; }
-        .brand-story-text .section-subtitle { text-align: left; }
-        .brand-story-text .section-title { text-align: left; margin-bottom: 30px; }
-        .brand-story-text p { font-size: 15px; line-height: 1.8; color: var(--text-light); margin-bottom: 20px; }
-        .brand-story-text .read-more { display: inline-block; margin-top: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; color: var(--bronze); border-bottom: 1px solid var(--bronze); padding-bottom: 4px; }
-        @media (max-width: 768px) { .brand-story-inner { grid-template-columns: 1fr; gap: 40px; } }
+/* ===== SPLIT SECTION ===== */
+.split-section{display:grid;grid-template-columns:1fr 1fr;min-height:500px}
+.split-section .split-image{overflow:hidden}
+.split-section .split-image img{width:100%;height:100%;object-fit:cover}
+.split-section .split-content{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px;text-align:center;background:var(--color-bg-warm)}
+.split-section .split-content h2{font-family:var(--font-serif);font-size:clamp(24px,3vw,38px);font-weight:400;letter-spacing:2px;margin-bottom:16px}
+.split-section .split-content p{font-size:14px;color:var(--color-text-light);line-height:1.8;max-width:400px;margin-bottom:32px}
+.split-btn{display:inline-block;border:1px solid var(--color-text);padding:14px 40px;font-size:12px;letter-spacing:2px;text-transform:uppercase;transition:all .3s}
+.split-btn:hover{background:var(--color-text);color:#fff}
 
-        /* Testimonials */
-        .testimonials { padding: 100px 0; background: #fff; }
-        .testimonials .section-header { margin-bottom: 50px; }
-        .testimonial-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
-        .testimonial-card { background: var(--cream); padding: 32px 28px; border: 1px solid var(--border); }
-        .testimonial-stars { color: var(--gold); font-size: 16px; margin-bottom: 16px; letter-spacing: 2px; }
-        .testimonial-text { font-size: 14px; line-height: 1.8; color: var(--text); margin-bottom: 20px; font-style: italic; }
-        .testimonial-author { font-size: 13px; font-weight: 600; }
-        .testimonial-meta { font-size: 11px; color: var(--text-light); margin-top: 2px; }
-        .testimonial-verified { font-size: 11px; color: var(--forest); font-weight: 500; margin-top: 6px; display: flex; align-items: center; gap: 4px; }
-        @media (max-width: 1024px) { .testimonial-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 640px) { .testimonial-grid { grid-template-columns: 1fr; } }
+/* ===== GIFT SECTION ===== */
+.gift-section{background:var(--color-bg-cream);padding:80px 0;text-align:center}
+.gift-section h2{font-family:var(--font-serif);font-size:clamp(24px,3vw,38px);font-weight:400;margin-bottom:20px;letter-spacing:2px}
+.gift-section p{font-size:14px;color:var(--color-text-light);max-width:600px;margin:0 auto 40px;line-height:1.8}
+.gift-section .gift-img{max-width:500px;margin:0 auto;aspect-ratio:16/9;overflow:hidden;border-radius:4px}
+.gift-section .gift-img img{width:100%;height:100%;object-fit:cover}
 
-        /* Instagram Feed */
-        .instagram-section { padding: 80px 0; }
-        .instagram-section .section-header { margin-bottom: 40px; }
-        .instagram-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
-        .instagram-item { position: relative; aspect-ratio: 1; overflow: hidden; cursor: pointer; }
-        .instagram-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .instagram-item:hover img { transform: scale(1.08); }
-        .instagram-item::after { content: ''; position: absolute; inset: 0; background: rgba(45, 74, 62, 0); transition: background 0.3s; }
-        .instagram-item:hover::after { background: rgba(45, 74, 62, 0.2); }
-        .instagram-handle { text-align: center; margin-top: 24px; font-size: 14px; color: var(--text-light); }
-        .instagram-handle a { color: var(--forest); font-weight: 600; }
-        @media (max-width: 768px) { .instagram-grid { grid-template-columns: repeat(3, 1fr); } }
+/* ===== CAROUSEL ===== */
+.carousel-wrapper{position:relative;overflow:hidden;padding:0 40px}
+.carousel-track{display:flex;gap:24px;transition:transform .5s ease;will-change:transform}
+.carousel-track .product-card{min-width:280px;flex-shrink:0}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid var(--color-border);background:#fff;display:flex;align-items:center;justify-content:center;z-index:5;transition:all .3s;font-size:18px}
+.carousel-btn:hover{background:var(--color-text);color:#fff;border-color:var(--color-text)}
+.carousel-btn.prev{left:10px}
+.carousel-btn.next{right:10px}
 
-        /* Newsletter */
-        .newsletter { background: var(--forest); padding: 80px 0; text-align: center; color: #fff; }
-        .newsletter .section-title { color: #fff; margin-bottom: 16px; }
-        .newsletter p { color: rgba(255,255,255,0.7); margin-bottom: 30px; font-size: 14px; }
-        .newsletter-form { display: flex; max-width: 480px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.3); }
-        .newsletter-form input { flex: 1; padding: 16px 20px; background: transparent; border: none; color: #fff; font-family: var(--font-body); font-size: 14px; outline: none; }
-        .newsletter-form input::placeholder { color: rgba(255,255,255,0.5); }
-        .newsletter-form button { padding: 16px 32px; background: #fff; border: none; color: var(--text); font-family: var(--font-body); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: 0.3s; }
-        .newsletter-form button:hover { background: var(--gold); color: #fff; }
+/* ===== BANNER ===== */
+.banner-full{width:100%;overflow:hidden}
+.banner-full img{width:100%;display:block}
 
-        /* As Seen In */
-        .press-section { padding: 50px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-        .press-inner { text-align: center; }
-        .press-inner .label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-light); margin-bottom: 24px; }
-        .press-logos { display: flex; justify-content: center; align-items: center; gap: 50px; flex-wrap: wrap; }
-        .press-logo { font-family: 'Georgia', serif; font-size: 22px; color: var(--text-light); opacity: 0.4; font-style: italic; letter-spacing: 2px; transition: opacity 0.3s; }
-        .press-logo:hover { opacity: 0.7; }
-        .press-logo.sans { font-family: var(--font-body); font-style: normal; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; font-size: 16px; }
+/* ===== NEWSLETTER ===== */
+.newsletter{background:var(--color-bg-warm);padding:80px 0;text-align:center}
+.newsletter h2{font-family:var(--font-serif);font-size:clamp(22px,3vw,36px);font-weight:400;margin-bottom:12px;letter-spacing:2px}
+.newsletter p{font-size:14px;color:var(--color-text-light);margin-bottom:32px}
+.newsletter-form{display:flex;max-width:500px;margin:0 auto;gap:0}
+.newsletter-form input{flex:1;padding:14px 20px;border:1px solid var(--color-border);font-size:14px;font-family:var(--font-sans);outline:none;transition:border-color .3s}
+.newsletter-form input:focus{border-color:var(--color-text)}
+.newsletter-form button{padding:14px 32px;background:var(--color-text);color:#fff;font-size:12px;letter-spacing:2px;text-transform:uppercase;border:none;transition:opacity .3s}
+.newsletter-form button:hover{opacity:.8}
 
-        /* Newsletter Popup */
-        .newsletter-popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9998; }
-        .newsletter-popup-overlay.active { display: block; }
-        .newsletter-popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; width: 90%; max-width: 480px; z-index: 9999; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; animation: popupIn 0.4s ease; }
-        .newsletter-popup.active { display: block; }
-        @keyframes popupIn { from { opacity: 0; transform: translate(-50%, -50%) scale(0.95); } to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
-        .popup-image { height: 200px; overflow: hidden; }
-        .popup-image img { width: 100%; height: 100%; object-fit: cover; }
-        .popup-content { padding: 36px 32px; text-align: center; }
-        .popup-content .discount { font-family: var(--font-display); font-size: 48px; font-weight: 300; color: var(--forest); line-height: 1; margin-bottom: 8px; }
-        .popup-content h3 { font-family: var(--font-display); font-size: 24px; font-weight: 400; margin-bottom: 12px; }
-        .popup-content p { font-size: 13px; color: var(--text-light); margin-bottom: 24px; }
-        .popup-form { display: flex; flex-direction: column; gap: 12px; }
-        .popup-form input { padding: 14px 16px; border: 1px solid var(--border); font-family: var(--font-body); font-size: 14px; outline: none; }
-        .popup-form input:focus { border-color: var(--bronze); }
-        .popup-form button { padding: 14px; background: var(--forest); color: #fff; border: none; font-family: var(--font-body); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: background 0.3s; }
-        .popup-form button:hover { background: var(--text); }
-        .popup-close { position: absolute; top: 12px; right: 16px; background: none; border: none; font-size: 24px; cursor: pointer; color: #fff; z-index: 10; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; }
-        .popup-no-thanks { display: block; margin-top: 16px; font-size: 12px; color: var(--text-light); cursor: pointer; background: none; border: none; text-decoration: underline; font-family: var(--font-body); }
+/* ===== FOOTER ===== */
+.footer{background:var(--color-text);color:#fff;padding:80px 0 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:60px}
+.footer-brand{font-family:var(--font-serif);font-size:22px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px}
+.footer-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:20px}
+.footer-social{display:flex;gap:16px}
+.footer-social a{width:36px;height:36px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .3s;color:rgba(255,255,255,.7)}
+.footer-social a:hover{background:#fff;color:var(--color-text);border-color:#fff}
+.footer-col h4{font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;font-weight:500}
+.footer-col ul li{margin-bottom:12px}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,.6);transition:color .3s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.5)}
+.footer-payments{display:flex;gap:12px;align-items:center}
+.footer-payments span{font-size:11px;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.2);padding:4px 8px;border-radius:3px}
 
-        /* Toast */
-        #cart-toast { position: fixed; top: 100px; right: 30px; background: var(--forest); color: #fff; padding: 14px 24px; border-radius: 4px; font-size: 14px; display: flex; align-items: center; gap: 10px; z-index: 9999; transform: translateX(120%); transition: transform 0.4s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
-        #cart-toast.show { transform: translateX(0); }
+/* ===== CART DRAWER ===== */
+.cart-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:9999;opacity:0;visibility:hidden;transition:all .3s}
+.cart-overlay.open{opacity:1;visibility:visible}
+.cart-drawer{position:fixed;top:0;right:-480px;width:460px;max-width:100%;height:100%;background:#fff;z-index:10000;transition:right .4s ease;display:flex;flex-direction:column}
+.cart-drawer.open{right:0}
+.cart-drawer-header{padding:24px 30px;border-bottom:1px solid var(--color-border);display:flex;justify-content:space-between;align-items:center}
+.cart-drawer-header h3{font-family:var(--font-serif);font-size:22px;font-weight:400;letter-spacing:2px}
+.cart-drawer-close{font-size:24px;cursor:pointer;color:var(--color-text)}
+.cart-drawer-body{flex:1;overflow-y:auto;padding:20px 30px}
+.cart-item{display:grid;grid-template-columns:80px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--color-border)}
+.cart-item img{width:80px;height:100px;object-fit:cover}
+.cart-item-info h4{font-size:13px;font-weight:400;margin-bottom:6px;line-height:1.4}
+.cart-item-info .cart-item-size{font-size:12px;color:var(--color-text-light);margin-bottom:8px}
+.cart-item-info .cart-item-price{font-size:14px;font-weight:500}
+.cart-item-qty{display:flex;align-items:center;gap:8px;margin-top:8px}
+.cart-item-qty button{width:28px;height:28px;border:1px solid var(--color-border);display:flex;align-items:center;justify-content:center;font-size:14px}
+.cart-item-qty span{font-size:13px;min-width:20px;text-align:center}
+.cart-item-remove{font-size:11px;color:var(--color-text-light);text-decoration:underline;margin-top:8px;cursor:pointer}
+.cart-drawer-footer{padding:24px 30px;border-top:1px solid var(--color-border)}
+.cart-subtotal{display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px}
+.cart-savings{display:flex;justify-content:space-between;margin-bottom:16px;font-size:13px;color:var(--color-sale)}
+.cart-checkout-btn{width:100%;padding:16px;background:var(--color-text);color:#fff;font-size:13px;letter-spacing:2px;text-transform:uppercase;border:none;margin-bottom:10px;transition:opacity .3s}
+.cart-checkout-btn:hover{opacity:.85}
+.cart-continue{display:block;text-align:center;font-size:12px;color:var(--color-text-light);text-decoration:underline;cursor:pointer}
+.cart-empty{text-align:center;padding:60px 20px}
+.cart-empty p{font-size:14px;color:var(--color-text-light);margin-bottom:20px}
 
-        /* Footer */
-        .footer { background: var(--text); color: rgba(255,255,255,0.7); padding: 80px 0 40px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 60px; margin-bottom: 60px; }
-        .footer-brand .logo { color: #fff; margin-bottom: 20px; display: block; }
-        .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 300px; }
-        .footer-col h4 { color: #fff; font-family: var(--font-display); font-size: 18px; font-weight: 400; margin-bottom: 20px; }
-        .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: 10px; }
-        .footer-col a { font-size: 13px; transition: color 0.3s; }
-        .footer-col a:hover { color: var(--gold); opacity: 1; }
-        .footer-social { display: flex; gap: 16px; margin-top: 20px; }
-        .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; transition: all 0.3s; }
-        .footer-social a:hover { border-color: var(--gold); color: var(--gold); opacity: 1; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        .footer-bottom p { font-size: 12px; }
-        .footer-payments { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-        .footer-payments span { padding: 5px 12px; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; font-size: 11px; letter-spacing: 0.5px; font-weight: 500; }
-        .footer-payments .pp { color: #FFC439; }
-        .footer-payments .apple { color: #fff; }
-        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; } .footer-bottom { flex-direction: column; text-align: center; } }
-        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .nav-main{display:none}
+  .mobile-menu-btn{display:block}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .split-section{grid-template-columns:1fr}
+  .header-inner{padding:14px 20px}
+}
+@media(max-width:768px){
+  .hero-slider{height:60vh;min-height:400px}
+  .hero-title{font-size:28px}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:12px;padding:0 12px}
+  .section{padding:50px 0}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .newsletter-form{flex-direction:column;gap:10px}
+  .split-section .split-content{padding:40px 20px}
+  .carousel-wrapper{padding:0 20px}
+  .carousel-track .product-card{min-width:200px}
+  .video-section{height:50vh}
+  .announcement-bar{font-size:11px;padding:8px 30px}
+}
+@media(max-width:480px){
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:8px;padding:0 8px}
+  .product-card-info{padding:10px 2px}
+  .product-card-name{font-size:11px}
+  .product-card-price{font-size:12px}
+}
 
-        /* Animations */
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .fade-up { animation: fadeUp 0.8s ease forwards; }
-        .fade-up-delay { animation: fadeUp 0.8s ease 0.2s forwards; opacity: 0; }
+/* Mobile menu */
+.mobile-nav{position:fixed;top:0;left:-100%;width:80%;max-width:360px;height:100%;background:#fff;z-index:10001;transition:left .4s ease;padding:30px;overflow-y:auto}
+.mobile-nav.open{left:0}
+.mobile-nav-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:10000;opacity:0;visibility:hidden;transition:all .3s}
+.mobile-nav-overlay.open{opacity:1;visibility:visible}
+.mobile-nav-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
+.mobile-nav-close{font-size:28px;cursor:pointer}
+.mobile-nav ul li{padding:14px 0;border-bottom:1px solid var(--color-border)}
+.mobile-nav ul li a{font-size:14px;letter-spacing:1px;text-transform:uppercase}
+.mobile-nav ul li a.sale-link{color:var(--color-sale)}
 
-        /* Mobile Menu */
-        .mobile-menu { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 2000; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
-        .mobile-menu.active { display: flex; }
-        .mobile-menu a { font-family: var(--font-display); font-size: 28px; font-weight: 300; }
-        .mobile-menu-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; }
-    </style>
+/* Quick product modal */
+.quick-view-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:9998;opacity:0;visibility:hidden;transition:all .3s}
+.quick-view-overlay.open{opacity:1;visibility:visible}
+</style>
 </head>
 <body>
-    <!-- Announcement Bar -->
-    <div class="announcement">Complimentary shipping on orders over SGD 200 — Shop Now</div>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="header-inner">
-            <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.add('active')">
-                <span></span><span></span><span></span>
-            </button>
-            <a href="index.html" class="logo">Strait <span>Pristine</span></a>
-            <nav class="nav">
-                <a href="collection.html">Shop</a>
-                <a href="collection.html">New Arrivals</a>
-                <a href="collection.html">Sale</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="cart.html">Cart</a>
-            </nav>
-            <div class="nav-icons">
-                <a href="#" title="Search">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                </a>
-                <a href="#" title="Account">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                </a>
-                <a href="cart.html" title="Cart" class="cart-icon-wrapper">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                    <span class="cart-badge" style="display:none;">0</span>
-                </a>
-            </div>
-        </div>
-    </header>
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+  Summer Sale — Up to 50% off selected styles &nbsp;|&nbsp; <a href="collections.html?c=sale2">Shop now</a>
+</div>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <button class="mobile-menu-close" onclick="this.parentElement.classList.remove('active')">&times;</button>
-        <a href="collection.html" onclick="this.parentElement.classList.remove('active')">Shop</a>
-        <a href="collection.html" onclick="this.parentElement.classList.remove('active')">New Arrivals</a>
-        <a href="collection.html" onclick="this.parentElement.classList.remove('active')">Sale</a>
-        <a href="about.html" onclick="this.parentElement.classList.remove('active')">About</a>
-        <a href="contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
-        <a href="cart.html" onclick="this.parentElement.classList.remove('active')">Cart</a>
+<!-- Header -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <button class="mobile-menu-btn" onclick="toggleMobileNav()">☰</button>
+    <a href="index.html" class="logo">STRAIT <span>PRISTINE</span></a>
+    <nav class="nav-main">
+      <a href="collections.html?c=dresses">Dresses</a>
+      <a href="collections.html?c=kaftans">Kaftans</a>
+      <a href="collections.html?c=kurtas">Kurtas</a>
+      <a href="collections.html?c=beachwear">Beachwear</a>
+      <a href="collections.html?c=bags">Bags</a>
+      <a href="collections.html?c=home">Home</a>
+      <a href="collections.html?c=new">New</a>
+      <a href="collections.html?c=sale2" class="sale-link">Sale</a>
+    </nav>
+    <div class="nav-icons">
+      <button onclick="toggleSearch()" title="Search">⌕</button>
+      <button onclick="location.href='about.html'" title="Account">☺</button>
+      <button onclick="openCart()" title="Cart">
+        ♡
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
     </div>
+  </div>
+</header>
 
-    <!-- Hero -->
-    <section class="hero">
-        <img class="hero-image" src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=1920&q=80" alt="Strait Pristine Collection">
-        <div class="hero-overlay"></div>
-        <div class="hero-content fade-up">
-            <p class="hero-subtitle">Summer 2025 Collection</p>
-            <h1 class="hero-title">Where East Meets West</h1>
-            <a href="collection.html" class="hero-btn">Explore Collection</a>
-        </div>
-    </section>
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="toggleMobileNav()"></div>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <span class="logo" style="font-size:20px">STRAIT PRISTINE</span>
+    <span class="mobile-nav-close" onclick="toggleMobileNav()">✕</span>
+  </div>
+  <ul>
+    <li><a href="collections.html?c=dresses" onclick="toggleMobileNav()">Dresses</a></li>
+    <li><a href="collections.html?c=kaftans" onclick="toggleMobileNav()">Kaftans</a></li>
+    <li><a href="collections.html?c=kurtas" onclick="toggleMobileNav()">Kurtas</a></li>
+    <li><a href="collections.html?c=beachwear" onclick="toggleMobileNav()">Beachwear</a></li>
+    <li><a href="collections.html?c=bags" onclick="toggleMobileNav()">Bags</a></li>
+    <li><a href="collections.html?c=home" onclick="toggleMobileNav()">Home</a></li>
+    <li><a href="collections.html?c=kids" onclick="toggleMobileNav()">Kids</a></li>
+    <li><a href="collections.html?c=new" onclick="toggleMobileNav()">New Arrivals</a></li>
+    <li><a href="collections.html?c=sale2" onclick="toggleMobileNav()" class="sale-link">Summer Sale</a></li>
+    <li><a href="about.html" onclick="toggleMobileNav()">About Us</a></li>
+    <li><a href="contact.html" onclick="toggleMobileNav()">Contact</a></li>
+  </ul>
+</div>
 
-    <!-- Trust Badges -->
-    <section class="trust-badges">
-        <div class="container">
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 22 11 22 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                    <strong>Free Shipping</strong>
-                    <span>On orders over SGD 150</span>
-                </div>
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-                    <strong>30-Day Returns</strong>
-                    <span>Hassle-free returns</span>
-                </div>
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                    <strong>Secure Payment</strong>
-                    <span>PayPal & all major cards</span>
-                </div>
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    <strong>Customer Support</strong>
-                    <span>service@str4it.com</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories -->
-    <section class="categories">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">Curated For You</p>
-                <h2 class="section-title">Shop by Category</h2>
-            </div>
-            <div class="category-grid">
-                <a href="collection.html" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80" alt="Dresses">
-                    <div class="category-card-overlay"><span class="category-card-title">Dresses</span></div>
-                </a>
-                <a href="collection.html" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1595777216528-071e02225865?w=600&q=80" alt="Kaftans">
-                    <div class="category-card-overlay"><span class="category-card-title">Kaftans</span></div>
-                </a>
-                <a href="collection.html" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80" alt="Bags">
-                    <div class="category-card-overlay"><span class="category-card-title">Bags</span></div>
-                </a>
-                <a href="collection.html" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="Home">
-                    <div class="category-card-overlay"><span class="category-card-title">Home</span></div>
-                </a>
-                <a href="collection.html" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Beachwear">
-                    <div class="category-card-overlay"><span class="category-card-title">Beachwear</span></div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section class="products">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">Handpicked</p>
-                <h2 class="section-title">Featured Pieces</h2>
-            </div>
-            <div class="product-grid" id="featured-products">
-                <!-- Filled by JS -->
-            </div>
-            <div style="text-align: center; margin-top: 60px;">
-                <a href="collection.html" class="hero-btn" style="border-color: var(--text); color: var(--text);">View All Products</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Brand Story -->
-    <section class="brand-story">
-        <div class="container">
-            <div class="brand-story-inner">
-                <div class="brand-story-image">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80" alt="Our Story">
-                </div>
-                <div class="brand-story-text">
-                    <p class="section-subtitle">Our Heritage</p>
-                    <h2 class="section-title">Born from the Straits</h2>
-                    <p>Strait Pristine draws its inspiration from the ancient maritime Silk Road that once connected the great civilisations of East and West. Based in Singapore — the jewel of the Straits — we celebrate the rich cultural tapestry woven over centuries of trade, migration, and creative exchange.</p>
-                    <p>Each piece in our collection is thoughtfully designed to embody the spirit of cross-cultural harmony: bold prints meet refined silhouettes, artisanal craftsmanship meets contemporary sensibility.</p>
-                    <a href="about.html" class="read-more">Read Our Story</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">What Our Clients Say</p>
-                <h2 class="section-title">Customer Reviews</h2>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"The Amara Silk Kaftan is absolutely stunning. The fabric quality is exceptional and the fit is so flattering. I wore it to a garden party and received so many compliments!"</p>
-                    <p class="testimonial-author">Rachel T.</p>
-                    <p class="testimonial-meta">Purchased: Amara Silk Kaftan</p>
-                    <p class="testimonial-verified"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Verified Purchase</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Beautiful packaging and fast delivery to Melbourne. The Peranakan Clutch is even more beautiful in person — the hand-painted details are exquisite. Will definitely order again."</p>
-                    <p class="testimonial-author">Mei Lin C.</p>
-                    <p class="testimonial-meta">Purchased: Peranakan Clutch</p>
-                    <p class="testimonial-verified"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Verified Purchase</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"I ordered the Spice Market Throw and Porcelain Vase Set for my new apartment. Both are gorgeous quality — the throw is incredibly soft and the vases look like art pieces. Love this brand!"</p>
-                    <p class="testimonial-author">Sarah M.</p>
-                    <p class="testimonial-meta">Purchased: Spice Market Throw, Porcelain Vase Set</p>
-                    <p class="testimonial-verified"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Verified Purchase</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★☆</div>
-                    <p class="testimonial-text">"The Sunset Linen Dress is my go-to for weekend brunches. The colour is beautiful and the linen quality is top-notch. Sizing runs slightly large — I'd recommend sizing down."</p>
-                    <p class="testimonial-author">Diana K.</p>
-                    <p class="testimonial-meta">Purchased: Sunset Linen Dress</p>
-                    <p class="testimonial-verified"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Verified Purchase</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Instagram Feed -->
-    <section class="instagram-section">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">@straitpristine</p>
-                <h2 class="section-title">Follow Us on Instagram</h2>
-            </div>
-            <div class="instagram-grid">
-                <a href="https://instagram.com/straitpristine" target="_blank" class="instagram-item">
-                    <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&q=80" alt="Instagram">
-                </a>
-                <a href="https://instagram.com/straitpristine" target="_blank" class="instagram-item">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80" alt="Instagram">
-                </a>
-                <a href="https://instagram.com/straitpristine" target="_blank" class="instagram-item">
-                    <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&q=80" alt="Instagram">
-                </a>
-                <a href="https://instagram.com/straitpristine" target="_blank" class="instagram-item">
-                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&q=80" alt="Instagram">
-                </a>
-                <a href="https://instagram.com/straitpristine" target="_blank" class="instagram-item">
-                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&q=80" alt="Instagram">
-                </a>
-                <a href="https://instagram.com/straitpristine" target="_blank" class="instagram-item">
-                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=400&q=80" alt="Instagram">
-                </a>
-            </div>
-            <p class="instagram-handle">Share your style with <a href="https://instagram.com/straitpristine" target="_blank">#StraitPristine</a></p>
-        </div>
-    </section>
-
-    <!-- As Seen In -->
-    <section class="press-section">
-        <div class="container">
-            <div class="press-inner">
-                <p class="label">As Featured In</p>
-                <div class="press-logos">
-                    <span class="press-logo">LUXE ASIA</span>
-                    <span class="press-logo sans">STYLE &amp; LIVING</span>
-                    <span class="press-logo">THE EDIT</span>
-                    <span class="press-logo sans">MODERN LUXURY</span>
-                    <span class="press-logo">CULTURE MAG</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="container">
-            <h2 class="section-title">Join the Strait Pristine World</h2>
-            <p>Subscribe for exclusive access to new collections, private sales, and style inspiration.</p>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-                <input type="email" placeholder="Your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Newsletter Popup -->
-    <div class="newsletter-popup-overlay" id="popup-overlay"></div>
-    <div class="newsletter-popup" id="newsletter-popup">
-        <button class="popup-close" id="popup-close">&times;</button>
-        <div class="popup-image">
-            <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600&q=80" alt="Welcome">
-        </div>
-        <div class="popup-content">
-            <p class="discount">10% OFF</p>
-            <h3>Your First Order</h3>
-            <p>Sign up for our newsletter and receive 10% off your first purchase, plus early access to new collections and exclusive offers.</p>
-            <form class="popup-form" onsubmit="event.preventDefault(); this.innerHTML='<p style=\'padding:20px;color:var(--forest);font-weight:600;\'>Welcome! Check your inbox for your discount code.</p>';">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Get My 10% Off</button>
-            </form>
-            <button class="popup-no-thanks" id="popup-no-thanks">No thanks, I'll pay full price</button>
-        </div>
+<!-- Hero Slider -->
+<section class="hero-slider">
+  <div class="hero-slide active">
+    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1920&q=80" alt="Summer Collection">
+    <div class="hero-overlay">
+      <h1 class="hero-title">Summer Sale</h1>
+      <p class="hero-subtitle">Up to 50% off selected styles</p>
+      <a href="collections.html?c=sale2" class="hero-btn">Shop now</a>
     </div>
+  </div>
+  <div class="hero-slide">
+    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80" alt="Nizam Collection">
+    <div class="hero-overlay">
+      <h1 class="hero-title">Our Iconic Nizam</h1>
+      <p class="hero-subtitle">The signature collection is back</p>
+      <a href="collections.html?c=nizam" class="hero-btn">Discover more</a>
+    </div>
+  </div>
+  <div class="slider-dots">
+    <button class="active" onclick="goToSlide(0)"></button>
+    <button onclick="goToSlide(1)"></button>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <span class="logo">Strait <span>Pristine</span></span>
-                    <p>Contemporary fashion and lifestyle brand inspired by the Silk Road and the rich cultural heritage of Southeast Asia. Based in Singapore since 2022.</p>
-                    <div class="footer-social">
-                        <a href="https://instagram.com/straitpristine" target="_blank" title="Instagram">@</a>
-                        <a href="https://facebook.com/straitpristine" target="_blank" title="Facebook">f</a>
-                        <a href="https://pinterest.com/straitpristine" target="_blank" title="Pinterest">P</a>
-                        <a href="https://tiktok.com/@straitpristine" target="_blank" title="TikTok">T</a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Shop</h4>
-                    <ul>
-                        <li><a href="collection.html">New Arrivals</a></li>
-                        <li><a href="collection.html">Dresses</a></li>
-                        <li><a href="collection.html">Kaftans</a></li>
-                        <li><a href="collection.html">Bags & Accessories</a></li>
-                        <li><a href="collection.html">Home & Living</a></li>
-                        <li><a href="collection.html">Sale</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Information</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="shipping.html">Shipping & Returns</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="refund-policy.html">Refund Policy</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li>STRAIT PRISTINE RESOURCES PTE. LTD.</li>
-                        <li>8 Eu Tong Sen Street</li>
-                        <li>#15-91 The Central</li>
-                        <li>Singapore 059818</li>
-                        <li style="margin-top: 10px;"><a href="mailto:service@str4it.com">service@str4it.com</a></li>
-                        <li><a href="tel:+6585553654">+65 8555 3654</a></li>
-                        <li style="margin-top:8px;font-size:12px;color:rgba(255,255,255,0.5);">Mon–Fri: 9:00–18:00 SGT</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 STRAIT PRISTINE RESOURCES PTE. LTD. (UEN: 202212345A) All rights reserved.</p>
-                <div class="footer-payments">
-                    <span class="pp">PayPal</span>
-                    <span>Visa</span>
-                    <span>Mastercard</span>
-                    <span>Amex</span>
-                    <span class="apple"> Apple Pay</span>
-                </div>
-            </div>
+<!-- The Summer Sale Edit -->
+<section class="section" style="background:var(--color-bg-cream)">
+  <div class="section-header">
+    <h2>The Summer Sale Edit</h2>
+  </div>
+  <div class="product-grid" id="saleGrid"></div>
+  <div style="text-align:center;margin-top:40px">
+    <a href="collections.html?c=sale2" class="split-btn">View all sale items</a>
+  </div>
+</section>
+
+<!-- Video / Beachwear Section -->
+<section class="video-section">
+  <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80" alt="Beachwear">
+  <div class="video-overlay">
+    <div class="play-btn" onclick="window.location.href='collections.html?c=beachwear'">
+      <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+    </div>
+    <h2>The Best of Beachwear</h2>
+    <a href="collections.html?c=beachwear" class="hero-btn">Shop now</a>
+  </div>
+</section>
+
+<!-- Split: Art of Summer Table -->
+<section class="split-section">
+  <div class="split-image">
+    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80" alt="Summer Table">
+  </div>
+  <div class="split-content">
+    <h2>The Art of the Summer Table</h2>
+    <p>Discover our hand-painted porcelain collection and artisanal tableware pieces that bring color and elegance to every gathering.</p>
+    <a href="collections.html?c=home" class="split-btn">Explore home</a>
+  </div>
+</section>
+
+<!-- Gift Section -->
+<section class="gift-section">
+  <h2>A Gift for You</h2>
+  <p>Whether it's a gift or a personal purchase, with every Strait Pristine order we are delighted to offer you our signature hand-printed Tote Bag as a complimentary gift. Your Tote Bag will be automatically added to your cart with any order.</p>
+  <div class="gift-img">
+    <img src="https://images.unsplash.com/photo-1544441893-675973e31985?w=800&q=80" alt="Gift Tote Bag">
+  </div>
+</section>
+
+<!-- Split: Icons Collection -->
+<section class="split-section" style="direction:rtl">
+  <div class="split-image" style="direction:ltr">
+    <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=1200&q=80" alt="Icons Collection">
+  </div>
+  <div class="split-content" style="direction:ltr">
+    <h2>The Icons Collection</h2>
+    <p>Our most beloved patterns, reimagined for your home. From the iconic Nizam to the timeless Dragon Cloud — discover cushions, trays, porcelain and more.</p>
+    <a href="collections.html?c=icons" class="split-btn">Discover more</a>
+  </div>
+</section>
+
+<!-- Beachwear Best Sellers Carousel -->
+<section class="section">
+  <div class="section-header">
+    <h2>Beachwear Best-Sellers</h2>
+  </div>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev" onclick="scrollCarousel('bestSellers',-1)">‹</button>
+    <div class="carousel-track" id="bestSellers"></div>
+    <button class="carousel-btn next" onclick="scrollCarousel('bestSellers',1)">›</button>
+  </div>
+</section>
+
+<!-- Shop the Look -->
+<section class="section" style="background:var(--color-bg-cream)">
+  <div class="section-header">
+    <h2>Shop the Look</h2>
+  </div>
+  <div class="product-grid" id="homeGrid"></div>
+  <div style="text-align:center;margin-top:40px">
+    <a href="collections.html?c=home" class="split-btn">View all home</a>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+  <h2>Join the Strait Pristine World</h2>
+  <p>Subscribe to receive updates on new collections, exclusive offers, and artisan stories.</p>
+  <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+    <input type="email" placeholder="Your email address" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">STRAIT PRISTINE</div>
+        <p class="footer-desc">Strait Pristine brings you luxury printed fashion and home accessories, handcrafted with artisanal techniques. Based in Singapore, inspired by the world.</p>
+        <div class="footer-social">
+          <a href="#" title="Instagram">IG</a>
+          <a href="#" title="Facebook">FB</a>
+          <a href="#" title="Pinterest">PI</a>
+          <a href="#" title="TikTok">TK</a>
         </div>
-    </footer>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="collections.html?c=dresses">Dresses</a></li>
+          <li><a href="collections.html?c=kaftans">Kaftans</a></li>
+          <li><a href="collections.html?c=kurtas">Kurtas</a></li>
+          <li><a href="collections.html?c=beachwear">Beachwear</a></li>
+          <li><a href="collections.html?c=bags">Bags</a></li>
+          <li><a href="collections.html?c=home">Home</a></li>
+          <li><a href="collections.html?c=kids">Kids</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Collections</h4>
+        <ul>
+          <li><a href="collections.html?c=new">New Arrivals</a></li>
+          <li><a href="collections.html?c=nizam">Nizam Collection</a></li>
+          <li><a href="collections.html?c=icons">Icons Collection</a></li>
+          <li><a href="collections.html?c=sale2">Summer Sale</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="shipping.html">Shipping Policy</a></li>
+          <li><a href="returns.html">Returns & Refunds</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="size-guide.html">Size Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="returns.html">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 STRAIT PRISTINE RESOURCES PTE. LTD. All rights reserved. | 8 EU TONG SEN STREET #15-91 THE CENTRAL SINGAPORE (059818)</p>
+      <div class="footer-payments">
+        <span>PayPal</span>
+        <span>Visa</span>
+        <span>Mastercard</span>
+        <span>AMEX</span>
+      </div>
+    </div>
+  </div>
+</footer>
 
-    <div id="cart-toast"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Item added to cart</div>
+<!-- Cart Drawer -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <h3>Shopping Bag</h3>
+    <span class="cart-drawer-close" onclick="closeCart()">✕</span>
+  </div>
+  <div class="cart-drawer-body" id="cartBody"></div>
+  <div class="cart-drawer-footer" id="cartFooter"></div>
+</div>
 
-    <script src="products.js"></script>
-    <script src="cart.js"></script>
-    <script>
-        // Render featured products
-        (function() {
-            const grid = document.getElementById('featured-products');
-            const featuredIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-            let html = '';
-            featuredIds.forEach(function(id) {
-                const p = getProductById(id);
-                if (!p) return;
-                let badgeHtml = '';
-                if (p.badge === 'New') badgeHtml = '<span class="product-badge badge-new">New</span>';
-                else if (p.badge === 'Sale') badgeHtml = '<span class="product-badge badge-sale">Sale</span>';
-                else if (p.badge === '-30%') badgeHtml = '<span class="product-badge badge-sale">-30%</span>';
-                
-                let priceHtml = '';
-                if (p.salePrice) {
-                    priceHtml = '<span class="original">SGD ' + p.price.toFixed(2) + '</span><span class="sale-price">SGD ' + p.salePrice.toFixed(2) + '</span>';
-                } else {
-                    priceHtml = 'SGD ' + p.price.toFixed(2);
-                }
-                
-                html += '<a href="product.html?id=' + id + '" class="product-card" style="text-decoration:none;color:inherit;">' +
-                    '<div class="product-image">' +
-                        '<img src="' + p.image + '" alt="' + p.name + '">' +
-                        badgeHtml +
-                        '<button class="quick-add" onclick="event.preventDefault(); event.stopPropagation(); addToCart(' + id + ', \'M\', 1);">Add to Cart</button>' +
-                    '</div>' +
-                    '<h3 class="product-name">' + p.name + '</h3>' +
-                    '<p class="product-price">' + priceHtml + '</p>' +
-                '</a>';
-            });
-            grid.innerHTML = html;
-        })();
+<script>
+// ===== HERO SLIDER =====
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.slider-dots button');
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide = n;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
+setInterval(() => goToSlide((currentSlide + 1) % slides.length), 6000);
 
-        // Newsletter popup - show after 5 seconds
-        (function() {
-            const popup = document.getElementById('newsletter-popup');
-            const overlay = document.getElementById('popup-overlay');
-            const closeBtn = document.getElementById('popup-close');
-            const noThanks = document.getElementById('popup-no-thanks');
-            
-            function closePopup() {
-                popup.classList.remove('active');
-                overlay.classList.remove('active');
-                sessionStorage.setItem('sp_popup_closed', '1');
-            }
-            
-            if (!sessionStorage.getItem('sp_popup_closed')) {
-                setTimeout(function() {
-                    popup.classList.add('active');
-                    overlay.classList.add('active');
-                }, 5000);
-            }
-            
-            closeBtn.addEventListener('click', closePopup);
-            noThanks.addEventListener('click', closePopup);
-            overlay.addEventListener('click', closePopup);
-        })();
-    </script>
+// ===== HEADER SCROLL =====
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ===== RENDER PRODUCT CARD =====
+function renderCard(p) {
+  const badge = p.tag === 'sale' ? `<span class="product-badge">${p.discount}% off</span>`
+    : p.tag === 'new' ? '<span class="product-badge new-arrival">New</span>'
+    : p.tag === 'must-have' ? '<span class="product-badge must-have">Must Have</span>'
+    : p.tag === 'sold-out' ? '<span class="product-badge sold-out">Sold out</span>' : '';
+  const priceHTML = p.salePrice
+    ? `<span class="current">S$${p.salePrice.toFixed(2)}</span> <span class="original">S$${p.price.toFixed(2)}</span> <span class="discount">-${p.discount}%</span>`
+    : `S$${p.price.toFixed(2)}`;
+  return `<div class="product-card" onclick="location.href='product.html?id=${p.id}'">
+    <div class="product-card-image">${badge}
+      <img src="${p.images[0]}" alt="${p.name}" loading="lazy">
+      ${p.images[1] ? `<img src="${p.images[1]}" alt="${p.name}" loading="lazy">` : ''}
+    </div>
+    <div class="product-card-info">
+      <div class="product-card-name">${p.name}</div>
+      <div class="product-card-price">${priceHTML}</div>
+    </div>
+  </div>`;
+}
+
+// ===== POPULATE SECTIONS =====
+function populateHome() {
+  // Sale grid - first 6 sale items
+  const saleItems = getSaleProducts().slice(0, 6);
+  document.getElementById('saleGrid').innerHTML = saleItems.map(renderCard).join('');
+
+  // Best sellers carousel - beachwear + kurtas
+  const bestSellers = [...products.filter(p => p.category === 'beachwear'), ...products.filter(p => p.category === 'kurtas')].slice(0, 10);
+  document.getElementById('bestSellers').innerHTML = bestSellers.map(renderCard).join('');
+
+  // Home grid - first 8 home items
+  const homeItems = products.filter(p => p.category === 'home').slice(0, 8);
+  document.getElementById('homeGrid').innerHTML = homeItems.map(renderCard).join('');
+}
+populateHome();
+
+// ===== CAROUSEL =====
+function scrollCarousel(id, dir) {
+  const track = document.getElementById(id);
+  const scrollAmt = 310;
+  track.scrollBy({ left: dir * scrollAmt, behavior: 'smooth' });
+}
+
+// ===== CART =====
+function openCart() {
+  document.getElementById('cartOverlay').classList.add('open');
+  document.getElementById('cartDrawer').classList.add('open');
+  renderCart();
+}
+function closeCart() {
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.getElementById('cartDrawer').classList.remove('open');
+}
+function renderCart() {
+  const body = document.getElementById('cartBody');
+  const footer = document.getElementById('cartFooter');
+  if (cart.items.length === 0) {
+    body.innerHTML = '<div class="cart-empty"><p>Your bag is empty</p><a href="collections.html?c=dresses" class="split-btn">Continue shopping</a></div>';
+    footer.innerHTML = '';
+    return;
+  }
+  body.innerHTML = cart.items.map(item => `
+    <div class="cart-item">
+      <img src="${item.image}" alt="${item.name}">
+      <div class="cart-item-info">
+        <h4>${item.name}</h4>
+        <div class="cart-item-size">Size: ${item.size}</div>
+        <div class="cart-item-price">S$${(item.price * item.qty).toFixed(2)}</div>
+        <div class="cart-item-qty">
+          <button onclick="cart.updateQty('${item.key}',${item.qty - 1});renderCart()">−</button>
+          <span>${item.qty}</span>
+          <button onclick="cart.updateQty('${item.key}',${item.qty + 1});renderCart()">+</button>
+        </div>
+        <span class="cart-item-remove" onclick="cart.removeItem('${item.key}');renderCart()">Remove</span>
+      </div>
+    </div>
+  `).join('');
+  const subtotal = cart.getSubtotal();
+  const savings = cart.getSavings();
+  footer.innerHTML = `
+    <div class="cart-subtotal"><span>Subtotal</span><span>S$${subtotal.toFixed(2)}</span></div>
+    ${savings > 0 ? `<div class="cart-savings"><span>You save</span><span>S$${savings.toFixed(2)}</span></div>` : ''}
+    <div class="cart-subtotal" style="font-weight:500;border-top:1px solid var(--color-border);padding-top:12px;margin-top:4px"><span>Total</span><span>S$${subtotal.toFixed(2)}</span></div>
+    <button class="cart-checkout-btn" onclick="openCheckout()">Checkout</button>
+    <span class="cart-continue" onclick="closeCart()">Continue shopping</span>
+  `;
+}
+cart.onChange(() => {
+  document.getElementById('cartCount').textContent = cart.getTotalItems();
+  renderCart();
+});
+
+// ===== CHECKOUT (PayPal Modal) =====
+function openCheckout() {
+  closeCart();
+  const modal = document.createElement('div');
+  modal.id = 'checkoutModal';
+  modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:20000;display:flex;align-items:center;justify-content:center';
+  const total = cart.getSubtotal();
+  modal.innerHTML = `
+    <div style="background:#fff;border-radius:8px;width:480px;max-width:90%;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.3)">
+      <div style="padding:24px 30px;border-bottom:1px solid #e5e5e5;display:flex;justify-content:space-between;align-items:center">
+        <h3 style="font-family:var(--font-serif);font-size:22px;font-weight:400">Checkout</h3>
+        <span onclick="document.getElementById('checkoutModal').remove()" style="font-size:24px;cursor:pointer">✕</span>
+      </div>
+      <div style="padding:30px">
+        <div style="text-align:center;margin-bottom:24px">
+          <div style="font-size:14px;color:#666;margin-bottom:8px">Order Total</div>
+          <div style="font-size:32px;font-weight:500">S$${total.toFixed(2)}</div>
+          <div style="font-size:12px;color:#999;margin-top:4px">${cart.getTotalItems()} item(s)</div>
+        </div>
+        <div style="background:#f8f5f0;padding:16px;border-radius:6px;margin-bottom:24px;text-align:center">
+          <div style="font-size:12px;color:#666;margin-bottom:4px">Merchant</div>
+          <div style="font-size:14px;font-weight:500;letter-spacing:1px">STRAIT PRISTINE RESOURCES PTE. LTD.</div>
+        </div>
+        <button onclick="processPayPal()" style="width:100%;padding:16px;background:#0070ba;color:#fff;border:none;border-radius:6px;font-size:15px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797H9.603c-.564 0-1.04.408-1.13.964L7.076 21.337z"/></svg>
+          Pay with PayPal
+        </button>
+        <button onclick="processPayPal()" style="width:100%;padding:16px;background:#ffc439;color:#111;border:none;border-radius:6px;font-size:15px;font-weight:500;cursor:pointer;margin-bottom:16px">
+          Pay with Debit or Credit Card
+        </button>
+        <div style="text-align:center;font-size:11px;color:#999">
+          Secured by PayPal. Your payment information is encrypted.
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+}
+
+function processPayPal() {
+  const modal = document.getElementById('checkoutModal');
+  const btn = modal.querySelector('button');
+  btn.innerHTML = '<span style="display:inline-block;width:20px;height:20px;border:2px solid #fff;border-top-color:transparent;border-radius:50%;animation:spin .8s linear infinite"></span> Processing...';
+  btn.disabled = true;
+  setTimeout(() => {
+    modal.innerHTML = `
+      <div style="background:#fff;border-radius:8px;width:480px;max-width:90%;padding:60px 40px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)">
+        <div style="width:60px;height:60px;border-radius:50%;background:#22a85a;margin:0 auto 24px;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff">✓</div>
+        <h3 style="font-family:var(--font-serif);font-size:28px;margin-bottom:12px">Thank You!</h3>
+        <p style="font-size:14px;color:#666;margin-bottom:8px">Your order has been placed successfully.</p>
+        <p style="font-size:13px;color:#999;margin-bottom:32px">Order confirmation has been sent to your email.<br>Merchant: STRAIT PRISTINE RESOURCES PTE. LTD.</p>
+        <button onclick="document.getElementById('checkoutModal').remove();cart.clear()" style="padding:14px 40px;background:var(--color-text);color:#fff;border:none;font-size:13px;letter-spacing:2px;text-transform:uppercase;cursor:pointer">Continue Shopping</button>
+      </div>
+    `;
+  }, 2500);
+}
+
+// ===== SEARCH =====
+function toggleSearch() {
+  const q = prompt('Search Strait Pristine:');
+  if (q) location.href = 'collections.html?q=' + encodeURIComponent(q);
+}
+
+// ===== MOBILE NAV =====
+function toggleMobileNav() {
+  document.getElementById('mobileNav').classList.toggle('open');
+  document.getElementById('mobileNavOverlay').classList.toggle('open');
+}
+
+// ===== NEWSLETTER =====
+function handleNewsletter(e) {
+  e.preventDefault();
+  const input = e.target.querySelector('input');
+  alert('Thank you for subscribing! You\'ll receive our latest updates at ' + input.value);
+  input.value = '';
+}
+
+// ===== SPIN ANIMATION =====
+const style = document.createElement('style');
+style.textContent = '@keyframes spin{to{transform:rotate(360deg)}}';
+document.head.appendChild(style);
+</script>
 </body>
 </html>

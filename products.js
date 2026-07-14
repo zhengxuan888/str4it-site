@@ -1,224 +1,162 @@
-// Product data for Strait Pristine
-const PRODUCTS = [
-    {
-        id: 1,
-        name: "Amara Silk Kaftan",
-        price: 420,
-        salePrice: null,
-        category: "Kaftans",
-        badge: "New",
-        image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=800&q=80",
-            "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800&q=80"
-        ],
-        description: "Crafted from the finest mulberry silk, the Amara Kaftan features a flowing silhouette with hand-finished seams. Inspired by the graceful lines of Peranakan architecture, this piece transitions effortlessly from beach cover-up to evening wear. The relaxed fit flatters every body type.",
-        material: "100% Mulberry Silk",
-        sizes: ["XS", "S", "M", "L", "XL"],
-        care: "Dry clean only. Store on padded hanger. Avoid direct sunlight.",
-        dimensions: "Length: 130cm (M), Bust: 110cm (M), Sleeve: 45cm",
-        shipping: "Complimentary shipping. Delivered in 3-5 business days."
-    },
-    {
-        id: 2,
-        name: "Merlion Print Dress",
-        price: 380,
-        salePrice: 265,
-        category: "Dresses",
-        badge: "Sale",
-        image: "https://images.unsplash.com/photo-1596783074918-c84e0996ca4c?w=500&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1596783074918-c84e0996ca4c?w=800&q=80"
-        ],
-        description: "A bold celebration of Singapore heritage, this midi dress features an exclusive artistic print on premium crepe fabric. The fitted bodice and A-line skirt create a flattering silhouette that works beautifully for garden parties and brunch alike. Hidden side zip closure.",
-        material: "97% Polyester, 3% Elastane",
-        sizes: ["XS", "S", "M", "L", "XL"],
-        care: "Machine wash cold, gentle cycle. Hang dry. Iron on low heat.",
-        dimensions: "Length: 105cm (M), Bust: 92cm (M), Waist: 76cm (M)",
-        shipping: "Complimentary shipping. Delivered in 3-5 business days."
-    },
-    {
-        id: 3,
-        name: "Straits Garden Cushion",
-        price: 95,
-        salePrice: null,
-        category: "Home",
-        badge: null,
-        image: "https://images.unsplash.com/photo-1616627561950-9f75e84e78a2?w=500&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1616627561950-9f75e84e78a2?w=800&q=80"
-        ],
-        description: "Bring the lush beauty of a Straits garden into your home with this hand-embroidered cushion cover. Features traditional botanical motifs inspired by the gardens of historic shophouses along Koon Wan Road. Pairs beautifully with our Spice Market Throw.",
-        material: "100% Linen cover, Duck feather insert",
-        sizes: ["One Size"],
-        care: "Cover: Machine washable. Insert: Dry clean only.",
-        dimensions: "45cm x 45cm",
-        shipping: "Standard shipping applies. Delivered in 5-7 business days."
-    },
-    {
-        id: 4,
-        name: "Tropical Rattan Tote",
-        price: 185,
-        salePrice: null,
-        category: "Bags",
-        badge: "New",
-        image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80"
-        ],
-        description: "Hand-woven from sustainably sourced rattan by artisans in rural Java. This structured tote features vegetable-tanned leather trim and a cotton-lined interior with zip closure. Spacious enough for a day at the beach or a weekend market run.",
-        material: "Natural Rattan, Leather trim, Cotton lining",
-        sizes: ["One Size"],
-        care: "Wipe clean with damp cloth. Avoid prolonged sun exposure.",
-        dimensions: "35cm W x 30cm H x 15cm D, Handle drop: 20cm",
-        shipping: "Complimentary shipping. Delivered in 3-5 business days."
-    },
-    {
-        id: 5,
-        name: "Jade Embroidered Maxi",
-        price: 520,
-        salePrice: null,
-        category: "Dresses",
-        badge: null,
-        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80"
-        ],
-        description: "An exquisite floor-length gown featuring intricate jade-toned embroidery throughout the bodice and sleeves. The flowing silk chiffon skirt creates ethereal movement with every step. Perfect for gala dinners, weddings, or any occasion that calls for understated glamour.",
-        material: "Silk chiffon with metallic thread embroidery",
-        sizes: ["XS", "S", "M", "L", "XL"],
-        care: "Dry clean only. Store in garment bag.",
-        dimensions: "Length: 155cm (M), Bust: 88cm (M), Waist: 72cm (M)",
-        shipping: "Complimentary shipping. Delivered in 5-7 business days."
-    },
-    {
-        id: 6,
-        name: "Peranakan Clutch",
-        price: 220,
-        salePrice: 155,
-        category: "Bags",
-        badge: "Sale",
-        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80"
-        ],
-        description: "Inspired by the vibrant tiles of Peranakan shophouses, this structured clutch features hand-painted details on supple calfskin. Gold-tone hardware and a detachable chain strap let you carry it as a clutch or crossbody. Interior includes card slots and a zip pocket.",
-        material: "Calfskin leather, Suede lining, Gold-tone hardware",
-        sizes: ["One Size"],
-        care: "Store in dust bag. Professional leather cleaning recommended.",
-        dimensions: "25cm W x 15cm H x 5cm D, Chain drop: 55cm",
-        shipping: "Complimentary shipping. Delivered in 3-5 business days."
-    },
-    {
-        id: 7,
-        name: "Batik Pareo Wrap",
-        price: 120,
-        salePrice: null,
-        category: "Beachwear",
-        badge: null,
-        image: "https://images.unsplash.com/photo-1600166898405-da9535204843?w=500&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1600166898405-da9535204843?w=800&q=80"
-        ],
-        description: "A versatile batik-print wrap crafted from lightweight cotton voile. Hand-block printed by artisans in Pekalongan using traditional wax-resist techniques. Can be worn as a sarong, beach cover-up, scarf, or even a tablecloth for impromptu picnics.",
-        material: "100% Cotton Voile",
-        sizes: ["One Size"],
-        care: "Machine wash cold. Colors may soften beautifully with washing.",
-        dimensions: "180cm x 110cm",
-        shipping: "Standard shipping applies. Delivered in 3-5 business days."
-    },
-    {
-        id: 8,
-        name: "Porcelain Vase Set",
-        price: 280,
-        salePrice: null,
-        category: "Home",
-        badge: null,
-        image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=500&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"
-        ],
-        description: "A set of three hand-thrown porcelain vases in graduating sizes. Features a subtle crackle glaze inspired by Song dynasty ceramics, bridging ancient tradition with contemporary design. Each vase is unique — slight variations in glaze pattern are part of their charm.",
-        material: "Porcelain with crackle glaze",
-        sizes: ["Set of 3"],
-        care: "Hand wash only. Watertight — suitable for fresh flowers.",
-        dimensions: "Small: 10cm dia x 15cm H, Medium: 12cm dia x 20cm H, Large: 15cm dia x 28cm H",
-        shipping: "Complimentary shipping. Delivered in 5-7 business days."
-    },
-    {
-        id: 9,
-        name: "Sunset Linen Dress",
-        price: 340,
-        salePrice: 238,
-        category: "Dresses",
-        badge: "-30%",
-        image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&q=80"
-        ],
-        description: "Effortless elegance in washed European linen. The relaxed silhouette features gathered shoulders and a self-tie belt for a flattering drape. Garment-dyed in a warm sunset tone that complements a range of skin tones. Ideal for resort wear or casual weekend outings.",
-        material: "100% European Washed Linen",
-        sizes: ["XS", "S", "M", "L", "XL"],
-        care: "Machine wash cold, reshape while damp. Iron while slightly damp for best results.",
-        dimensions: "Length: 120cm (M), Bust: 104cm (M)",
-        shipping: "Complimentary shipping. Delivered in 3-5 business days."
-    },
-    {
-        id: 10,
-        name: "Orchid Print Kaftan",
-        price: 385,
-        salePrice: null,
-        category: "Kaftans",
-        badge: "New",
-        image: "https://images.unsplash.com/photo-1581382575275-979b1b4e1c3f?w=500&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1581382575275-979b1b4e1c3f?w=800&q=80"
-        ],
-        description: "An exclusive orchid print designed in-house by our creative team, inspired by the tropical gardens of Southeast Asia. This relaxed kaftan is cut from breathable silk georgette with mother-of-pearl button details at the neckline. Featherweight and packable — your perfect travel companion.",
-        material: "100% Silk Georgette",
-        sizes: ["XS", "S", "M", "L", "XL"],
-        care: "Dry clean recommended. Cool iron if needed.",
-        dimensions: "Length: 125cm (M), Bust: 120cm (M), Sleeve: 40cm",
-        shipping: "Complimentary shipping. Delivered in 3-5 business days."
-    },
-    {
-        id: 11,
-        name: "Golden Coast Tote",
-        price: 165,
-        salePrice: null,
-        category: "Bags",
-        badge: null,
-        image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80"
-        ],
-        description: "A spacious everyday tote in warm tan leather that develops a beautiful patina over time. Features an interior zip pocket, magnetic snap closure, and reinforced base. The perfect companion for work, weekend, and everything in between.",
-        material: "Full-grain Vegetable-tanned Leather, Cotton twill lining",
-        sizes: ["One Size"],
-        care: "Condition leather periodically. Store stuffed in dust bag when not in use.",
-        dimensions: "40cm W x 35cm H x 15cm D, Handle drop: 25cm",
-        shipping: "Complimentary shipping. Delivered in 3-5 business days."
-    },
-    {
-        id: 12,
-        name: "Spice Market Throw",
-        price: 145,
-        salePrice: null,
-        category: "Home",
-        badge: null,
-        image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=500&q=80",
-        images: [
-            "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80"
-        ],
-        description: "Woven from the finest merino wool, this throw blanket features warm spice-toned stripes inspired by the colours of a traditional spice market. Finished with hand-twisted fringe. Drape it over your sofa for an instant dose of warmth and texture.",
-        material: "100% Merino Wool",
-        sizes: ["One Size"],
-        care: "Dry clean recommended. Alternatively, gentle machine wash cold.",
-        dimensions: "180cm x 130cm",
-        shipping: "Standard shipping applies. Delivered in 5-7 business days."
-    }
+// ========================================
+// STRAIT PRISTINE - Product Catalog
+// Mirrors lisacorti.com structure & pricing (converted to SGD)
+// ========================================
+
+const products = [
+  // ===== DRESSES (Abito) =====
+  {id:1, name:"Teena Dress - Ginza Bouquet Ivory", category:"dresses", collection:"sale2", price:560, salePrice:336, discount:40, images:["https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80","https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=800&q=80"], description:"A flowing midi dress in our signature Ginza Bouquet print on ivory silk cotton. Features a relaxed silhouette with short sleeves and side pockets.", sizes:["XS","S","M","L","XL"], tag:"sale"},
+  {id:2, name:"Teena Dress - Dragon Cloud Fuxia", category:"dresses", collection:"sale2", price:560, salePrice:336, discount:40, images:["https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=800&q=80","https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80"], description:"The iconic Teena silhouette in a vibrant Dragon Cloud fuxia pattern. Crafted from lightweight silk cotton with a flattering A-line cut.", sizes:["XS","S","M","L","XL"], tag:"sale"},
+  {id:3, name:"Teena Dress - Dragon Cloud Aqua", category:"dresses", collection:"sale2", price:560, salePrice:336, discount:40, images:["https://images.unsplash.com/photo-1612336307429-8a898d10e223?w=800&q=80","https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=800&q=80"], description:"Our beloved Teena dress reimagined in a refreshing aqua Dragon Cloud motif. Perfect for warm-weather occasions.", sizes:["XS","S","M","L"], tag:"sale"},
+  {id:4, name:"Rambagh Dress - Dragon Cloud Aqua", category:"dresses", collection:"sale2", price:630, salePrice:378, discount:40, images:["https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80","https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=800&q=80"], description:"The Rambagh maxi dress features an elegant full-length silhouette in our Dragon Cloud aqua print. Handcrafted from premium silk.", sizes:["XS","S","M","L","XL"], tag:"sale"},
+  {id:5, name:"Rambagh Dress - Dragon Cloud Fuxia", category:"dresses", collection:"sale2", price:630, salePrice:378, discount:40, images:["https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&q=80","https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80"], description:"A statement maxi in vivid fuxia Dragon Cloud. The Rambagh silhouette drapes beautifully with its empire waist and flowing skirt.", sizes:["XS","S","M","L"], tag:"sale"},
+  {id:6, name:"Rambagh Dress - Ginza Bouquet Ivory", category:"dresses", collection:"sale2", price:630, salePrice:378, discount:40, images:["https://images.unsplash.com/photo-1583846783214-7229a91b20ed?w=800&q=80","https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&q=80"], description:"Elegant Rambagh maxi in the delicate Ginza Bouquet ivory print. A timeless piece for the modern wardrobe.", sizes:["S","M","L","XL"], tag:"sale"},
+  {id:7, name:"Khubani Dress - Akira Dark Teal", category:"dresses", collection:"sale2", price:590, salePrice:354, discount:40, images:["https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=800&q=80","https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&q=80"], description:"The Khubani dress in a rich Akira dark teal pattern. Features a V-neckline, flutter sleeves, and a mid-length hemline.", sizes:["XS","S","M","L"], tag:"sale"},
+  {id:8, name:"Khubani Dress - Akira Rany", category:"dresses", collection:"sale2", price:590, salePrice:354, discount:40, images:["https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&q=80","https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=800&q=80"], description:"Khubani in warm Akira Rany tones. The structured bodice and fluid skirt create an effortlessly elegant look.", sizes:["XS","S","M","L","XL"], tag:"sale"},
+  {id:9, name:"Khubani Dress - Kasuri Damask Black", category:"dresses", collection:"sale2", price:890, salePrice:534, discount:40, images:["https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=800&q=80","https://images.unsplash.com/photo-1595777216528-071e024227e3?w=800&q=80"], description:"Our most luxurious Khubani in Kasuri Damask on black silk. Hand-printed using traditional techniques with metallic accents.", sizes:["XS","S","M","L"], tag:"sale"},
+  {id:10, name:"Madhu Dress - Mathura Ikat Sugar Red", category:"dresses", collection:"sale2", price:790, salePrice:474, discount:40, images:["https://images.unsplash.com/photo-1551803091-e20673f15770?w=800&q=80","https://images.unsplash.com/photo-1583846783214-7229a91b20ed?w=800&q=80"], description:"The Madhu dress in vibrant Mathura Ikat sugar red. A midi length with billowing sleeves and a cinched waist.", sizes:["XS","S","M","L","XL"], tag:"sale"},
+  {id:11, name:"Madhu Dress - Midikasuri Damask Black", category:"dresses", collection:"sale2", price:790, salePrice:474, discount:40, images:["https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=800&q=80","https://images.unsplash.com/photo-1551803091-e20673f15770?w=800&q=80"], description:"Madhu in the sophisticated Midikasuri Damask on black. Handcrafted with meticulous attention to detail.", sizes:["S","M","L"], tag:"sale"},
+  {id:12, name:"Madhu Dress - Midikitila Flame Orange", category:"dresses", collection:"sale2", price:790, salePrice:474, discount:40, images:["https://images.unsplash.com/photo-1502716119720-b23a1e3b2180?w=800&q=80","https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=800&q=80"], description:"A fiery statement piece in Midikitila flame orange. The Madhu silhouette flatters every figure.", sizes:["XS","S","M","L"], tag:"sale"},
+  {id:13, name:"Mandili Dress - Saheli Ikat Indigo", category:"dresses", collection:"sale2", price:660, salePrice:330, discount:50, images:["https://images.unsplash.com/photo-1562137369-1a1a0bc66744?w=800&q=80","https://images.unsplash.com/photo-1502716119720-b23a1e3b2180?w=800&q=80"], description:"The Mandili in deep Saheli Ikat indigo. A versatile midi dress with a relaxed fit and artistic print.", sizes:["XS","S","M","L","XL"], tag:"sale"},
+  {id:14, name:"Check Dress - Positano Flower Plumbago", category:"dresses", price:290, images:["https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80","https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&q=80"], description:"A playful check pattern meets the romantic Positano Flower in plumbago tones. Cotton construction with a flattering fit.", sizes:["XS","S","M","L"], tag:""},
+  {id:15, name:"Check Dress - Leopard Touch Small Red", category:"dresses", price:290, images:["https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&q=80","https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80"], description:"Leopard Touch in small red on a check background. A bold everyday piece with cotton comfort.", sizes:["XS","S","M","L","XL"], tag:""},
+  {id:16, name:"Cherry Dress - Toile De Jouy Chutney", category:"dresses", price:700, salePrice:350, discount:50, images:["https://images.unsplash.com/photo-1595777216528-071e024227e3?w=800&q=80","https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&q=80"], description:"The Cherry dress in a refined Toile De Jouy chutney pattern. Silk construction with elegant draping.", sizes:["XS","S","M","L"], tag:"sale"},
+  {id:17, name:"Saharian Dress - Toile De Jouy Chutney", category:"dresses", price:860, salePrice:430, discount:50, images:["https://images.unsplash.com/photo-1502716119720-b23a1e3b2180?w=800&q=80","https://images.unsplash.com/photo-1562137369-1a1a0bc66744?w=800&q=80"], description:"The Saharian safari-inspired dress in Toile De Jouy chutney. Features button-front closure and belted waist.", sizes:["XS","S","M","L"], tag:"sale"},
+  {id:18, name:"Saharian Dress - Toile De Jouy Orange", category:"dresses", price:860, salePrice:430, discount:50, images:["https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=800&q=80","https://images.unsplash.com/photo-1502716119720-b23a1e3b2180?w=800&q=80"], description:"Saharian in vibrant Toile De Jouy orange. A bold statement piece for the adventurous spirit.", sizes:["S","M","L","XL"], tag:"sale"},
+  {id:19, name:"Lotty Dress - Indigo Blues Plumbago", category:"dresses", price:970, salePrice:485, discount:50, images:["https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&q=80","https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=800&q=80"], description:"The Lotty maxi in mesmerizing Indigo Blues plumbago. Pure silk with hand-printed artistry.", sizes:["XS","S","M","L"], tag:"sale"},
+  {id:20, name:"Amla Dress - Damask Red", category:"dresses", price:520, images:["https://images.unsplash.com/photo-1583846783214-7229a91b20ed?w=800&q=80","https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&q=80"], description:"The Amla in classic damask red. A versatile midi dress for day-to-evening wear.", sizes:["XS","S","M","L","XL"], tag:""},
+  {id:21, name:"Alise Mini Dress - Missing Check White", category:"dresses", price:550, salePrice:275, discount:50, images:["https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&q=80","https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&q=80"], description:"The Alise mini in Missing Check on white. A youthful, playful silhouette with cotton comfort.", sizes:["XS","S","M","L"], tag:"sale"},
+  {id:22, name:"Phaalko Dress - Tangra Pink", category:"dresses", price:1610, salePrice:483, discount:70, images:["https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=800&q=80","https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80"], description:"Our most luxurious Phaalko gown in Tangra pink silk. Hand-embroidered with crystal embellishments.", sizes:["XS","S","M"], tag:"sale"},
+  {id:23, name:"Radha Tunic - Suiko Flower Black", category:"dresses", collection:"sale2", price:495, salePrice:297, discount:40, images:["https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=800&q=80","https://images.unsplash.com/photo-1583846783214-7229a91b20ed?w=800&q=80"], description:"The Radha tunic in Suiko Flower on black. A versatile piece that pairs beautifully with trousers or skirts.", sizes:["XS","S","M","L","XL"], tag:"sale"},
+
+  // ===== KAFTANS =====
+  {id:24, name:"Radha Kaftan - Dandelion Green Gold", category:"kaftans", collection:"sale2", price:1100, salePrice:770, discount:30, images:["https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80","https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80"], description:"The iconic Radha kaftan in Dandelion Green with gold accents. Pure silk with hand-printed motifs, free-size silhouette.", sizes:["Free Size"], tag:"sale"},
+  {id:25, name:"Radha Kaftan - Sapphire Night", category:"kaftans", price:1100, images:["https://images.unsplash.com/photo-1562137369-1a1a0bc66744?w=800&q=80","https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=800&q=80"], description:"The Radha kaftan in deep sapphire night tones. Luxurious silk with intricate hand-printed patterns.", sizes:["Free Size"], tag:""},
+  {id:26, name:"Radha Kaftan - Sunset Garden", category:"kaftans", price:1100, images:["https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&q=80","https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=800&q=80"], description:"The Radha kaftan in warm sunset garden hues. A statement piece for effortless elegance.", sizes:["Free Size"], tag:"new"},
+
+  // ===== KURTAS =====
+  {id:27, name:"Long Kurta - Damask Design Blue", category:"kurtas", price:380, images:["https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80","https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80"], description:"The Long Kurta in classic damask design blue. Cotton construction with side slits and a mandarin collar.", sizes:["S","M","L","XL"], tag:""},
+  {id:28, name:"Long Kurta Open - Mini Stripes Ferozi", category:"kurtas", price:380, images:["https://images.unsplash.com/photo-1551803091-e20673f15770?w=800&q=80","https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=800&q=80"], description:"The open-front Long Kurta in mini stripes ferozi. Perfect as a layering piece over camisoles.", sizes:["S","M","L","XL"], tag:""},
+  {id:29, name:"Short Kurta - Ibisco Pink", category:"kurtas", price:335, images:["https://images.unsplash.com/photo-1612336307429-8a898d10e223?w=800&q=80","https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80"], description:"The Short Kurta in vibrant ibisco pink. Cotton with a relaxed hip-length cut.", sizes:["XS","S","M","L"], tag:""},
+  {id:30, name:"Short Kurta - Ibisco Royal Blue", category:"kurtas", price:335, images:["https://images.unsplash.com/photo-1583846783214-7229a91b20ed?w=800&q=80","https://images.unsplash.com/photo-1612336307429-8a898d10e223?w=800&q=80"], description:"The Short Kurta in royal blue ibisco. A bold everyday staple in premium cotton.", sizes:["XS","S","M","L","XL"], tag:""},
+  {id:31, name:"Long Kurta - Leopard Flower Dark Teal", category:"kurtas", price:380, images:["https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=800&q=80","https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&q=80"], description:"The Long Kurta in leopard flower dark teal. A sophisticated piece with intricate print detailing.", sizes:["S","M","L","XL"], tag:""},
+
+  // ===== BEACHWEAR / SARONGS =====
+  {id:32, name:"Sarong - Bougainvillea Stripes White Veronese", category:"beachwear", price:220, images:["https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&q=80","https://images.unsplash.com/photo-1502716119720-b23a1e3b2180?w=800&q=80"], description:"The Issimo x Strait Pristine sarong in bougainvillea stripes. Lightweight cotton perfect for beach to bar.", sizes:["One Size"], tag:""},
+  {id:33, name:"Sarong - Hima Plumbago", category:"beachwear", price:250, images:["https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80","https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80"], description:"The sarong in our signature Hima Plumbago print. Versatile styling as wrap, scarf, or beach cover-up.", sizes:["One Size"], tag:""},
+  {id:34, name:"Sarong - Nizam Red", category:"beachwear", price:220, images:["https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&q=80","https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80"], description:"The iconic Nizam sarong in vibrant red. Our most beloved print in a versatile beach essential.", sizes:["One Size"], tag:""},
+  {id:35, name:"Sarong - Naoshima White", category:"beachwear", price:250, images:["https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&q=80","https://images.unsplash.com/photo-1551803091-e20673f15770?w=800&q=80"], description:"The Naoshima sarong in clean white. Minimalist elegance for the modern beachgoer.", sizes:["One Size"], tag:""},
+  {id:36, name:"Beach Kafton - Tropical Aqua", category:"beachwear", price:620, images:["https://images.unsplash.com/photo-1562137369-1a1a0bc66744?w=800&q=80","https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=800&q=80"], description:"The Beach Kafton in tropical aqua. Silk-cotton blend with a flowing silhouette.", sizes:["S/M","L/XL"], tag:"new"},
+  {id:37, name:"Beach Cover-Up - Lotus Print", category:"beachwear", price:520, salePrice:364, discount:30, images:["https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=800&q=80","https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80"], description:"A breezy beach cover-up in lotus print. Sheer cotton with tassel detailing.", sizes:["S/M","L/XL"], tag:"sale"},
+  {id:38, name:"Beach Shirt - Nizam Blue", category:"beachwear", price:380, images:["https://images.unsplash.com/photo-1502716119720-b23a1e3b2180?w=800&q=80","https://images.unsplash.com/photo-1595777216528-071e024227e3?w=800&q=80"], description:"The Beach Shirt in Nizam blue. An oversized silhouette in crisp cotton.", sizes:["S/M","L/XL"], tag:""},
+
+  // ===== BAGS =====
+  {id:39, name:"Shopping Bag - Ikat Arrow Blue", category:"bags", collection:"sale2", price:260, salePrice:182, discount:30, images:["https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80"], description:"The Shopping Bag in Ikat Arrow blue. Cotton canvas with leather trim, structured shape with interior pockets.", sizes:["One Size"], tag:"sale"},
+  {id:40, name:"Shopping Bag - Hima Plumbago", category:"bags", collection:"sale2", price:260, salePrice:182, discount:30, images:["https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800&q=80","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80"], description:"The Shopping Bag in Hima Plumbago. Our everyday essential with generous capacity.", sizes:["One Size"], tag:"sale"},
+  {id:41, name:"New Lisa Bag - Akira Dark Teal", category:"bags", collection:"sale2", price:190, salePrice:133, discount:30, images:["https://images.unsplash.com/photo-1591561954557-26941169b49e?w=800&q=80","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80"], description:"The New Lisa Bag in Akira Dark Teal. Compact crossbody with adjustable strap and magnetic closure.", sizes:["One Size"], tag:"sale"},
+  {id:42, name:"New Lisa Bag - Ginza Bouquet Ivory", category:"bags", collection:"sale2", price:190, salePrice:133, discount:30, images:["https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80","https://images.unsplash.com/photo-1591561954557-26941169b49e?w=800&q=80"], description:"The New Lisa Bag in Ginza Bouquet ivory. Elegant and versatile for any occasion.", sizes:["One Size"], tag:"sale"},
+  {id:43, name:"New Lisa Bag - Kanji Fuxia", category:"bags", collection:"sale2", price:190, salePrice:133, discount:30, images:["https://images.unsplash.com/photo-1564422170194-896b89110ef8?w=800&q=80","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80"], description:"The New Lisa Bag in Kanji fuxia. A pop of color for your everyday look.", sizes:["One Size"], tag:"sale"},
+  {id:44, name:"New Lisa Bag - Kanji Black", category:"bags", collection:"sale2", price:190, salePrice:133, discount:30, images:["https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80"], description:"The New Lisa Bag in Kanji black. Understated elegance with our signature print.", sizes:["One Size"], tag:"sale"},
+  {id:45, name:"Weekend Bag - Kusama Check Rany", category:"bags", collection:"sale2", price:530, salePrice:318, discount:40, images:["https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80"], description:"The Weekend Bag in Kusama Check rany. Spacious travel companion with detachable shoulder strap.", sizes:["One Size"], tag:"sale"},
+  {id:46, name:"Weekend Bag - Suiko Flower Sugar", category:"bags", collection:"sale2", price:530, salePrice:318, discount:40, images:["https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80","https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80"], description:"The Weekend Bag in Suiko Flower sugar. Perfect for short getaways with refined style.", sizes:["One Size"], tag:"sale"},
+  {id:47, name:"Vivana Bag - Denim", category:"bags", collection:"sale2", price:440, salePrice:264, discount:40, images:["https://images.unsplash.com/photo-1591561954557-26941169b49e?w=800&q=80","https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80"], description:"The Vivana Bag in washed denim. A casual-chic shoulder bag with hand-printed silk panels.", sizes:["One Size"], tag:"sale"},
+  {id:48, name:"Dog Bag - Stripes Old Pink Rust", category:"bags", price:470, images:["https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800&q=80","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80"], description:"The Dog Bag in stripes old pink and rust. Our signature pet carrier in fashion-forward style.", sizes:["One Size"], tag:""},
+  {id:49, name:"Clutch Pouch - Nizam Gold", category:"bags", price:165, images:["https://images.unsplash.com/photo-1564422170194-896b89110ef8?w=800&q=80","https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80"], description:"The Clutch Pouch in Nizam gold. A compact essential for evening occasions.", sizes:["One Size"], tag:"new"},
+  {id:50, name:"Beach Tote - Canvas Tropical", category:"bags", price:220, images:["https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80"], description:"The Beach Tote in tropical canvas. Lightweight and spacious for seaside adventures.", sizes:["One Size"], tag:"new"},
+
+  // ===== HOME - CUSHIONS & TEXTILES =====
+  {id:51, name:"Cotton Cushion Cover 45x45 - Nizam Stripes Blue Natural", category:"home", price:110, images:["https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80","https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"], description:"Cotton cushion cover in Nizam Stripes blue and natural. Hand-printed with our iconic pattern. Zip closure.", sizes:["45x45cm"], tag:"must-have"},
+  {id:52, name:"Cotton Cushion Cover 45x45 - Positano Red Tiles", category:"home", price:145, images:["https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=800&q=80","https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"], description:"Cotton cushion cover in Positano red tiles. Inspired by Italian coastal architecture.", sizes:["45x45cm"], tag:""},
+  {id:53, name:"Cotton Cushion 30x40 - Nizam Stripes Blue Natural", category:"home", price:88, images:["https://images.unsplash.com/photo-1579656381226-3fc1f880dd07?w=800&q=80","https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"], description:"Cotton cushion in Nizam Stripes blue and natural. Comes with insert. Perfect accent piece.", sizes:["30x40cm"], tag:"must-have"},
+  {id:54, name:"Cotton Cushion Cover 45x45 - Arabesque Corolla Gold Natural", category:"home", price:110, images:["https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=800&q=80","https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"], description:"Cotton cushion cover in Arabesque Corolla gold on natural. Luxurious texture with hand-printed motif.", sizes:["45x45cm"], tag:"must-have"},
+  {id:55, name:"Cotton Cushion 30x40 - Dam Dam Gold", category:"home", price:88, images:["https://images.unsplash.com/photo-1592928302636-c83cf1e1c887?w=800&q=80","https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"], description:"Cotton cushion in Dam Dam gold. Comes with premium insert. A statement accent for any room.", sizes:["30x40cm"], tag:"sold-out"},
+  {id:56, name:"Cotton Cushion Cover 45x45 - Dragon Cloud Teal", category:"home", price:110, images:["https://images.unsplash.com/photo-1579656381226-3fc1f880dd07?w=800&q=80","https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=800&q=80"], description:"Cotton cushion cover in Dragon Cloud teal. Part of our Icons Collection.", sizes:["45x45cm"], tag:"new"},
+  {id:57, name:"Throw Blanket - Nizam Flower", category:"home", price:320, images:["https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80","https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=800&q=80"], description:"Luxurious cotton throw in Nizam Flower pattern. Hand-loomed with fringed edges.", sizes:["140x200cm"], tag:""},
+
+  // ===== HOME - TABLEWARE =====
+  {id:58, name:"Porcelain Charger Tray - Japanese Green", category:"home", price:110, images:["https://images.unsplash.com/photo-1565193566173-7a0ee3dbe263?w=800&q=80","https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=800&q=80"], description:"Hand-painted porcelain charger tray in Japanese green. Artisan-crafted with our signature botanical motif.", sizes:["One Size"], tag:""},
+  {id:59, name:"Porcelain Salad Bowl - Japanese Pink", category:"home", price:245, images:["https://images.unsplash.com/photo-1578749556568-bc2c40e63ca2?w=800&q=80","https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=800&q=80"], description:"Hand-painted porcelain salad bowl in Japanese pink. A stunning centerpiece for your table setting.", sizes:["One Size"], tag:""},
+  {id:60, name:"Porcelain Mug - Japanese Cream", category:"home", price:65, images:["https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800&q=80","https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=800&q=80"], description:"Hand-painted porcelain mug in Japanese cream. Start your morning with artistry.", sizes:["One Size"], tag:""},
+  {id:61, name:"Round Tray - Nizam Flower Geranium", category:"home", price:270, images:["https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=800&q=80","https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=800&q=80"], description:"Round MDF tray in Nizam Flower geranium. Hand-printed with protective lacquer finish.", sizes:["35x35cm"], tag:""},
+  {id:62, name:"Porcelain Plate Set - Botanical Garden", category:"home", price:380, images:["https://images.unsplash.com/photo-1565193566173-7a0ee3dbe263?w=800&q=80","https://images.unsplash.com/photo-1578749556568-bc2c40e63ca2?w=800&q=80"], description:"Set of 4 porcelain plates in botanical garden motif. Hand-painted rims with gold accents.", sizes:["Set of 4"], tag:"new"},
+  {id:63, name:"Porcelain Teapot - Japanese Blue", category:"home", price:290, images:["https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&q=80","https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=800&q=80"], description:"Hand-painted porcelain teapot in Japanese blue. Artisan-crafted with bamboo handle.", sizes:["One Size"], tag:""},
+
+  // ===== HOME - GLASSWARE =====
+  {id:64, name:"Glass Bottle - Pervinch Blue", category:"home", price:450, images:["https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=800&q=80","https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=800&q=80"], description:"Hand-blown glass bottle in pervinch blue. Each piece is unique with subtle color variations.", sizes:["One Size"], tag:""},
+  {id:65, name:"Glass Bottle - Pervinch Green", category:"home", price:450, images:["https://images.unsplash.com/photo-1563865436874-9aef32095fad?w=800&q=80","https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=800&q=80"], description:"Hand-blown glass bottle in pervinch green. A sculptural piece for any shelf or table.", sizes:["One Size"], tag:""},
+  {id:66, name:"Glass Bottle - Pervinch Mustard", category:"home", price:450, images:["https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=800&q=80","https://images.unsplash.com/photo-1563865436874-9aef32095fad?w=800&q=80"], description:"Hand-blown glass bottle in pervinch mustard. Warm tones that complement any interior.", sizes:["One Size"], tag:""},
+  {id:67, name:"Glass Vase Set - Nizam Trio", category:"home", price:580, images:["https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=800&q=80","https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=800&q=80"], description:"Set of 3 hand-blown glass vases in Nizam colors. A curated collection for the discerning collector.", sizes:["Set of 3"], tag:"new"},
+
+  // ===== KIDS =====
+  {id:68, name:"Kids Spring Dress - Big Flower Old Pink", category:"kids", collection:"sale2", price:155, salePrice:109, discount:30, images:["https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=800&q=80","https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=800&q=80"], description:"Kids spring dress in big flower old pink. 100% cotton with concealed back zip. Ages 3-10 years.", sizes:["3-4Y","5-6Y","7-8Y","9-10Y"], tag:"sale"},
+  {id:69, name:"Kids Spring Dress - Hima Plumbago", category:"kids", collection:"sale2", price:155, salePrice:109, discount:30, images:["https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800&q=80","https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=800&q=80"], description:"Kids spring dress in Hima Plumbago. Soft cotton with our signature pattern. Playful and elegant.", sizes:["3-4Y","5-6Y","7-8Y","9-10Y"], tag:"sale"},
+  {id:70, name:"Kids Spring Dress - Leopard Flower Dark Teal", category:"kids", collection:"sale2", price:155, salePrice:109, discount:30, images:["https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=800&q=80","https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=800&q=80"], description:"Kids spring dress in leopard flower dark teal. Comfortable cotton for active little ones.", sizes:["3-4Y","5-6Y","7-8Y"], tag:"sale"},
+  {id:71, name:"Kids Spring Dress - Damask Design Blue", category:"kids", collection:"sale2", price:135, salePrice:95, discount:30, images:["https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800&q=80","https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=800&q=80"], description:"Kids spring dress in damask design blue. Cotton with peter pan collar. Ages 2-8 years.", sizes:["2-3Y","3-4Y","5-6Y","7-8Y"], tag:"sale"},
+  {id:72, name:"Kids Spring Dress - Damask Design Red", category:"kids", collection:"sale2", price:135, salePrice:95, discount:30, images:["https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=800&q=80","https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800&q=80"], description:"Kids spring dress in damask design red. A vibrant choice for special occasions.", sizes:["2-3Y","3-4Y","5-6Y","7-8Y"], tag:"sale"},
+  {id:73, name:"Kids Spring Dress - Ibisco Pink", category:"kids", collection:"sale2", price:135, salePrice:95, discount:30, images:["https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=800&q=80","https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800&q=80"], description:"Kids spring dress in ibisco pink. Soft cotton with ruffle hem. Delightful for any event.", sizes:["3-4Y","5-6Y","7-8Y","9-10Y"], tag:"sale"},
+  {id:74, name:"Kids Spring Dress - Leopard Touch Red", category:"kids", collection:"sale2", price:135, salePrice:95, discount:30, images:["https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800&q=80","https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=800&q=80"], description:"Kids spring dress in leopard touch red. Bold pattern in a kid-friendly silhouette.", sizes:["3-4Y","5-6Y","7-8Y"], tag:"sale"},
+
+  // ===== ACCESSORIES =====
+  {id:75, name:"Silk Scarf - Garden Paisley", category:"accessories", price:280, images:["https://images.unsplash.com/photo-1601924994987-69e26d50dc64?w=800&q=80","https://images.unsplash.com/photo-1584736328868-fdc25f816a36?w=800&q=80"], description:"Pure silk scarf in garden paisley. Hand-rolled edges with our signature finishing.", sizes:["90x90cm"], tag:"new"},
+  {id:76, name:"Silk Scarf - Tropical Bloom", category:"accessories", price:280, images:["https://images.unsplash.com/photo-1584736328868-fdc25f816a36?w=800&q=80","https://images.unsplash.com/photo-1601924994987-69e26d50dc64?w=800&q=80"], description:"Pure silk scarf in tropical bloom. A vibrant accessory for every ensemble.", sizes:["90x90cm"], tag:"new"},
+  {id:77, name:"Silk Twill - Nizam Collection", category:"accessories", price:350, images:["https://images.unsplash.com/photo-1601924994987-69e26d50dc64?w=800&q=80","https://images.unsplash.com/photo-1584736328868-fdc25f816a36?w=800&q=80"], description:"Silk twill from our Nizam collection. Versatile styling as headband, neck tie, or wrist wrap.", sizes:["One Size"], tag:""},
+  {id:78, name:"Hair Clip Set - Floral Gold", category:"accessories", price:95, images:["https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80","https://images.unsplash.com/photo-1564422170194-896b89110ef8?w=800&q=80"], description:"Set of 3 hair clips in floral gold. Metal with enamel detail.", sizes:["One Size"], tag:""},
+
+  // ===== NIZAM COLLECTION =====
+  {id:79, name:"Nizam Cushion - Heritage Pattern Navy", category:"home", price:130, images:["https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=800&q=80","https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"], description:"Nizam heritage pattern cushion in navy. Our most iconic print on premium cotton.", sizes:["50x50cm"], tag:"new"},
+  {id:80, name:"Nizam Silk Scarf - Heritage Ivory", category:"accessories", price:420, images:["https://images.unsplash.com/photo-1601924994987-69e26d50dc64?w=800&q=80","https://images.unsplash.com/photo-1584736328868-fdc25f816a36?w=800&q=80"], description:"Nizam heritage silk scarf in ivory. The quintessential accessory from our signature collection.", sizes:["140x140cm"], tag:""},
+  {id:81, name:"Nizam Table Runner - Heritage Gold", category:"home", price:240, images:["https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=800&q=80","https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=800&q=80"], description:"Nizam heritage table runner in gold. Hand-printed on linen-cotton blend.", sizes:["40x180cm"], tag:""},
+
+  // ===== ICONS COLLECTION =====
+  {id:82, name:"Icons Cushion - Dragon Cloud Ivory", category:"home", price:120, images:["https://images.unsplash.com/photo-1579656381226-3fc1f880dd07?w=800&q=80","https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"], description:"Icons collection cushion in Dragon Cloud ivory. A timeless pattern for contemporary living.", sizes:["45x45cm"], tag:"must-have"},
+  {id:83, name:"Icons Tray - Dragon Cloud Teal", category:"home", price:260, images:["https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=800&q=80","https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=800&q=80"], description:"Icons collection tray in Dragon Cloud teal. Hand-printed MDF with lacquered finish.", sizes:["30x30cm"], tag:"must-have"},
+  {id:84, name:"Icons Mug - Dragon Cloud Pink", category:"home", price:58, images:["https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800&q=80","https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=800&q=80"], description:"Icons collection mug in Dragon Cloud pink. Porcelain with hand-applied print.", sizes:["One Size"], tag:"must-have"},
 ];
 
+// Collections mapping (mirrors lisacorti.com collections)
+const collections = {
+  all: { title: "All Products", products: products },
+  dresses: { title: "Dresses", products: products.filter(p => p.category === 'dresses') },
+  kaftans: { title: "Kaftans", products: products.filter(p => p.category === 'kaftans') },
+  kurtas: { title: "Kurtas", products: products.filter(p => p.category === 'kurtas') },
+  beachwear: { title: "Beachwear", products: products.filter(p => p.category === 'beachwear') },
+  bags: { title: "Bags", products: products.filter(p => p.category === 'bags') },
+  home: { title: "Home", products: products.filter(p => p.category === 'home') },
+  kids: { title: "Kids", products: products.filter(p => p.category === 'kids') },
+  accessories: { title: "Accessories", products: products.filter(p => p.category === 'accessories') },
+  sale2: { title: "Summer Sale", products: products.filter(p => p.tag === 'sale') },
+  nizam: { title: "Nizam Collection", products: products.filter(p => p.name.includes('Nizam') || p.id >= 79 && p.id <= 81) },
+  icons: { title: "Icons Collection", products: products.filter(p => p.name.includes('Icons') || (p.tag === 'must-have' && p.category === 'home')) },
+  new: { title: "New Arrivals", products: products.filter(p => p.tag === 'new') },
+};
+
+// Helper functions
+function getProductsByCategory(cat) {
+  if (collections[cat]) return collections[cat].products;
+  return products;
+}
+
+function getSaleProducts() {
+  return products.filter(p => p.tag === 'sale');
+}
+
+function getNewProducts() {
+  return products.filter(p => p.tag === 'new');
+}
+
+function searchProducts(query) {
+  const q = query.toLowerCase();
+  return products.filter(p =>
+    p.name.toLowerCase().includes(q) ||
+    p.category.toLowerCase().includes(q) ||
+    (p.description && p.description.toLowerCase().includes(q))
+  );
+}
+
 function getProductById(id) {
-    return PRODUCTS.find(p => p.id === parseInt(id));
+  return products.find(p => p.id === parseInt(id));
+}
+
+function formatPrice(price) {
+  return `S$${price.toFixed(2)}`;
 }

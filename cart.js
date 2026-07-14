@@ -1,88 +1,87 @@
-// Cart functionality for Strait Pristine
-const CART_KEY = "strait_pristine_cart";
+// ========================================
+// STRAIT PRISTINE - Shopping Cart
+// ========================================
 
-function getCart() {
-    try {
-        return JSON.parse(localStorage.getItem(CART_KEY)) || [];
-    } catch(e) {
-        return [];
-    }
-}
+class ShoppingCart {
+  constructor() {
+    this.items = JSON.parse(localStorage.getItem('sp_cart') || '[]');
+    this.listeners = [];
+  }
 
-function saveCart(cart) {
-    localStorage.setItem(CART_KEY, JSON.stringify(cart));
-    updateCartBadge();
-}
-
-function addToCart(productId, size, quantity) {
-    const cart = getCart();
-    const existing = cart.find(item => item.productId === productId && item.size === size);
+  addItem(product, size, qty = 1) {
+    const key = `${product.id}_${size}`;
+    const existing = this.items.find(i => i.key === key);
     if (existing) {
-        existing.quantity += quantity;
+      existing.qty += qty;
     } else {
-        cart.push({ productId, size, quantity });
+      this.items.push({
+        key,
+        id: product.id,
+        name: product.name,
+        price: product.salePrice || product.price,
+        originalPrice: product.price,
+        image: product.images[0],
+        size,
+        qty,
+        category: product.category
+      });
     }
-    saveCart(cart);
-    showAddedToast();
-}
+    this.save();
+    this.notify();
+  }
 
-function updateCartItem(index, quantity) {
-    const cart = getCart();
-    if (quantity <= 0) {
-        cart.splice(index, 1);
-    } else {
-        cart[index].quantity = quantity;
+  removeItem(key) {
+    this.items = this.items.filter(i => i.key !== key);
+    this.save();
+    this.notify();
+  }
+
+  updateQty(key, qty) {
+    const item = this.items.find(i => i.key === key);
+    if (item) {
+      if (qty <= 0) {
+        this.removeItem(key);
+      } else {
+        item.qty = qty;
+        this.save();
+        this.notify();
+      }
     }
-    saveCart(cart);
-    return cart;
+  }
+
+  clear() {
+    this.items = [];
+    this.save();
+    this.notify();
+  }
+
+  getSubtotal() {
+    return this.items.reduce((sum, i) => sum + (i.price * i.qty), 0);
+  }
+
+  getTotalItems() {
+    return this.items.reduce((sum, i) => sum + i.qty, 0);
+  }
+
+  getSavings() {
+    return this.items.reduce((sum, i) => sum + ((i.originalPrice - i.price) * i.qty), 0);
+  }
+
+  save() {
+    localStorage.setItem('sp_cart', JSON.stringify(this.items));
+  }
+
+  onChange(fn) {
+    this.listeners.push(fn);
+  }
+
+  notify() {
+    this.listeners.forEach(fn => fn());
+    document.dispatchEvent(new CustomEvent('cartUpdated'));
+  }
 }
 
-function removeCartItem(index) {
-    const cart = getCart();
-    cart.splice(index, 1);
-    saveCart(cart);
-    return cart;
-}
+const cart = new ShoppingCart();
 
-function getCartTotal() {
-    const cart = getCart();
-    let subtotal = 0;
-    cart.forEach(item => {
-        const product = typeof PRODUCTS !== "undefined" ? getProductById(item.productId) : null;
-        if (product) {
-            const price = product.salePrice || product.price;
-            subtotal += price * item.quantity;
-        }
-    });
-    return subtotal;
-}
-
-function getCartCount() {
-    const cart = getCart();
-    return cart.reduce((sum, item) => sum + item.quantity, 0);
-}
-
-function updateCartBadge() {
-    const count = getCartCount();
-    const badges = document.querySelectorAll(".cart-badge");
-    badges.forEach(badge => {
-        badge.textContent = count;
-        badge.style.display = count > 0 ? "flex" : "none";
-    });
-}
-
-function showAddedToast() {
-    let toast = document.getElementById("cart-toast");
-    if (!toast) {
-        toast = document.createElement("div");
-        toast.id = "cart-toast";
-        toast.innerHTML = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z\"/><path d=\"M3 6h18\"/><path d=\"M16 10a4 4 0 0 1-8 0\"/></svg> Item added to cart";
-        document.body.appendChild(toast);
-    }
-    toast.classList.add("show");
-    setTimeout(() => toast.classList.remove("show"), 2500);
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    updateCartBadge();
-});
+// Notify on load
+cart.notify();
